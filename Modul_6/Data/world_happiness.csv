@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>World Happiness Report | Kaggle</title>
+  <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+  <meta name="description" content="Happiness scored according to economic production, social support, etc." />
+    <meta name="keywords" content="arts and entertainment,news,social science,religion and belief systems,economics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="5UwLCU7B&#x2B;xtdaRXF7DFPHA==" type="text/javascript">
+    window["pageRequestStartTime"] = 1733748680638;
+    window["pageRequestEndTime"] = 1733748680731;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <script nonce="5UwLCU7B&#x2B;xtdaRXF7DFPHA==" id="gsi-client" src="https://accounts.google.com/gsi/client" async defer></script>
+  <script nonce="5UwLCU7B&#x2B;xtdaRXF7DFPHA==">window.KAGGLE_JUPYTERLAB_PATH = "/static/assets/jupyterlab-v4/jupyterlab-index-dfd7023b6fc25e5b5278.html";</script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+    <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" id="dynamic-favicon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="5UwLCU7B&#x2B;xtdaRXF7DFPHA==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+
+    <link rel="canonical" href="https://www.kaggle.com/datasets/unsdsn/world-happiness" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=dne" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=5bf3c9f45d06b890b0a5" />
+
+  
+    
+ 
+      <script nonce="5UwLCU7B&#x2B;xtdaRXF7DFPHA==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="5UwLCU7B&#x2B;xtdaRXF7DFPHA==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-T7QHS60L4Q', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Datasets'
+        });
+    </script>
+    <script nonce="5UwLCU7B&#x2B;xtdaRXF7DFPHA==" async src="https://www.googletagmanager.com/gtag/js?id=G-T7QHS60L4Q"></script>
+
+  
+    
+    <meta property="og:url" content="https://www.kaggle.com/datasets/unsdsn/world-happiness" />
+    <meta property="og:title" content="World Happiness Report" />
+    <meta property="og:description" content="Happiness scored according to economic production, social support, etc." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://storage.googleapis.com/kaggle-datasets-images/894/1634/927f32f2cc2cc40d208ae384562ad743/dataset-card.jpg" />
+    <meta property="fb:app_id" content="2665027677054710" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets" />
+        <meta name="twitter:creator" content="@UNSDSN" />
+
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+            <script nonce="5UwLCU7B+xtdaRXF7DFPHA==" type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"World Happiness Report","description":"### Context \n\nThe World Happiness Report is a landmark survey of the state of global happiness. The first report was published in 2012, the second in 2013, the third in 2015, and the fourth in the 2016 Update. The World Happiness 2017, which ranks 155 countries by their happiness levels, was released at the United Nations at an event celebrating International Day of Happiness on March 20th. The report continues to gain global recognition as governments, organizations and civil society increasingly use happiness indicators to inform their policy-making decisions. Leading experts across fields – economics, psychology, survey analysis, national statistics, health, public policy and more – describe how measurements of well-being can be used effectively to assess the progress of nations. The reports review the state of happiness in the world today and show how the new science of happiness explains personal and national variations in happiness. \n\n### Content\n\nThe happiness scores and rankings use data from the Gallup World Poll. The scores are based on answers to the main life evaluation question asked in the poll. This question, known as the Cantril ladder, asks respondents to think of a ladder with the best possible life for them being a 10 and the worst possible life being a 0 and to rate their own current lives on that scale. The scores are from nationally representative samples for the years 2013-2016 and use the Gallup weights to make the estimates representative. The columns following the happiness score estimate the extent to which each of six factors – economic production, social support, life expectancy, freedom, absence of corruption, and generosity – contribute to making life evaluations higher in each country than they are in Dystopia, a hypothetical country that has values equal to the world’s lowest national averages for each of the six factors. They have no impact on the total score reported for each country, but they do explain why some countries rank higher than others.\n\n\n### Inspiration\n\nWhat countries or regions rank the highest in overall happiness and each of the six factors contributing to happiness? How did country ranks or scores change between the 2015 and 2016 as well as the 2016 and 2017 reports? Did any country experience a significant increase or decrease in happiness?\n\n**What is Dystopia?**\n\nDystopia is an imaginary country that has the world’s least-happy people. The purpose in establishing Dystopia is to have a benchmark against which all countries can be favorably compared (no country performs more poorly than Dystopia) in terms of each of the six key variables, thus allowing each sub-bar to be of positive width. The lowest scores observed for the six key variables, therefore, characterize Dystopia. Since life would be very unpleasant in a country with the world’s lowest incomes, lowest life expectancy, lowest generosity, most corruption, least freedom and least social support, it is referred to as “Dystopia,” in contrast to Utopia.\n\n**What are the residuals?**\n\nThe residuals, or unexplained components, differ for each country, reflecting the extent to which the six variables either over- or under-explain average 2014-2016 life evaluations. These residuals have an average value of approximately zero over the whole set of countries. Figure 2.2 shows the average residual for each country when the equation in Table 2.1 is applied to average 2014- 2016 data for the six variables in that country. We combine these residuals with the estimate for life evaluations in Dystopia so that the combined bar will always have positive values. As can be seen in Figure 2.2, although some life evaluation residuals are quite large, occasionally exceeding one point on the scale from 0 to 10, they are always much smaller than the calculated value in Dystopia, where the average life is rated at 1.85 on the 0 to 10 scale.\n\n**What do the columns succeeding the Happiness Score(like Family, Generosity, etc.) describe?**\n\nThe following columns: GDP per Capita, Family, Life Expectancy, Freedom, Generosity, Trust Government Corruption describe the extent to which these factors contribute in evaluating the happiness in each country. \nThe Dystopia Residual metric actually is the Dystopia Happiness Score(1.85) +  the Residual value or the unexplained value for each country as stated in the previous answer.\n\nIf you add all these factors up, you get the happiness score so it might be un-reliable to model them to predict Happiness Scores.\n\n#[Start a new kernel][1]\n\n\n  [1]: https://www.kaggle.com/unsdsn/world-happiness/kernels?modal=true","url":"https://www.kaggle.com/unsdsn/world-happiness","version":2,"keywords":["subject, arts and entertainment","subject, people and society, news","subject, people and society, social science","subject, people and society, religion and belief systems","subject, people and society, social science, economics"],"license":{"@type":"CreativeWork","name":"CC0: Public Domain","url":"https://creativecommons.org/publicdomain/zero/1.0/"},"identifier":["894"],"includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Organization","name":"Sustainable Development Solutions Network","url":"https://www.kaggle.com/organizations/unsdsn","image":"https://storage.googleapis.com/kaggle-organizations/485/thumbnail.png"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com/datasets/unsdsn/world-happiness/download?datasetVersionNumber=2","contentSize":"37692 bytes"}],"commentCount":17,"dateModified":"2019-11-27T04:41:47.297Z","discussionUrl":"https://www.kaggle.com/unsdsn/world-happiness/discussion","alternateName":"Happiness scored according to economic production, social support, etc.","isAccessibleForFree":true,"thumbnailUrl":"https://storage.googleapis.com/kaggle-datasets-images/894/1634/927f32f2cc2cc40d208ae384562ad743/dataset-card.jpg","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":17},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":324721},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":1758362},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":4227}]}</script>
+        
+
+  
+    
+
+  
+    
+
+
+    <script nonce="5UwLCU7B&#x2B;xtdaRXF7DFPHA==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="5UwLCU7B&#x2B;xtdaRXF7DFPHA==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="5UwLCU7B+xtdaRXF7DFPHA==" src="/static/assets/runtime.js?v=aff0483aff24084bee57"></script>
+  <script nonce="5UwLCU7B+xtdaRXF7DFPHA==" src="/static/assets/vendor.js?v=55af743e3678f4d83805"></script>
+  <script nonce="5UwLCU7B+xtdaRXF7DFPHA==" src="/static/assets/app.js?v=d9d8cab4e4d37e9829db"></script>
+    <script nonce="5UwLCU7B&#x2B;xtdaRXF7DFPHA==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '0'
+      }
+    </script>
+</head>
+<body>
+<main>
+    
+
+
+
+
+
+<div id="site-container"></div>
+
+<div id="site-body" class="hide">
+    
+
+
+<script nonce="5UwLCU7B&#x2B;xtdaRXF7DFPHA==" type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none",
+    extensions: ["Safe.js"],
+    });
+</script>
+<script type="text/javascript" nonce="5UwLCU7B&#x2B;xtdaRXF7DFPHA==">
+  window.addEventListener("DOMContentLoaded", () => {
+    const head = document.getElementsByTagName("head")[0];
+    const lib = document.createElement("script");
+    lib.type = "text/javascript";
+    // Always use the production asset in local dev, which is served from GCS. We tried to proxy and / or serve this
+    // in a better way in localhost, but it didn't work out. See b/328073416#comment8 for details.
+    const forceProdHost = window.location.hostname === "localhost";
+    lib.src = `${forceProdHost ? "https://www.kaggle.com" : ""}/static/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML`;
+    head.appendChild(lib);
+  });
+</script>
+
+
+
+
+
+
+</div>
+
+
+
+
+  </main>
+</body>
+
+</html>
