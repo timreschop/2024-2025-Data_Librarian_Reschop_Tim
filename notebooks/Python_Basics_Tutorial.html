@@ -1,0 +1,1485 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Arithmetik und Variablen &#8212; Python Basics Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Python_Basics_Tutorial';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Python Basics – Interaktives Tutorial" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Python Basics Tutorial</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Python Basics – Interaktives Tutorial
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Arithmetik und Variablen</a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/Python_Basics_Tutorial.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/Python_Basics_Tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1. Arithmetik und Variablen</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Arithmetik und Variablen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetik">Arithmetik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-seinen-grundlegendsten-funktion-kann-python-wie-ein-taschenrechner-verwendet-werden-also-ganz-basal-fur-addition-multiplikation-subtraktion-und-division-aber-auch-weitaus-komplexere-berechnungen">In seinen grundlegendsten Funktion kann Python wie ein Taschenrechner verwendet werden - also ganz basal für Addition, Multiplikation, Subtraktion und Division, aber auch weitaus komplexere Berechnungen.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-der-folgenden-zelle-findest-du-einige-bespiele-fur-solche-aufgaben-wobei-der-befehl-print-verwendet-wird-um-eine-ausgabe-erzeugen-zu-lassen">In der folgenden Zelle findest Du einige Bespiele für solche Aufgaben, wobei der Befehl <em>print(…)</em> verwendet wird, um eine Ausgabe erzeugen zu lassen.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-das-symbol-verwenden-um-deinen-code-zu-kommentieren-d-h-dass-alles-hinter-dem-symbol-nicht-als-code-ausgefuhrt-wird-kommmentare-sind-sehr-hilfreich-um-dem-code-direkt-eine-erklarung-zum-besseren-verstandnis-hinzuzufugen">Du kannst das <em>#-Symbol</em> verwenden, um Deinen Code zu kommentieren, d.h. dass alles hinter dem <em>#-Symbol</em> nicht als Code ausgeführt wird. Kommmentare sind sehr hilfreich, um dem Code direkt eine Erklärung zum besseren Verständnis hinzuzufügen.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variablen">Variablen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-python-arbeitet-man-sehr-haufig-mit-variablen-das-bedeutet-dass-du-bestimmte-werte-in-variablen-abspeichern-kannst-bzw-auch-mehrere-werte-in-einer-variable-das-ist-sehr-nutzlich-wenn-ein-wert-mehrfach-im-code-verwendet-werden-soll-eine-zuweisung-erfolgt-uber-den-operator-die-benennung-der-variablen-ist-beliebig-d-h-du-kannst-sie-benennen-wie-du-willst-es-empfiehlt-sich-jedoch-in-der-praxis-namen-zu-verwenden-die-die-variable-sinnvoll-mit-dem-wert-assoziieren-das-macht-den-code-fur-dich-und-andere-verstandlicher">In Python arbeitet man sehr häufig mit Variablen. Das bedeutet, dass Du bestimmte Werte in Variablen abspeichern kannst bzw. auch mehrere Werte in einer Variable. Das ist sehr nützlich, wenn ein Wert mehrfach im Code verwendet werden soll. Eine Zuweisung erfolgt über den <em>= - Operator</em>. Die Benennung der Variablen ist beliebig, d.h. Du kannst sie benennen, wie Du willst. Es empfiehlt sich jedoch in der Praxis, Namen zu verwenden, die die Variable sinnvoll mit dem Wert assoziieren. Das macht den Code für Dich und andere verständlicher.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweis-achte-darauf-bei-der-benennung-von-variablen-keine-bereits-verwendeten-namen-zu-verwenden-du-kennst-z-b-schon-die-print-funktion-wenn-du-eine-variable-print-nennst-wurde-das-die-funktion-uberschreiben-die-dann-nicht-mehr-ausgefuhrt-werden-konnte"><strong>HINWEIS</strong>: Achte darauf, bei der Benennung von Variablen, keine bereits verwendeten Namen zu verwenden. Du kennst z.B. schon die print(…)-Funktion. Wenn du eine Variable “print” nennst, würde das die Funktion überschreiben, die dann nicht mehr ausgeführt werden könnte.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-der-folgenden-zelle-siehst-du-wie-man-eine-variable-einem-wert-zuweist-und-diese-dann-uber-print-ausgeben-lassen-kann">In der folgenden Zelle siehst Du, wie man eine Variable einem Wert zuweist und diese dann über print(…) ausgeben lassen kann.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-dieselbe-variable-dann-mit-auch-wieder-uberschreiben-z-b-so">Du kannst dieselbe Variable dann mit <em>=</em> auch wieder überschreiben, z.B. so:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-variable-x-ist-somit-uberschrieben-und-nun-dem-wert-10-zugewiesen">Die Variable <em>x</em> ist somit überschrieben und nun dem Wert 10 zugewiesen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variablen-sind-also-schlicht-platzhalter-fur-objekte-in-diesem-fall-eine-ganze-zahl-integer-oder-int-wenn-wir-weitere-variablen-definieren-konnen-wir-mit-diesen-auch-berechnungen-anstellen">Variablen sind also schlicht Platzhalter für Objekte, in diesem Fall eine ganze Zahl (<em>Integer</em> oder <em>Int</em>). Wenn wir weitere Variablen definieren, können wir mit diesen auch Berechnungen anstellen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-wie-bereits-erwahnt-auch-mehrere-objekte-in-einer-variable-speichern-und-ausgeben-lassen-z-b-so">Du kannst, wie bereits erwähnt, auch mehrere Objekte in einer Variable speichern und ausgeben lassen, z.B. so:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-diesem-fall-sind-die-objekte-keine-ganzen-zahlen-integers-sondern-sogenannte-strings-ein-string-in-python-ist-einfach-ein-stuck-text-also-alles-was-aus-buchstaben-zahlen-oder-zeichen-besteht-und-in-anfuhrungszeichen-steht">In diesem Fall sind die Objekte keine ganzen Zahlen/Integers sondern sogenannte <em>Strings</em>. Ein <em>String</em> in Python ist einfach ein Stück Text – also alles, was aus Buchstaben, Zahlen oder Zeichen besteht <strong>und in Anführungszeichen</strong> steht.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ubung-1">Übung 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jetzt-bist-du-an-der-reihe-lose-die-folgende-ubung">Jetzt bist Du an der Reihe! Löse die folgende Übung:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#berechne-das-produkt-aus-3-und-6-und-speichere-das-ergebnis-in-der-variable-v-1-dividiere-das-ergebnis-durch-2-und-speichere-dieses-ergebnis-in-der-variable-v-2-lass-dir-dann-das-ergebnis-von-v-2-ausgeben">Berechne das Produkt aus 3 und 6 und speichere das Ergebnis in der Variable v_1. Dividiere das Ergebnis durch 2 und speichere dieses Ergebnis in der Variable v_2. Lass dir dann das Ergebnis von v_2 ausgeben.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#datentypen">2. Datentypen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#im-ersten-kapitel-hast-du-bereits-integer-und-string-variablen-kennengelernt-in-python-gibt-es-verschiedene-datentypen-die-in-variablen-abgespeichert-werden-konnen-integers-ganze-zahlen-und-strings-zeichenfolgen-in-sind-nur-zwei-beispiele-fur-datentypen-die-eine-variable-annehmen-kann-in-diesem-kapitel-lernst-du-weitere-bzw-die-gangigsten-datentypen-in-python-kennen">Im ersten Kapitel hast Du bereits <em>Integer-</em> und *String-*Variablen kennengelernt. In Python gibt es verschiedene Datentypen, die in Variablen abgespeichert werden können. <em>Integers</em> (Ganze Zahlen) und <em>Strings</em> (Zeichenfolgen in “…”) sind nur zwei Beispiele für Datentypen, die eine Variable annehmen kann. In diesem Kapitel lernst du weitere bzw. die gängigsten Datentypen in Python kennen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variablentypen-datentypen"><strong>Variablentypen / Datentypen</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerische-datentypen">Numerische Datentypen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grundsatzlich-gibt-es-zwei-wichtige-numerische-datenypen-ganzzahlen-int-die-du-schon-kennst-und-flieszkommazahlen-float-also-dezimalzahlen-wichtig-in-python-ist-das-dezimalzeichen-ein-punkt-kein-komma">Grundsätzlich gibt es zwei wichtige numerische Datenypen: Ganzzahlen (<em>int</em>), die Du schon kennst, und Fließkommazahlen (<em>float</em>) also Dezimalzahlen. <strong>Wichtig:</strong> In Python ist das Dezimalzeichen ein Punkt, kein Komma.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweis-du-musst-in-python-den-datentyp-beim-erstellen-einer-variable-nicht-explizit-angeben-als-dynamische-sprache-erkennt-python-automatisch-den-datentyp-der-variablen-basierend-auf-dem-zugewiesenen-wert-das-gilt-fur-alles-datentypen-nicht-nur-fur-numerische-datentypen-hier-ein-beispiel"><strong>HINWEIS:</strong> Du musst in Python den Datentyp beim Erstellen einer Variable nicht explizit angeben. Als dynamische Sprache erkennt Python automatisch den Datentyp der Variablen basierend auf dem zugewiesenen Wert. Das gilt für alles Datentypen, nicht nur für numerische Datentypen. Hier ein Beispiel:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-der-funktion-type-kannst-du-dir-ausgeben-lassen-welchen-datentyp-eine-variable-hat">Mit der Funktion type(…) kannst Du dir ausgeben lassen, welchen Datentyp eine Variable hat.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings"><strong>Strings</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier"><em>Strings</em> sind Zeichenfolgen (Buchstaben, Symbole, aber auch Zahlen usw.). <em>Strings</em> werden erstellt, indem man die Zeichenfolge in einfache oder doppelte Anführungszeichen einschließt, so wie hier:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans"><strong>Booleans</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-sind-ein-datentyp-der-nur-zwei-werte-annehmen-kann-entweder-true-oder-false-sie-reprasentieren-den-wahrheitswert-eine-aussage-auch-diesen-datentyp-kannst-du-mit-der-funktion-type-uberprufen"><em>Booleans</em> sind ein Datentyp, der nur zwei Werte annehmen kann. Entweder <em>True</em> oder <em>False</em>. Sie repräsentieren den Wahrheitswert eine Aussage. Auch diesen Datentyp kannst du mit der Funktion type(…) überprüfen:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-werden-haufig-in-bedingungsanweisungen-if-else-verwendet-also-z-b-wenn-x-groszer-ist-als-4-d-h-x-4-true-dann-tue-dies-wenn-nicht-d-h-x-4-false-dann-tue-dies-bedingungsanweisungen-sind-schon-eine-fortgeschrittene-technik-die-wir-zunachst-nicht-betrachten">Booleans werden häufig in Bedingungsanweisungen (if, else) verwendet (also z.B. “Wenn x größer ist als 4 (d.h. x &gt; 4 = True), dann tue dies, wenn nicht (d.h. x &gt; 4 = False), dann tue dies…). Bedingungsanweisungen sind schon eine fortgeschrittene Technik, die wir zunächst nicht betrachten.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#collections-fur-variablen">Collections für Variablen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-bietet-die-moglichkeit-mehrere-werte-in-einer-einzigen-variable-zu-speichern-sogenannte-collections-die-gangigsten-collection-typen-sind-listen-tupel-sets-und-dictionaries">Python bietet die Möglichkeit, mehrere Werte in einer einzigen Variable zu speichern, sogenannte <em>Collections</em>. Die gängigsten <em>Collection</em>-Typen sind Listen, Tupel, Sets und Dictionaries.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listen">Listen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listen-sind-die-flexibleste-art-um-mehrere-objekte-in-einer-variablen-zu-speichern-listen-werden-mit-eckigen-klammern-erstellt-in-denen-du-die-einzelnen-objekte-mit-kommata-trennst">Listen sind die flexibleste Art, um mehrere Objekte in einer Variablen zu speichern. Listen werden mit eckigen Klammern erstellt, in denen Du die einzelnen Objekte mit Kommata trennst:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#man-kann-auch-auf-einzelne-elemente-einer-liste-zugreifen-uber-den-sog-index">Man kann auch auf einzelne Elemente einer Liste zugreifen - über den sog. <em>Index</em>.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweis-die-indexierung-d-h-die-durchnummerierung-der-objekte-in-einer-liste-beginnt-in-python-bei-0-und-nicht-bei-1-d-h-wenn-ich-auf-der-erste-objekt-eine-liste-zugreifen-will-ist-der-index-0-und-beim-zweiten-objekt-1-usw"><strong>HINWEIS</strong>: Die Indexierung, d.h. die “Durchnummerierung” der Objekte in einer Liste beginnt in Python bei 0 und nicht bei 1, d.h. wenn ich auf der erste Objekt eine Liste zugreifen will, ist der Index 0, und beim zweiten Objekt 1 usw:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-indizes-konnen-ebenfalls-verwendet-werden-um-objekte-aus-der-liste-von-hinten-zu-erhalten-mit-1-greift-man-bspw-auf-das-letzte-objekt-einer-liste-zu">Negative Indizes können ebenfalls verwendet werden, um Objekte aus der Liste “von hinten” zu erhalten. Mit -1 greift man bspw. auf das letzte Objekt einer Liste zu.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listen-sind-wie-gesagt-flexibel-d-h-sie-konnen-jederzeit-verandert-erweitert-oder-dezimiert-werden-mit-den-funktionen-append-und-remove-kannst-du-objekte-hinzufugen-bzw-entfernen">Listen sind, wie gesagt, flexibel, d.h. sie können jederzeit verändert, erweitert oder dezimiert werden. Mit den Funktionen append() und remove() kannst du Objekte hinzufügen bzw. entfernen:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Übung 1</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstelle-eine-liste-mit-den-namen-benny-emre-charlotte-oleg-und-anastasia-losche-dann-benny-aus-der-liste-und-fuge-lukas-hinzu">Erstelle eine Liste mit den Namen <em>Benny, Emre, Charlotte, Oleg</em> und <em>Anastasia</em>. Lösche dann <em>Benny</em> aus der Liste und füge <em>Lukas</em> hinzu.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubung-2"><strong>Übung 2</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstelle-eine-liste-mit-den-zahlen-1-bis-3-fuge-dann-den-string-four-hinzu-und-gib-die-liste-aus">Erstelle eine Liste mit den Zahlen 1 bis 3. Füge dann den String “Four” hinzu und gib die Liste aus.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tupel">Tupel</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tupel-sind-der-unflexibelste-datentyp-da-sie-nicht-verandert-werden-konnen-daher-sollten-sie-nur-verwendet-werden-wenn-die-daten-mit-sicherheit-gleich-bleiben">Tupel sind der unflexibelste Datentyp, da sie nicht verändert werden können. Daher sollten sie nur verwendet werden, wenn die Daten mit Sicherheit gleich bleiben.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-tupel-wird-mit-runden-klammern-und-kommata-erzeugt-und-wenn-du-dich-erinnerst-haben-wir-auch-schon-einen-erstellt-namlich">Ein Tupel wird mit runden Klammern und Kommata erzeugt und wenn du dich erinnerst, haben wir auch schon einen erstellt, nämlich:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-besondere-an-tupeln-ist-das-tuple-unpacking-wobei-mehrere-variablen-gleichzeitig-automatisch-zugewiesen-werden-konnen">Das besondere an Tupeln ist das <em>Tuple Unpacking</em>, wobei mehrere Variablen gleichzeitig automatisch zugewiesen werden können:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">Sets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-sind-ungeordnet-und-auszerdem-nicht-indizierbar-d-h-du-kannst-uber-den-index-nicht-auf-einzelne-objekte-des-sets-zugreifen-auszerdem-ist-jedes-objekt-in-einem-set-einzigartig-sodass-doppelte-werte-automatisch-entfernt-werden"><em>Sets</em> sind “ungeordnet” und außerdem nicht indizierbar, d.h. Du kannst über den <em>Index</em> nicht auf einzelne Objekte des Sets zugreifen. Außerdem ist jedes Objekt in einem <em>Set</em> einzigartig, sodass doppelte Werte automatisch entfernt werden.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-werden-mit-geschweiften-klammern-und-kommata-erzeugt"><em>Sets</em> werden mit geschweiften Klammern und Kommata erzeugt:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-sind-z-b-sehr-nutzlich-wenn-man-duplikate-aus-listen-entfernen-mochte">Sets sind z.B. sehr nützlich, wenn man Duplikate aus Listen entfernen möchte:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#im-prinzip-sind-dictionaries-eine-erweiterte-version-von-listen-und-sets-listen-enthalten-nur-werte-wahrend-dictionaries-aus-schlussel-wert-paaren-bestehen-die-aber-im-gegensatz-zu-den-werten-einer-liste-ungeordnet-sind-dictionaries-werden-in-eingeschlossen-und-die-schlussel-wert-paare-mit-kommata-getrennt-d-h-dass-du-jedem-objekt-eine-eindeutige-kennung-zuordnung-geben-kannst-der-zugriff-auf-einzelne-objekte-erfolgt-dann-uber-den-schlussel-nicht-uber-den-index-das-konnen-wir-uns-anhand-der-listen-die-wir-oben-schon-erstellt-haben-ganz-leicht-veranschaulichen">Im Prinzip sind Dictionaries eine erweiterte Version von Listen und Sets. Listen enthalten nur Werte, während Dictionaries aus <em>Schlüssel-Wert-Paaren</em> bestehen, die aber - im Gegensatz zu den Werten einer Liste - ungeordnet sind. Dictionaries werden in {…} eingeschlossen und die <em>Schlüssel-Wert-Paare</em> mit Kommata getrennt. D.h., dass du jedem Objekt eine eindeutige Kennung/Zuordnung geben kannst. Der Zugriff auf einzelne Objekte erfolgt dann über den <em>Schlüssel</em>, nicht über den <em>Index</em>. Das können wir uns anhand der Listen, die wir oben schon erstellt haben ganz leicht veranschaulichen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-diesem-dictionary-sind-die-namen-in-die-schlussel-und-die-dazugehorigen-alter-die-werte-uber-die-print-funktion-kann-man-sich-dann-mit-angabe-des-dictionaries-und-des-schlussels-in-den-zugehorigen-wert-ausgeben-lassen">In diesem Dictionary sind die Namen in “…” die <em>Schlüssel</em> und die dazugehörigen Alter die <em>Werte</em>. Über die print(…)-Funktion kann man sich dann mit Angabe des Dictionaries und des Schlüssels in […] den zugehörigen Wert ausgeben lassen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries-sind-sehr-flexibel-objekte-konnen-hinzugefugt-verandert-oder-entfernt-werden-mit-dem-zuweisungsoperator-s-u-konnen-weitere-werte-hinzugefugt-mit-der-funktion-pop-entfernt-werden">Dictionaries sind sehr flexibel. Objekte können hinzugefügt, verändert oder entfernt werden. Mit dem Zuweisungsoperator (s.u.) können weitere Werte hinzugefügt, mit der Funktion pop(…) entfernt werden.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-keys-kannst-du-dir-alle-schlussel-oder-mit-values-alle-werte-eines-dictionaries-ausgeben-separat-voneinander-ausgeben-lassen">Mit keys(…) kannst du dir alle Schlüssel oder mit values(…) alle Werte eines Dictionaries ausgeben separat voneinander ausgeben lassen:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ubung-3">Übung 3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-nachste-ubung-ist-etwas-schwieriger-und-bedarf-einer-kombination-von-code-aus-dem-bisher-gelernten-aber-mit-etwas-geschick-konnt-ihr-den-code-knacken">Die nächste Übung ist etwas schwieriger und bedarf einer Kombination von Code aus dem bisher gelernten. Aber mit etwas Geschick könnt Ihr den Code knacken:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellt-ein-dictionary-aus-den-namen-peter-aylin-und-sebastian-und-gebt-als-wert-jeweils-ein-beliebiges-alter-an-fuge-dann-ezra-mit-dem-gleichen-alter-wie-aylin-hinzu-wandle-dann-die-werte-des-dictionaries-in-eine-liste-mit-eindeutigen-werten-um">Erstellt ein Dictionary aus den Namen “Peter”, “Aylin” und “Sebastian” und gebt als Wert jeweils ein beliebiges Alter an. Füge dann “Ezra” mit dem gleichen Alter wie “Aylin” hinzu. Wandle dann die <strong>Werte</strong> des Dictionaries in eine Liste mit eindeutigen Werten um.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#module">3. Module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-python-kann-man-im-grunde-alles-von-grund-auf-neu-programmieren-es-gibt-allerdings-schon-sehr-viel-code-der-bereits-von-anderen-python-nutzern-umgesetzt-wurde-wenn-dieser-code-online-veroffentlicht-wurde-kannst-auch-du-ihn-nutzen-und-fur-deine-zwecke-anpassen">Mit Python kann man im Grunde alles von Grund auf neu programmieren. Es gibt allerdings schon sehr viel Code, der bereits von anderen Python-Nutzern umgesetzt wurde. Wenn dieser Code online veröffentlicht wurde, kannst auch Du ihn nutzen und für deine Zwecke anpassen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#da-python-mit-verschiedenen-modulen-bzw-bibliotheken-arbeitet-musst-du-diese-aber-zunachst-installieren-und-importieren-bevor-funktionen-und-code-verwenden-kannst-der-entsprechende-module-benutzt-die-nicht-schon-in-python-vorinstalliert-sind">Da Python mit verschiedenen Modulen bzw. Bibliotheken arbeitet, musst du diese aber zunächst installieren und importieren, bevor Funktionen und Code verwenden kannst, der entsprechende Module benutzt, die nicht schon in Python vorinstalliert sind.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotheken-installieren">Bibliotheken installieren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#es-gibt-sehr-viele-weitere-bibliotheken-die-in-der-standardversion-von-python-noch-nicht-enthalten-sind-die-veroffentlichungen-von-python-bibliotheken-werden-i-d-r-auf-https-pypi-org-veroffentlicht">Es gibt sehr viele weitere Bibliotheken, die in der Standardversion von Python noch nicht enthalten sind. Die Veröffentlichungen von Python-Bibliotheken werden i.d.R. auf https://pypi.org veröffentlicht</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#um-bibliotheken-von-pypi-zu-installieren-kannst-du-pip-verwenden-du-kannst-pip-direkt-aus-python-heraus-in-deinem-notebook-aufrufen-ublicherweise-benutzt-man-pip-aber-uber-das-terminal">Um Bibliotheken von PyPi zu installieren, kannst du <strong>pip</strong> verwenden. Du kannst <strong>pip</strong> direkt aus Python heraus in deinem Notebook aufrufen, üblicherweise benutzt man <strong>pip</strong> aber über das Terminal.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eine-der-am-meisten-verwendeten-bibliotheken-sind-pandas-und-matplotlib-die-insbesondere-zur-datenverarbeitung-analyse-und-visualisierung-verwendet-werden-hier-zeigen-wir-dir-beide-wege-der-installation-einmal-exemplarisch">Eine der am meisten verwendeten Bibliotheken sind <strong>pandas</strong> und <strong>matplotlib</strong>, die insbesondere zur Datenverarbeitung, -analyse und -visualisierung verwendet werden. Hier zeigen wir dir beide Wege der Installation einmal exemplarisch:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#um-eine-bibliothek-oder-ein-modul-zu-installieren-muss-der-befehl-import-verwendet-werden-und-der-name-der-bibliohek-und-an-alias-angegeben-werden">Um eine Bibliothek oder ein Modul zu installieren, muss der Befehl <strong>import</strong> verwendet werden und der Name der Bibliohek und an Alias angegeben werden:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-von-pandas-konnen-jetzt-uber-das-kurzel-pd-abgerufen-werden">Funktionen von <strong>pandas</strong> können jetzt über das Kürzel <strong>pd</strong> abgerufen werden.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-und-matplotlib">4. pandas und matplotlib</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#da-wir-nun-die-beiden-bibliotheken-importiert-haben-konnen-wir-mit-ihnen-arbeiten-mit-pandas-kann-man-daten-in-eine-tabellarische-form-einen-sog-dataframe-umwandeln-und-analysieren-und-anschlieszend-mit-matplotlib-visualisieren">Da wir nun die beiden Bibliotheken importiert haben, können wir mit ihnen arbeiten. Mit <strong>pandas</strong> kann man Daten in eine tabellarische Form, einen sog. <strong>DataFrame</strong> umwandeln und analysieren und anschließend mit <strong>matplotlib</strong> visualisieren.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispielhaft-konnte-das-so-aussehen">Beispielhaft könnte das so aussehen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nun-sind-unsere-daten-in-einer-sauberen-tabellarischen-form-unter-der-variablen-df-abgespeichert">Nun sind unsere Daten in einer sauberen tabellarischen Form unter der Variablen <em>df</em> abgespeichert</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#man-konnte-nun-z-b-die-funktion-sort-values-von-pandas-verwenden-um-die-daten-nach-den-werten-einer-bestimmten-spalte-zu-sortieren-in-diesem-fall-nehmen-wir-das-alter-und-lassen-es-absteigend-sortieren">Man könnte nun z.B. die Funktion <em>sort_values()</em> von <strong>pandas</strong> verwenden, um die Daten nach den Werten einer bestimmten Spalte zu sortieren. In diesem Fall nehmen wir das Alter und lassen es absteigend sortieren:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#by-alter-gibt-an-aus-welcher-spalte-die-werte-zur-sortierung-entnommen-werden-sollen-ascending-false-kehrt-die-sortierung-ascending-aufsteigend-um-sodass-das-alter-absteigend-sortiert-wird-ascending-true-wurde-die-werte-aufsteigend-sortieren-mit-der-erstellung-der-neuen-variable-df-sorted-haben-wir-einen-neuen-dataframe-erstellt-hatten-wir-einfach-wieder-die-variable-df-verwendet-hatten-wir-unseren-ersten-dataframe-uberschrieben-es-ist-wichtig-das-im-hinterkopf-zu-behalten-um-den-ursprunglichen-dataframe-oder-bestimmte-berarbeitete-dataframes-zu-erhalten-sofern-das-relevant-fur-die-eigene-datenverarbeitung-ist-unser-neuer-dataframe-sieht-nun-so-aus"><em>by=”Alter”</em> gibt an, aus welcher Spalte die Werte zur Sortierung entnommen werden sollen, <em>ascending=False</em> kehrt die Sortierung (ascending - aufsteigend) um, sodass das Alter absteigend sortiert wird. <em>ascending=True</em> würde die Werte aufsteigend sortieren. mit der Erstellung der neuen Variable <em>df_sorted</em> haben wir einen neuen DataFrame erstellt. Hätten wir einfach wieder die Variable <em>df</em> verwendet, hätten wir unseren ersten DataFrame überschrieben. Es ist wichtig, das im Hinterkopf zu behalten, um den ursprünglichen <strong>DataFrame</strong> oder bestimmte berarbeitete <strong>DataFrames</strong> zu erhalten, sofern das relevant für die eigene Datenverarbeitung ist. Unser neuer <strong>DataFrame</strong> sieht nun so aus:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wir-konnen-uber-pandas-auch-csv-oder-xlsx-dateien-die-wir-normalerweise-mit-excel-offnen-wurden-einlesen-und-ebenfalls-in-einem-dataframe-darstellen-lassen-um-mit-den-daten-zu-arbeiten-z-b-so">Wir können über pandas auch .csv- oder .xlsx-Dateien, die wir normalerweise mit Excel öffnen würden einlesen und ebenfalls in einem DataFrame darstellen lassen, um mit den Daten zu arbeiten. z.B. so:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-datei-enthalt-zeitstempel-und-kursveranderung-einer-aktie-zu-bestimmten-zeitpunkten-wenn-wir-bpsw-nur-daten-fur-einen-ganz-bestimmten-zeitraum-sehen-wollen-konnen-wir-den-dataframe-mit-der-funktion-loc-dementsprechend-filtern-und-wieder-in-einen-neuen-dataframe-abspeichern">Die Datei enthält Zeitstempel und Kursveränderung einer Aktie zu bestimmten Zeitpunkten. Wenn wir bpsw. nur Daten für einen ganz bestimmten Zeitraum sehen wollen, können wir den <strong>DataFrame</strong> mit der Funktion <em>loc()</em> dementsprechend filtern und wieder in einen neuen <strong>DataFrame</strong> abspeichern:</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="arithmetik-und-variablen">
+<h1>1. Arithmetik und Variablen<a class="headerlink" href="#arithmetik-und-variablen" title="Link to this heading">#</a></h1>
+<section id="arithmetik">
+<h2>Arithmetik<a class="headerlink" href="#arithmetik" title="Link to this heading">#</a></h2>
+<section id="in-seinen-grundlegendsten-funktion-kann-python-wie-ein-taschenrechner-verwendet-werden-also-ganz-basal-fur-addition-multiplikation-subtraktion-und-division-aber-auch-weitaus-komplexere-berechnungen">
+<h3>In seinen grundlegendsten Funktion kann Python wie ein Taschenrechner verwendet werden - also ganz basal für Addition, Multiplikation, Subtraktion und Division, aber auch weitaus komplexere Berechnungen.<a class="headerlink" href="#in-seinen-grundlegendsten-funktion-kann-python-wie-ein-taschenrechner-verwendet-werden-also-ganz-basal-fur-addition-multiplikation-subtraktion-und-division-aber-auch-weitaus-komplexere-berechnungen" title="Link to this heading">#</a></h3>
+</section>
+<section id="in-der-folgenden-zelle-findest-du-einige-bespiele-fur-solche-aufgaben-wobei-der-befehl-print-verwendet-wird-um-eine-ausgabe-erzeugen-zu-lassen">
+<h3>In der folgenden Zelle findest Du einige Bespiele für solche Aufgaben, wobei der Befehl <em>print(…)</em> verwendet wird, um eine Ausgabe erzeugen zu lassen.<a class="headerlink" href="#in-der-folgenden-zelle-findest-du-einige-bespiele-fur-solche-aufgaben-wobei-der-befehl-print-verwendet-wird-um-eine-ausgabe-erzeugen-zu-lassen" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#Addition</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#Subtraktion</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">24</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#Division</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">#Multiplikation</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#Potenzierung</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+3
+8.0
+10
+27
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="du-kannst-das-symbol-verwenden-um-deinen-code-zu-kommentieren-d-h-dass-alles-hinter-dem-symbol-nicht-als-code-ausgefuhrt-wird-kommmentare-sind-sehr-hilfreich-um-dem-code-direkt-eine-erklarung-zum-besseren-verstandnis-hinzuzufugen">
+<h3>Du kannst das <em>#-Symbol</em> verwenden, um Deinen Code zu kommentieren, d.h. dass alles hinter dem <em>#-Symbol</em> nicht als Code ausgeführt wird. Kommmentare sind sehr hilfreich, um dem Code direkt eine Erklärung zum besseren Verständnis hinzuzufügen.<a class="headerlink" href="#du-kannst-das-symbol-verwenden-um-deinen-code-zu-kommentieren-d-h-dass-alles-hinter-dem-symbol-nicht-als-code-ausgefuhrt-wird-kommmentare-sind-sehr-hilfreich-um-dem-code-direkt-eine-erklarung-zum-besseren-verstandnis-hinzuzufugen" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="variablen">
+<h1>Variablen<a class="headerlink" href="#variablen" title="Link to this heading">#</a></h1>
+<section id="in-python-arbeitet-man-sehr-haufig-mit-variablen-das-bedeutet-dass-du-bestimmte-werte-in-variablen-abspeichern-kannst-bzw-auch-mehrere-werte-in-einer-variable-das-ist-sehr-nutzlich-wenn-ein-wert-mehrfach-im-code-verwendet-werden-soll-eine-zuweisung-erfolgt-uber-den-operator-die-benennung-der-variablen-ist-beliebig-d-h-du-kannst-sie-benennen-wie-du-willst-es-empfiehlt-sich-jedoch-in-der-praxis-namen-zu-verwenden-die-die-variable-sinnvoll-mit-dem-wert-assoziieren-das-macht-den-code-fur-dich-und-andere-verstandlicher">
+<h2>In Python arbeitet man sehr häufig mit Variablen. Das bedeutet, dass Du bestimmte Werte in Variablen abspeichern kannst bzw. auch mehrere Werte in einer Variable. Das ist sehr nützlich, wenn ein Wert mehrfach im Code verwendet werden soll. Eine Zuweisung erfolgt über den <em>= - Operator</em>. Die Benennung der Variablen ist beliebig, d.h. Du kannst sie benennen, wie Du willst. Es empfiehlt sich jedoch in der Praxis, Namen zu verwenden, die die Variable sinnvoll mit dem Wert assoziieren. Das macht den Code für Dich und andere verständlicher.<a class="headerlink" href="#in-python-arbeitet-man-sehr-haufig-mit-variablen-das-bedeutet-dass-du-bestimmte-werte-in-variablen-abspeichern-kannst-bzw-auch-mehrere-werte-in-einer-variable-das-ist-sehr-nutzlich-wenn-ein-wert-mehrfach-im-code-verwendet-werden-soll-eine-zuweisung-erfolgt-uber-den-operator-die-benennung-der-variablen-ist-beliebig-d-h-du-kannst-sie-benennen-wie-du-willst-es-empfiehlt-sich-jedoch-in-der-praxis-namen-zu-verwenden-die-die-variable-sinnvoll-mit-dem-wert-assoziieren-das-macht-den-code-fur-dich-und-andere-verstandlicher" title="Link to this heading">#</a></h2>
+</section>
+<section id="hinweis-achte-darauf-bei-der-benennung-von-variablen-keine-bereits-verwendeten-namen-zu-verwenden-du-kennst-z-b-schon-die-print-funktion-wenn-du-eine-variable-print-nennst-wurde-das-die-funktion-uberschreiben-die-dann-nicht-mehr-ausgefuhrt-werden-konnte">
+<h2><strong>HINWEIS</strong>: Achte darauf, bei der Benennung von Variablen, keine bereits verwendeten Namen zu verwenden. Du kennst z.B. schon die print(…)-Funktion. Wenn du eine Variable “print” nennst, würde das die Funktion überschreiben, die dann nicht mehr ausgeführt werden könnte.<a class="headerlink" href="#hinweis-achte-darauf-bei-der-benennung-von-variablen-keine-bereits-verwendeten-namen-zu-verwenden-du-kennst-z-b-schon-die-print-funktion-wenn-du-eine-variable-print-nennst-wurde-das-die-funktion-uberschreiben-die-dann-nicht-mehr-ausgefuhrt-werden-konnte" title="Link to this heading">#</a></h2>
+</section>
+<section id="in-der-folgenden-zelle-siehst-du-wie-man-eine-variable-einem-wert-zuweist-und-diese-dann-uber-print-ausgeben-lassen-kann">
+<h2>In der folgenden Zelle siehst Du, wie man eine Variable einem Wert zuweist und diese dann über print(…) ausgeben lassen kann.<a class="headerlink" href="#in-der-folgenden-zelle-siehst-du-wie-man-eine-variable-einem-wert-zuweist-und-diese-dann-uber-print-ausgeben-lassen-kann" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="du-kannst-dieselbe-variable-dann-mit-auch-wieder-uberschreiben-z-b-so">
+<h2>Du kannst dieselbe Variable dann mit <em>=</em> auch wieder überschreiben, z.B. so:<a class="headerlink" href="#du-kannst-dieselbe-variable-dann-mit-auch-wieder-uberschreiben-z-b-so" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+10
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="die-variable-x-ist-somit-uberschrieben-und-nun-dem-wert-10-zugewiesen">
+<h2>Die Variable <em>x</em> ist somit überschrieben und nun dem Wert 10 zugewiesen.<a class="headerlink" href="#die-variable-x-ist-somit-uberschrieben-und-nun-dem-wert-10-zugewiesen" title="Link to this heading">#</a></h2>
+</section>
+<section id="variablen-sind-also-schlicht-platzhalter-fur-objekte-in-diesem-fall-eine-ganze-zahl-integer-oder-int-wenn-wir-weitere-variablen-definieren-konnen-wir-mit-diesen-auch-berechnungen-anstellen">
+<h2>Variablen sind also schlicht Platzhalter für Objekte, in diesem Fall eine ganze Zahl (<em>Integer</em> oder <em>Int</em>). Wenn wir weitere Variablen definieren, können wir mit diesen auch Berechnungen anstellen:<a class="headerlink" href="#variablen-sind-also-schlicht-platzhalter-fur-objekte-in-diesem-fall-eine-ganze-zahl-integer-oder-int-wenn-wir-weitere-variablen-definieren-konnen-wir-mit-diesen-auch-berechnungen-anstellen" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">#Überschreibt die Variable x wieder</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="du-kannst-wie-bereits-erwahnt-auch-mehrere-objekte-in-einer-variable-speichern-und-ausgeben-lassen-z-b-so">
+<h2>Du kannst, wie bereits erwähnt, auch mehrere Objekte in einer Variable speichern und ausgeben lassen, z.B. so:<a class="headerlink" href="#du-kannst-wie-bereits-erwahnt-auch-mehrere-objekte-in-einer-variable-speichern-und-ausgeben-lassen-z-b-so" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g7_countries</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;Italy&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;UK&quot;</span><span class="p">,</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">,</span> <span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g7_countries</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Germany&#39;, &#39;Italy&#39;, &#39;France&#39;, &#39;UK&#39;, &#39;USA&#39;, &#39;Canada&#39;, &#39;Japan&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="in-diesem-fall-sind-die-objekte-keine-ganzen-zahlen-integers-sondern-sogenannte-strings-ein-string-in-python-ist-einfach-ein-stuck-text-also-alles-was-aus-buchstaben-zahlen-oder-zeichen-besteht-und-in-anfuhrungszeichen-steht">
+<h2>In diesem Fall sind die Objekte keine ganzen Zahlen/Integers sondern sogenannte <em>Strings</em>. Ein <em>String</em> in Python ist einfach ein Stück Text – also alles, was aus Buchstaben, Zahlen oder Zeichen besteht <strong>und in Anführungszeichen</strong> steht.<a class="headerlink" href="#in-diesem-fall-sind-die-objekte-keine-ganzen-zahlen-integers-sondern-sogenannte-strings-ein-string-in-python-ist-einfach-ein-stuck-text-also-alles-was-aus-buchstaben-zahlen-oder-zeichen-besteht-und-in-anfuhrungszeichen-steht" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ubung-1">
+<h1>Übung 1<a class="headerlink" href="#ubung-1" title="Link to this heading">#</a></h1>
+<section id="jetzt-bist-du-an-der-reihe-lose-die-folgende-ubung">
+<h2>Jetzt bist Du an der Reihe! Löse die folgende Übung:<a class="headerlink" href="#jetzt-bist-du-an-der-reihe-lose-die-folgende-ubung" title="Link to this heading">#</a></h2>
+</section>
+<section id="berechne-das-produkt-aus-3-und-6-und-speichere-das-ergebnis-in-der-variable-v-1-dividiere-das-ergebnis-durch-2-und-speichere-dieses-ergebnis-in-der-variable-v-2-lass-dir-dann-das-ergebnis-von-v-2-ausgeben">
+<h2>Berechne das Produkt aus 3 und 6 und speichere das Ergebnis in der Variable v_1. Dividiere das Ergebnis durch 2 und speichere dieses Ergebnis in der Variable v_2. Lass dir dann das Ergebnis von v_2 ausgeben.<a class="headerlink" href="#berechne-das-produkt-aus-3-und-6-und-speichere-das-ergebnis-in-der-variable-v-1-dividiere-das-ergebnis-durch-2-und-speichere-dieses-ergebnis-in-der-variable-v-2-lass-dir-dann-das-ergebnis-von-v-2-ausgeben" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="datentypen">
+<h1>2. Datentypen<a class="headerlink" href="#datentypen" title="Link to this heading">#</a></h1>
+<section id="im-ersten-kapitel-hast-du-bereits-integer-und-string-variablen-kennengelernt-in-python-gibt-es-verschiedene-datentypen-die-in-variablen-abgespeichert-werden-konnen-integers-ganze-zahlen-und-strings-zeichenfolgen-in-sind-nur-zwei-beispiele-fur-datentypen-die-eine-variable-annehmen-kann-in-diesem-kapitel-lernst-du-weitere-bzw-die-gangigsten-datentypen-in-python-kennen">
+<h2>Im ersten Kapitel hast Du bereits <em>Integer-</em> und *String-*Variablen kennengelernt. In Python gibt es verschiedene Datentypen, die in Variablen abgespeichert werden können. <em>Integers</em> (Ganze Zahlen) und <em>Strings</em> (Zeichenfolgen in “…”) sind nur zwei Beispiele für Datentypen, die eine Variable annehmen kann. In diesem Kapitel lernst du weitere bzw. die gängigsten Datentypen in Python kennen.<a class="headerlink" href="#im-ersten-kapitel-hast-du-bereits-integer-und-string-variablen-kennengelernt-in-python-gibt-es-verschiedene-datentypen-die-in-variablen-abgespeichert-werden-konnen-integers-ganze-zahlen-und-strings-zeichenfolgen-in-sind-nur-zwei-beispiele-fur-datentypen-die-eine-variable-annehmen-kann-in-diesem-kapitel-lernst-du-weitere-bzw-die-gangigsten-datentypen-in-python-kennen" title="Link to this heading">#</a></h2>
+</section>
+<section id="variablentypen-datentypen">
+<h2><strong>Variablentypen / Datentypen</strong><a class="headerlink" href="#variablentypen-datentypen" title="Link to this heading">#</a></h2>
+</section>
+<section id="numerische-datentypen">
+<h2>Numerische Datentypen<a class="headerlink" href="#numerische-datentypen" title="Link to this heading">#</a></h2>
+<section id="grundsatzlich-gibt-es-zwei-wichtige-numerische-datenypen-ganzzahlen-int-die-du-schon-kennst-und-flieszkommazahlen-float-also-dezimalzahlen-wichtig-in-python-ist-das-dezimalzeichen-ein-punkt-kein-komma">
+<h3>Grundsätzlich gibt es zwei wichtige numerische Datenypen: Ganzzahlen (<em>int</em>), die Du schon kennst, und Fließkommazahlen (<em>float</em>) also Dezimalzahlen. <strong>Wichtig:</strong> In Python ist das Dezimalzeichen ein Punkt, kein Komma.<a class="headerlink" href="#grundsatzlich-gibt-es-zwei-wichtige-numerische-datenypen-ganzzahlen-int-die-du-schon-kennst-und-flieszkommazahlen-float-also-dezimalzahlen-wichtig-in-python-ist-das-dezimalzeichen-ein-punkt-kein-komma" title="Link to this heading">#</a></h3>
+</section>
+<section id="hinweis-du-musst-in-python-den-datentyp-beim-erstellen-einer-variable-nicht-explizit-angeben-als-dynamische-sprache-erkennt-python-automatisch-den-datentyp-der-variablen-basierend-auf-dem-zugewiesenen-wert-das-gilt-fur-alles-datentypen-nicht-nur-fur-numerische-datentypen-hier-ein-beispiel">
+<h3><strong>HINWEIS:</strong> Du musst in Python den Datentyp beim Erstellen einer Variable nicht explizit angeben. Als dynamische Sprache erkennt Python automatisch den Datentyp der Variablen basierend auf dem zugewiesenen Wert. Das gilt für alles Datentypen, nicht nur für numerische Datentypen. Hier ein Beispiel:<a class="headerlink" href="#hinweis-du-musst-in-python-den-datentyp-beim-erstellen-einer-variable-nicht-explizit-angeben-als-dynamische-sprache-erkennt-python-automatisch-den-datentyp-der-variablen-basierend-auf-dem-zugewiesenen-wert-das-gilt-fur-alles-datentypen-nicht-nur-fur-numerische-datentypen-hier-ein-beispiel" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">5.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mit-der-funktion-type-kannst-du-dir-ausgeben-lassen-welchen-datentyp-eine-variable-hat">
+<h3>Mit der Funktion type(…) kannst Du dir ausgeben lassen, welchen Datentyp eine Variable hat.<a class="headerlink" href="#mit-der-funktion-type-kannst-du-dir-ausgeben-lassen-welchen-datentyp-eine-variable-hat" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="strings">
+<h2><strong>Strings</strong><a class="headerlink" href="#strings" title="Link to this heading">#</a></h2>
+<section id="strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier">
+<h3><em>Strings</em> sind Zeichenfolgen (Buchstaben, Symbole, aber auch Zahlen usw.). <em>Strings</em> werden erstellt, indem man die Zeichenfolge in einfache oder doppelte Anführungszeichen einschließt, so wie hier:<a class="headerlink" href="#strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;Hello, World!&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World! &lt;class &#39;str&#39;&gt;
+Hello, World! &lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="booleans">
+<h2><strong>Booleans</strong><a class="headerlink" href="#booleans" title="Link to this heading">#</a></h2>
+<section id="booleans-sind-ein-datentyp-der-nur-zwei-werte-annehmen-kann-entweder-true-oder-false-sie-reprasentieren-den-wahrheitswert-eine-aussage-auch-diesen-datentyp-kannst-du-mit-der-funktion-type-uberprufen">
+<h3><em>Booleans</em> sind ein Datentyp, der nur zwei Werte annehmen kann. Entweder <em>True</em> oder <em>False</em>. Sie repräsentieren den Wahrheitswert eine Aussage. Auch diesen Datentyp kannst du mit der Funktion type(…) überprüfen:<a class="headerlink" href="#booleans-sind-ein-datentyp-der-nur-zwei-werte-annehmen-kann-entweder-true-oder-false-sie-reprasentieren-den-wahrheitswert-eine-aussage-auch-diesen-datentyp-kannst-du-mit-der-funktion-type-uberprufen" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">d</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt;
+&lt;class &#39;bool&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="booleans-werden-haufig-in-bedingungsanweisungen-if-else-verwendet-also-z-b-wenn-x-groszer-ist-als-4-d-h-x-4-true-dann-tue-dies-wenn-nicht-d-h-x-4-false-dann-tue-dies-bedingungsanweisungen-sind-schon-eine-fortgeschrittene-technik-die-wir-zunachst-nicht-betrachten">
+<h3>Booleans werden häufig in Bedingungsanweisungen (if, else) verwendet (also z.B. “Wenn x größer ist als 4 (d.h. x &gt; 4 = True), dann tue dies, wenn nicht (d.h. x &gt; 4 = False), dann tue dies…). Bedingungsanweisungen sind schon eine fortgeschrittene Technik, die wir zunächst nicht betrachten.<a class="headerlink" href="#booleans-werden-haufig-in-bedingungsanweisungen-if-else-verwendet-also-z-b-wenn-x-groszer-ist-als-4-d-h-x-4-true-dann-tue-dies-wenn-nicht-d-h-x-4-false-dann-tue-dies-bedingungsanweisungen-sind-schon-eine-fortgeschrittene-technik-die-wir-zunachst-nicht-betrachten" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="collections-fur-variablen">
+<h1>Collections für Variablen<a class="headerlink" href="#collections-fur-variablen" title="Link to this heading">#</a></h1>
+<section id="python-bietet-die-moglichkeit-mehrere-werte-in-einer-einzigen-variable-zu-speichern-sogenannte-collections-die-gangigsten-collection-typen-sind-listen-tupel-sets-und-dictionaries">
+<h2>Python bietet die Möglichkeit, mehrere Werte in einer einzigen Variable zu speichern, sogenannte <em>Collections</em>. Die gängigsten <em>Collection</em>-Typen sind Listen, Tupel, Sets und Dictionaries.<a class="headerlink" href="#python-bietet-die-moglichkeit-mehrere-werte-in-einer-einzigen-variable-zu-speichern-sogenannte-collections-die-gangigsten-collection-typen-sind-listen-tupel-sets-und-dictionaries" title="Link to this heading">#</a></h2>
+</section>
+<section id="listen">
+<h2>Listen<a class="headerlink" href="#listen" title="Link to this heading">#</a></h2>
+<section id="listen-sind-die-flexibleste-art-um-mehrere-objekte-in-einer-variablen-zu-speichern-listen-werden-mit-eckigen-klammern-erstellt-in-denen-du-die-einzelnen-objekte-mit-kommata-trennst">
+<h3>Listen sind die flexibleste Art, um mehrere Objekte in einer Variablen zu speichern. Listen werden mit eckigen Klammern erstellt, in denen Du die einzelnen Objekte mit Kommata trennst:<a class="headerlink" href="#listen-sind-die-flexibleste-art-um-mehrere-objekte-in-einer-variablen-zu-speichern-listen-werden-mit-eckigen-klammern-erstellt-in-denen-du-die-einzelnen-objekte-mit-kommata-trennst" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span> <span class="s2">&quot;Giselle&quot;</span><span class="p">,</span> <span class="s2">&quot;Can&quot;</span><span class="p">,</span> <span class="s2">&quot;Amber&quot;</span><span class="p">,</span> <span class="s2">&quot;Friedrich&quot;</span><span class="p">]</span> <span class="c1">#Liste aus Strings</span>
+<span class="n">age</span> <span class="o">=</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span> <span class="c1">#Liste aus integers</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Alex&#39;, &#39;Giselle&#39;, &#39;Can&#39;, &#39;Amber&#39;, &#39;Friedrich&#39;]
+[24, 23, 26, 21, 29]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="man-kann-auch-auf-einzelne-elemente-einer-liste-zugreifen-uber-den-sog-index">
+<h3>Man kann auch auf einzelne Elemente einer Liste zugreifen - über den sog. <em>Index</em>.<a class="headerlink" href="#man-kann-auch-auf-einzelne-elemente-einer-liste-zugreifen-uber-den-sog-index" title="Link to this heading">#</a></h3>
+</section>
+<section id="hinweis-die-indexierung-d-h-die-durchnummerierung-der-objekte-in-einer-liste-beginnt-in-python-bei-0-und-nicht-bei-1-d-h-wenn-ich-auf-der-erste-objekt-eine-liste-zugreifen-will-ist-der-index-0-und-beim-zweiten-objekt-1-usw">
+<h3><strong>HINWEIS</strong>: Die Indexierung, d.h. die “Durchnummerierung” der Objekte in einer Liste beginnt in Python bei 0 und nicht bei 1, d.h. wenn ich auf der erste Objekt eine Liste zugreifen will, ist der Index 0, und beim zweiten Objekt 1 usw:<a class="headerlink" href="#hinweis-die-indexierung-d-h-die-durchnummerierung-der-objekte-in-einer-liste-beginnt-in-python-bei-0-und-nicht-bei-1-d-h-wenn-ich-auf-der-erste-objekt-eine-liste-zugreifen-will-ist-der-index-0-und-beim-zweiten-objekt-1-usw" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#Durch [0] mache gebe ich an, auf welches Objekt ich zugreifen will.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="negative-indizes-konnen-ebenfalls-verwendet-werden-um-objekte-aus-der-liste-von-hinten-zu-erhalten-mit-1-greift-man-bspw-auf-das-letzte-objekt-einer-liste-zu">
+<h3>Negative Indizes können ebenfalls verwendet werden, um Objekte aus der Liste “von hinten” zu erhalten. Mit -1 greift man bspw. auf das letzte Objekt einer Liste zu.<a class="headerlink" href="#negative-indizes-konnen-ebenfalls-verwendet-werden-um-objekte-aus-der-liste-von-hinten-zu-erhalten-mit-1-greift-man-bspw-auf-das-letzte-objekt-einer-liste-zu" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="listen-sind-wie-gesagt-flexibel-d-h-sie-konnen-jederzeit-verandert-erweitert-oder-dezimiert-werden-mit-den-funktionen-append-und-remove-kannst-du-objekte-hinzufugen-bzw-entfernen">
+<h3>Listen sind, wie gesagt, flexibel, d.h. sie können jederzeit verändert, erweitert oder dezimiert werden. Mit den Funktionen append() und remove() kannst du Objekte hinzufügen bzw. entfernen:<a class="headerlink" href="#listen-sind-wie-gesagt-flexibel-d-h-sie-konnen-jederzeit-verandert-erweitert-oder-dezimiert-werden-mit-den-funktionen-append-und-remove-kannst-du-objekte-hinzufugen-bzw-entfernen" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Raffael&quot;</span><span class="p">)</span>
+<span class="n">age</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">31</span><span class="p">)</span>
+
+<span class="n">names</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">)</span>
+<span class="n">age</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Giselle&#39;, &#39;Can&#39;, &#39;Amber&#39;, &#39;Friedrich&#39;, &#39;Raffael&#39;]
+[23, 26, 21, 29, 31]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2><strong>Übung 1</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="erstelle-eine-liste-mit-den-namen-benny-emre-charlotte-oleg-und-anastasia-losche-dann-benny-aus-der-liste-und-fuge-lukas-hinzu">
+<h3>Erstelle eine Liste mit den Namen <em>Benny, Emre, Charlotte, Oleg</em> und <em>Anastasia</em>. Lösche dann <em>Benny</em> aus der Liste und füge <em>Lukas</em> hinzu.<a class="headerlink" href="#erstelle-eine-liste-mit-den-namen-benny-emre-charlotte-oleg-und-anastasia-losche-dann-benny-aus-der-liste-und-fuge-lukas-hinzu" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="ubung-2">
+<h2><strong>Übung 2</strong><a class="headerlink" href="#ubung-2" title="Link to this heading">#</a></h2>
+<section id="erstelle-eine-liste-mit-den-zahlen-1-bis-3-fuge-dann-den-string-four-hinzu-und-gib-die-liste-aus">
+<h3>Erstelle eine Liste mit den Zahlen 1 bis 3. Füge dann den String “Four” hinzu und gib die Liste aus.<a class="headerlink" href="#erstelle-eine-liste-mit-den-zahlen-1-bis-3-fuge-dann-den-string-four-hinzu-und-gib-die-liste-aus" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tupel">
+<h1>Tupel<a class="headerlink" href="#tupel" title="Link to this heading">#</a></h1>
+<section id="tupel-sind-der-unflexibelste-datentyp-da-sie-nicht-verandert-werden-konnen-daher-sollten-sie-nur-verwendet-werden-wenn-die-daten-mit-sicherheit-gleich-bleiben">
+<h2>Tupel sind der unflexibelste Datentyp, da sie nicht verändert werden können. Daher sollten sie nur verwendet werden, wenn die Daten mit Sicherheit gleich bleiben.<a class="headerlink" href="#tupel-sind-der-unflexibelste-datentyp-da-sie-nicht-verandert-werden-konnen-daher-sollten-sie-nur-verwendet-werden-wenn-die-daten-mit-sicherheit-gleich-bleiben" title="Link to this heading">#</a></h2>
+</section>
+<section id="ein-tupel-wird-mit-runden-klammern-und-kommata-erzeugt-und-wenn-du-dich-erinnerst-haben-wir-auch-schon-einen-erstellt-namlich">
+<h2>Ein Tupel wird mit runden Klammern und Kommata erzeugt und wenn du dich erinnerst, haben wir auch schon einen erstellt, nämlich:<a class="headerlink" href="#ein-tupel-wird-mit-runden-klammern-und-kommata-erzeugt-und-wenn-du-dich-erinnerst-haben-wir-auch-schon-einen-erstellt-namlich" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g7_countries</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;Italy&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;UK&quot;</span><span class="p">,</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">,</span> <span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g7_countries</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Germany&#39;, &#39;Italy&#39;, &#39;France&#39;, &#39;UK&#39;, &#39;USA&#39;, &#39;Canada&#39;, &#39;Japan&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="das-besondere-an-tupeln-ist-das-tuple-unpacking-wobei-mehrere-variablen-gleichzeitig-automatisch-zugewiesen-werden-konnen">
+<h2>Das besondere an Tupeln ist das <em>Tuple Unpacking</em>, wobei mehrere Variablen gleichzeitig automatisch zugewiesen werden können:<a class="headerlink" href="#das-besondere-an-tupeln-ist-das-tuple-unpacking-wobei-mehrere-variablen-gleichzeitig-automatisch-zugewiesen-werden-konnen" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g7_countries</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;Italy&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;UK&quot;</span><span class="p">,</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">,</span> <span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
+<span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="n">g7_countries</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="c1">#usw...</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Germany
+Italy
+France
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sets">
+<h1>Sets<a class="headerlink" href="#sets" title="Link to this heading">#</a></h1>
+<section id="sets-sind-ungeordnet-und-auszerdem-nicht-indizierbar-d-h-du-kannst-uber-den-index-nicht-auf-einzelne-objekte-des-sets-zugreifen-auszerdem-ist-jedes-objekt-in-einem-set-einzigartig-sodass-doppelte-werte-automatisch-entfernt-werden">
+<h2><em>Sets</em> sind “ungeordnet” und außerdem nicht indizierbar, d.h. Du kannst über den <em>Index</em> nicht auf einzelne Objekte des Sets zugreifen. Außerdem ist jedes Objekt in einem <em>Set</em> einzigartig, sodass doppelte Werte automatisch entfernt werden.<a class="headerlink" href="#sets-sind-ungeordnet-und-auszerdem-nicht-indizierbar-d-h-du-kannst-uber-den-index-nicht-auf-einzelne-objekte-des-sets-zugreifen-auszerdem-ist-jedes-objekt-in-einem-set-einzigartig-sodass-doppelte-werte-automatisch-entfernt-werden" title="Link to this heading">#</a></h2>
+</section>
+<section id="sets-werden-mit-geschweiften-klammern-und-kommata-erzeugt">
+<h2><em>Sets</em> werden mit geschweiften Klammern und Kommata erzeugt:<a class="headerlink" href="#sets-werden-mit-geschweiften-klammern-und-kommata-erzeugt" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set_1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span> <span class="c1">#Man achte auf die doppelte 3!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sets-sind-z-b-sehr-nutzlich-wenn-man-duplikate-aus-listen-entfernen-mochte">
+<h2>Sets sind z.B. sehr nützlich, wenn man Duplikate aus Listen entfernen möchte:<a class="headerlink" href="#sets-sind-z-b-sehr-nutzlich-wenn-man-duplikate-aus-listen-entfernen-mochte" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">list_1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">list_1</span><span class="p">)</span> <span class="c1">#Wandelt die Liste in ein Set um, wodurch doppelte Werte entfernt werden.</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">list_1</span><span class="p">))</span>
+<span class="n">list_1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">list_1</span><span class="p">)</span> <span class="c1">#Wandelt das Set wieder in eine Liste um, die jetzt keine Duplikate mehr enthält.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_1</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">list_1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;set&#39;&gt;
+[1, 2, 3, 4, 5] &lt;class &#39;list&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="dictionaries">
+<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h1>
+<section id="im-prinzip-sind-dictionaries-eine-erweiterte-version-von-listen-und-sets-listen-enthalten-nur-werte-wahrend-dictionaries-aus-schlussel-wert-paaren-bestehen-die-aber-im-gegensatz-zu-den-werten-einer-liste-ungeordnet-sind-dictionaries-werden-in-eingeschlossen-und-die-schlussel-wert-paare-mit-kommata-getrennt-d-h-dass-du-jedem-objekt-eine-eindeutige-kennung-zuordnung-geben-kannst-der-zugriff-auf-einzelne-objekte-erfolgt-dann-uber-den-schlussel-nicht-uber-den-index-das-konnen-wir-uns-anhand-der-listen-die-wir-oben-schon-erstellt-haben-ganz-leicht-veranschaulichen">
+<h2>Im Prinzip sind Dictionaries eine erweiterte Version von Listen und Sets. Listen enthalten nur Werte, während Dictionaries aus <em>Schlüssel-Wert-Paaren</em> bestehen, die aber - im Gegensatz zu den Werten einer Liste - ungeordnet sind. Dictionaries werden in {…} eingeschlossen und die <em>Schlüssel-Wert-Paare</em> mit Kommata getrennt. D.h., dass du jedem Objekt eine eindeutige Kennung/Zuordnung geben kannst. Der Zugriff auf einzelne Objekte erfolgt dann über den <em>Schlüssel</em>, nicht über den <em>Index</em>. Das können wir uns anhand der Listen, die wir oben schon erstellt haben ganz leicht veranschaulichen:<a class="headerlink" href="#im-prinzip-sind-dictionaries-eine-erweiterte-version-von-listen-und-sets-listen-enthalten-nur-werte-wahrend-dictionaries-aus-schlussel-wert-paaren-bestehen-die-aber-im-gegensatz-zu-den-werten-einer-liste-ungeordnet-sind-dictionaries-werden-in-eingeschlossen-und-die-schlussel-wert-paare-mit-kommata-getrennt-d-h-dass-du-jedem-objekt-eine-eindeutige-kennung-zuordnung-geben-kannst-der-zugriff-auf-einzelne-objekte-erfolgt-dann-uber-den-schlussel-nicht-uber-den-index-das-konnen-wir-uns-anhand-der-listen-die-wir-oben-schon-erstellt-haben-ganz-leicht-veranschaulichen" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#die Listen von oben:</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span> <span class="s2">&quot;Giselle&quot;</span><span class="p">,</span> <span class="s2">&quot;Can&quot;</span><span class="p">,</span> <span class="s2">&quot;Amber&quot;</span><span class="p">,</span> <span class="s2">&quot;Friedrich&quot;</span><span class="p">]</span> 
+<span class="n">age</span> <span class="o">=</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span>
+
+<span class="c1">#Ein Dictionary sähe so aus:</span>
+<span class="n">dict_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alex&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Giselle&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;Can&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;Amber&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;Friedrich&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="p">[</span><span class="s2">&quot;Can&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="in-diesem-dictionary-sind-die-namen-in-die-schlussel-und-die-dazugehorigen-alter-die-werte-uber-die-print-funktion-kann-man-sich-dann-mit-angabe-des-dictionaries-und-des-schlussels-in-den-zugehorigen-wert-ausgeben-lassen">
+<h2>In diesem Dictionary sind die Namen in “…” die <em>Schlüssel</em> und die dazugehörigen Alter die <em>Werte</em>. Über die print(…)-Funktion kann man sich dann mit Angabe des Dictionaries und des Schlüssels in […] den zugehörigen Wert ausgeben lassen.<a class="headerlink" href="#in-diesem-dictionary-sind-die-namen-in-die-schlussel-und-die-dazugehorigen-alter-die-werte-uber-die-print-funktion-kann-man-sich-dann-mit-angabe-des-dictionaries-und-des-schlussels-in-den-zugehorigen-wert-ausgeben-lassen" title="Link to this heading">#</a></h2>
+</section>
+<section id="dictionaries-sind-sehr-flexibel-objekte-konnen-hinzugefugt-verandert-oder-entfernt-werden-mit-dem-zuweisungsoperator-s-u-konnen-weitere-werte-hinzugefugt-mit-der-funktion-pop-entfernt-werden">
+<h2>Dictionaries sind sehr flexibel. Objekte können hinzugefügt, verändert oder entfernt werden. Mit dem Zuweisungsoperator (s.u.) können weitere Werte hinzugefügt, mit der Funktion pop(…) entfernt werden.<a class="headerlink" href="#dictionaries-sind-sehr-flexibel-objekte-konnen-hinzugefugt-verandert-oder-entfernt-werden-mit-dem-zuweisungsoperator-s-u-konnen-weitere-werte-hinzugefugt-mit-der-funktion-pop-entfernt-werden" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Unser Dictionary:</span>
+<span class="n">dict_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alex&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Giselle&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;Can&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;Amber&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;Friedrich&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">}</span>
+
+<span class="c1">#Hinzufügen eines Schlüssel-Wert-Paares</span>
+<span class="n">dict_1</span><span class="p">[</span><span class="s2">&quot;Florian&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">27</span>
+
+<span class="c1">#Entfernen eines Schlüssel-Wert-Paares</span>
+<span class="n">dict_1</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">)</span>
+
+<span class="c1">#Ändern eines Schlüssel-Wert-Paares</span>
+<span class="n">dict_1</span><span class="p">[</span><span class="s2">&quot;Can&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Giselle&#39;: 23, &#39;Can&#39;: 25, &#39;Amber&#39;: 21, &#39;Friedrich&#39;: 29, &#39;Florian&#39;: 27}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mit-keys-kannst-du-dir-alle-schlussel-oder-mit-values-alle-werte-eines-dictionaries-ausgeben-separat-voneinander-ausgeben-lassen">
+<h2>Mit keys(…) kannst du dir alle Schlüssel oder mit values(…) alle Werte eines Dictionaries ausgeben separat voneinander ausgeben lassen:<a class="headerlink" href="#mit-keys-kannst-du-dir-alle-schlussel-oder-mit-values-alle-werte-eines-dictionaries-ausgeben-separat-voneinander-ausgeben-lassen" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Unser Dictionary</span>
+<span class="n">dict_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alex&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Giselle&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;Can&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;Amber&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;Friedrich&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Alex&#39;, &#39;Giselle&#39;, &#39;Can&#39;, &#39;Amber&#39;, &#39;Friedrich&#39;])
+dict_values([25, 23, 26, 21, 29])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ubung-3">
+<h1>Übung 3<a class="headerlink" href="#ubung-3" title="Link to this heading">#</a></h1>
+<section id="die-nachste-ubung-ist-etwas-schwieriger-und-bedarf-einer-kombination-von-code-aus-dem-bisher-gelernten-aber-mit-etwas-geschick-konnt-ihr-den-code-knacken">
+<h2>Die nächste Übung ist etwas schwieriger und bedarf einer Kombination von Code aus dem bisher gelernten. Aber mit etwas Geschick könnt Ihr den Code knacken:<a class="headerlink" href="#die-nachste-ubung-ist-etwas-schwieriger-und-bedarf-einer-kombination-von-code-aus-dem-bisher-gelernten-aber-mit-etwas-geschick-konnt-ihr-den-code-knacken" title="Link to this heading">#</a></h2>
+</section>
+<section id="erstellt-ein-dictionary-aus-den-namen-peter-aylin-und-sebastian-und-gebt-als-wert-jeweils-ein-beliebiges-alter-an-fuge-dann-ezra-mit-dem-gleichen-alter-wie-aylin-hinzu-wandle-dann-die-werte-des-dictionaries-in-eine-liste-mit-eindeutigen-werten-um">
+<h2>Erstellt ein Dictionary aus den Namen “Peter”, “Aylin” und “Sebastian” und gebt als Wert jeweils ein beliebiges Alter an. Füge dann “Ezra” mit dem gleichen Alter wie “Aylin” hinzu. Wandle dann die <strong>Werte</strong> des Dictionaries in eine Liste mit eindeutigen Werten um.<a class="headerlink" href="#erstellt-ein-dictionary-aus-den-namen-peter-aylin-und-sebastian-und-gebt-als-wert-jeweils-ein-beliebiges-alter-an-fuge-dann-ezra-mit-dem-gleichen-alter-wie-aylin-hinzu-wandle-dann-die-werte-des-dictionaries-in-eine-liste-mit-eindeutigen-werten-um" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="module">
+<h1>3. Module<a class="headerlink" href="#module" title="Link to this heading">#</a></h1>
+<section id="mit-python-kann-man-im-grunde-alles-von-grund-auf-neu-programmieren-es-gibt-allerdings-schon-sehr-viel-code-der-bereits-von-anderen-python-nutzern-umgesetzt-wurde-wenn-dieser-code-online-veroffentlicht-wurde-kannst-auch-du-ihn-nutzen-und-fur-deine-zwecke-anpassen">
+<h2>Mit Python kann man im Grunde alles von Grund auf neu programmieren. Es gibt allerdings schon sehr viel Code, der bereits von anderen Python-Nutzern umgesetzt wurde. Wenn dieser Code online veröffentlicht wurde, kannst auch Du ihn nutzen und für deine Zwecke anpassen.<a class="headerlink" href="#mit-python-kann-man-im-grunde-alles-von-grund-auf-neu-programmieren-es-gibt-allerdings-schon-sehr-viel-code-der-bereits-von-anderen-python-nutzern-umgesetzt-wurde-wenn-dieser-code-online-veroffentlicht-wurde-kannst-auch-du-ihn-nutzen-und-fur-deine-zwecke-anpassen" title="Link to this heading">#</a></h2>
+</section>
+<section id="da-python-mit-verschiedenen-modulen-bzw-bibliotheken-arbeitet-musst-du-diese-aber-zunachst-installieren-und-importieren-bevor-funktionen-und-code-verwenden-kannst-der-entsprechende-module-benutzt-die-nicht-schon-in-python-vorinstalliert-sind">
+<h2>Da Python mit verschiedenen Modulen bzw. Bibliotheken arbeitet, musst du diese aber zunächst installieren und importieren, bevor Funktionen und Code verwenden kannst, der entsprechende Module benutzt, die nicht schon in Python vorinstalliert sind.<a class="headerlink" href="#da-python-mit-verschiedenen-modulen-bzw-bibliotheken-arbeitet-musst-du-diese-aber-zunachst-installieren-und-importieren-bevor-funktionen-und-code-verwenden-kannst-der-entsprechende-module-benutzt-die-nicht-schon-in-python-vorinstalliert-sind" title="Link to this heading">#</a></h2>
+</section>
+<section id="bibliotheken-installieren">
+<h2>Bibliotheken installieren<a class="headerlink" href="#bibliotheken-installieren" title="Link to this heading">#</a></h2>
+<section id="es-gibt-sehr-viele-weitere-bibliotheken-die-in-der-standardversion-von-python-noch-nicht-enthalten-sind-die-veroffentlichungen-von-python-bibliotheken-werden-i-d-r-auf-https-pypi-org-veroffentlicht">
+<h3>Es gibt sehr viele weitere Bibliotheken, die in der Standardversion von Python noch nicht enthalten sind. Die Veröffentlichungen von Python-Bibliotheken werden i.d.R. auf <a class="reference external" href="https://pypi.org">https://pypi.org</a> veröffentlicht<a class="headerlink" href="#es-gibt-sehr-viele-weitere-bibliotheken-die-in-der-standardversion-von-python-noch-nicht-enthalten-sind-die-veroffentlichungen-von-python-bibliotheken-werden-i-d-r-auf-https-pypi-org-veroffentlicht" title="Link to this heading">#</a></h3>
+</section>
+<section id="um-bibliotheken-von-pypi-zu-installieren-kannst-du-pip-verwenden-du-kannst-pip-direkt-aus-python-heraus-in-deinem-notebook-aufrufen-ublicherweise-benutzt-man-pip-aber-uber-das-terminal">
+<h3>Um Bibliotheken von PyPi zu installieren, kannst du <strong>pip</strong> verwenden. Du kannst <strong>pip</strong> direkt aus Python heraus in deinem Notebook aufrufen, üblicherweise benutzt man <strong>pip</strong> aber über das Terminal.<a class="headerlink" href="#um-bibliotheken-von-pypi-zu-installieren-kannst-du-pip-verwenden-du-kannst-pip-direkt-aus-python-heraus-in-deinem-notebook-aufrufen-ublicherweise-benutzt-man-pip-aber-uber-das-terminal" title="Link to this heading">#</a></h3>
+</section>
+<section id="eine-der-am-meisten-verwendeten-bibliotheken-sind-pandas-und-matplotlib-die-insbesondere-zur-datenverarbeitung-analyse-und-visualisierung-verwendet-werden-hier-zeigen-wir-dir-beide-wege-der-installation-einmal-exemplarisch">
+<h3>Eine der am meisten verwendeten Bibliotheken sind <strong>pandas</strong> und <strong>matplotlib</strong>, die insbesondere zur Datenverarbeitung, -analyse und -visualisierung verwendet werden. Hier zeigen wir dir beide Wege der Installation einmal exemplarisch:<a class="headerlink" href="#eine-der-am-meisten-verwendeten-bibliotheken-sind-pandas-und-matplotlib-die-insbesondere-zur-datenverarbeitung-analyse-und-visualisierung-verwendet-werden-hier-zeigen-wir-dir-beide-wege-der-installation-einmal-exemplarisch" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Installation direkt aus Python heraus</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pip</span>
+<span class="n">pip</span><span class="o">.</span><span class="n">main</span><span class="p">([</span><span class="s2">&quot;install&quot;</span><span class="p">,</span> <span class="s2">&quot;pandas&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+To avoid this problem you can invoke Python with &#39;-m pip&#39; instead of running pip directly.
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Requirement already satisfied: pandas in /home/tim/anaconda3/lib/python3.12/site-packages (2.2.2)
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Requirement already satisfied: numpy&gt;=1.26.0 in /home/tim/anaconda3/lib/python3.12/site-packages (from pandas) (1.26.4)
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/tim/anaconda3/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Requirement already satisfied: pytz&gt;=2020.1 in /home/tim/anaconda3/lib/python3.12/site-packages (from pandas) (2024.1)
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Requirement already satisfied: tzdata&gt;=2022.7 in /home/tim/anaconda3/lib/python3.12/site-packages (from pandas) (2023.3)
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Requirement already satisfied: six&gt;=1.5 in /home/tim/anaconda3/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
+</pre>
+</div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Installation im Terminal</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">43</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="um-eine-bibliothek-oder-ein-modul-zu-installieren-muss-der-befehl-import-verwendet-werden-und-der-name-der-bibliohek-und-an-alias-angegeben-werden">
+<h3>Um eine Bibliothek oder ein Modul zu installieren, muss der Befehl <strong>import</strong> verwendet werden und der Name der Bibliohek und an Alias angegeben werden:<a class="headerlink" href="#um-eine-bibliothek-oder-ein-modul-zu-installieren-muss-der-befehl-import-verwendet-werden-und-der-name-der-bibliohek-und-an-alias-angegeben-werden" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1">#oder</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">NumExpr defaulting to 1 threads.
+</pre>
+</div></div>
+</div>
+</section>
+<section id="funktionen-von-pandas-konnen-jetzt-uber-das-kurzel-pd-abgerufen-werden">
+<h3>Funktionen von <strong>pandas</strong> können jetzt über das Kürzel <strong>pd</strong> abgerufen werden.<a class="headerlink" href="#funktionen-von-pandas-konnen-jetzt-uber-das-kurzel-pd-abgerufen-werden" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pandas-und-matplotlib">
+<h1>4. pandas und matplotlib<a class="headerlink" href="#pandas-und-matplotlib" title="Link to this heading">#</a></h1>
+<section id="da-wir-nun-die-beiden-bibliotheken-importiert-haben-konnen-wir-mit-ihnen-arbeiten-mit-pandas-kann-man-daten-in-eine-tabellarische-form-einen-sog-dataframe-umwandeln-und-analysieren-und-anschlieszend-mit-matplotlib-visualisieren">
+<h2>Da wir nun die beiden Bibliotheken importiert haben, können wir mit ihnen arbeiten. Mit <strong>pandas</strong> kann man Daten in eine tabellarische Form, einen sog. <strong>DataFrame</strong> umwandeln und analysieren und anschließend mit <strong>matplotlib</strong> visualisieren.<a class="headerlink" href="#da-wir-nun-die-beiden-bibliotheken-importiert-haben-konnen-wir-mit-ihnen-arbeiten-mit-pandas-kann-man-daten-in-eine-tabellarische-form-einen-sog-dataframe-umwandeln-und-analysieren-und-anschlieszend-mit-matplotlib-visualisieren" title="Link to this heading">#</a></h2>
+</section>
+<section id="beispielhaft-konnte-das-so-aussehen">
+<h2>Beispielhaft könnte das so aussehen:<a class="headerlink" href="#beispielhaft-konnte-das-so-aussehen" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Zunächst erstellen wir drei Listen mit gleich vielen Elementen - eine für Namen, eine für Alter und eine für Hobbies</span>
+<span class="c1">#Jede Position in den Listen gehört logisch zusammen (z.B. Name, Alter und Hobby einer bestimmten Person)</span>
+<span class="c1">#Der Einfachheit halber verwenden wir die Listen, die wir bereits erstellt haben:</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span> <span class="s2">&quot;Giselle&quot;</span><span class="p">,</span> <span class="s2">&quot;Can&quot;</span><span class="p">,</span> <span class="s2">&quot;Amber&quot;</span><span class="p">,</span> <span class="s2">&quot;Friedrich&quot;</span><span class="p">]</span> 
+<span class="n">age</span> <span class="o">=</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span> 
+<span class="n">hobby</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Gaming&quot;</span><span class="p">,</span> <span class="s2">&quot;Fußball&quot;</span><span class="p">,</span> <span class="s2">&quot;Fußball&quot;</span><span class="p">,</span> <span class="s2">&quot;Singen&quot;</span><span class="p">,</span> <span class="s2">&quot;Lesen&quot;</span><span class="p">]</span>
+
+<span class="c1">#Nun bündeln wir die Listen in einem Dictionary - erstellen also Schlüssel-Wert-Paare. D.h. unser Dictionary besteht aus mehreren Listen,</span>
+<span class="c1">#denen ein Schlüssel zugeordnet wird:</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">names</span><span class="p">,</span> <span class="s2">&quot;Alter&quot;</span><span class="p">:</span> <span class="n">age</span><span class="p">,</span> <span class="s2">&quot;Hobby&quot;</span><span class="p">:</span> <span class="n">hobby</span><span class="p">}</span>
+
+<span class="c1">#Jetzt können wir mit pandas einen DataFrane ersellen - eine tabellarische Struktur (ähnlich wie Excel)</span>
+<span class="c1">#Die Spalten ergeben sich dabei aus den Schlüssel-Wert-Paaren:</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1">#Jetzt lassen wir uns den DataFrame (df) ausgeben, das geht mit print(df) oder einfach mit &quot;df&quot;</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Alter</th>
+      <th>Hobby</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alex</td>
+      <td>24</td>
+      <td>Gaming</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Giselle</td>
+      <td>23</td>
+      <td>Fußball</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Can</td>
+      <td>26</td>
+      <td>Fußball</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Amber</td>
+      <td>21</td>
+      <td>Singen</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Friedrich</td>
+      <td>29</td>
+      <td>Lesen</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="nun-sind-unsere-daten-in-einer-sauberen-tabellarischen-form-unter-der-variablen-df-abgespeichert">
+<h2>Nun sind unsere Daten in einer sauberen tabellarischen Form unter der Variablen <em>df</em> abgespeichert<a class="headerlink" href="#nun-sind-unsere-daten-in-einer-sauberen-tabellarischen-form-unter-der-variablen-df-abgespeichert" title="Link to this heading">#</a></h2>
+</section>
+<section id="man-konnte-nun-z-b-die-funktion-sort-values-von-pandas-verwenden-um-die-daten-nach-den-werten-einer-bestimmten-spalte-zu-sortieren-in-diesem-fall-nehmen-wir-das-alter-und-lassen-es-absteigend-sortieren">
+<h2>Man könnte nun z.B. die Funktion <em>sort_values()</em> von <strong>pandas</strong> verwenden, um die Daten nach den Werten einer bestimmten Spalte zu sortieren. In diesem Fall nehmen wir das Alter und lassen es absteigend sortieren:<a class="headerlink" href="#man-konnte-nun-z-b-die-funktion-sort-values-von-pandas-verwenden-um-die-daten-nach-den-werten-einer-bestimmten-spalte-zu-sortieren-in-diesem-fall-nehmen-wir-das-alter-und-lassen-es-absteigend-sortieren" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sorted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Alter&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="by-alter-gibt-an-aus-welcher-spalte-die-werte-zur-sortierung-entnommen-werden-sollen-ascending-false-kehrt-die-sortierung-ascending-aufsteigend-um-sodass-das-alter-absteigend-sortiert-wird-ascending-true-wurde-die-werte-aufsteigend-sortieren-mit-der-erstellung-der-neuen-variable-df-sorted-haben-wir-einen-neuen-dataframe-erstellt-hatten-wir-einfach-wieder-die-variable-df-verwendet-hatten-wir-unseren-ersten-dataframe-uberschrieben-es-ist-wichtig-das-im-hinterkopf-zu-behalten-um-den-ursprunglichen-dataframe-oder-bestimmte-berarbeitete-dataframes-zu-erhalten-sofern-das-relevant-fur-die-eigene-datenverarbeitung-ist-unser-neuer-dataframe-sieht-nun-so-aus">
+<h2><em>by=”Alter”</em> gibt an, aus welcher Spalte die Werte zur Sortierung entnommen werden sollen, <em>ascending=False</em> kehrt die Sortierung (ascending - aufsteigend) um, sodass das Alter absteigend sortiert wird. <em>ascending=True</em> würde die Werte aufsteigend sortieren. mit der Erstellung der neuen Variable <em>df_sorted</em> haben wir einen neuen DataFrame erstellt. Hätten wir einfach wieder die Variable <em>df</em> verwendet, hätten wir unseren ersten DataFrame überschrieben. Es ist wichtig, das im Hinterkopf zu behalten, um den ursprünglichen <strong>DataFrame</strong> oder bestimmte berarbeitete <strong>DataFrames</strong> zu erhalten, sofern das relevant für die eigene Datenverarbeitung ist. Unser neuer <strong>DataFrame</strong> sieht nun so aus:<a class="headerlink" href="#by-alter-gibt-an-aus-welcher-spalte-die-werte-zur-sortierung-entnommen-werden-sollen-ascending-false-kehrt-die-sortierung-ascending-aufsteigend-um-sodass-das-alter-absteigend-sortiert-wird-ascending-true-wurde-die-werte-aufsteigend-sortieren-mit-der-erstellung-der-neuen-variable-df-sorted-haben-wir-einen-neuen-dataframe-erstellt-hatten-wir-einfach-wieder-die-variable-df-verwendet-hatten-wir-unseren-ersten-dataframe-uberschrieben-es-ist-wichtig-das-im-hinterkopf-zu-behalten-um-den-ursprunglichen-dataframe-oder-bestimmte-berarbeitete-dataframes-zu-erhalten-sofern-das-relevant-fur-die-eigene-datenverarbeitung-ist-unser-neuer-dataframe-sieht-nun-so-aus" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sorted</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Alter</th>
+      <th>Hobby</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>Friedrich</td>
+      <td>29</td>
+      <td>Lesen</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Can</td>
+      <td>26</td>
+      <td>Fußball</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Alex</td>
+      <td>24</td>
+      <td>Gaming</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Giselle</td>
+      <td>23</td>
+      <td>Fußball</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Amber</td>
+      <td>21</td>
+      <td>Singen</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="wir-konnen-uber-pandas-auch-csv-oder-xlsx-dateien-die-wir-normalerweise-mit-excel-offnen-wurden-einlesen-und-ebenfalls-in-einem-dataframe-darstellen-lassen-um-mit-den-daten-zu-arbeiten-z-b-so">
+<h2>Wir können über pandas auch .csv- oder .xlsx-Dateien, die wir normalerweise mit Excel öffnen würden einlesen und ebenfalls in einem DataFrame darstellen lassen, um mit den Daten zu arbeiten. z.B. so:<a class="headerlink" href="#wir-konnen-uber-pandas-auch-csv-oder-xlsx-dateien-die-wir-normalerweise-mit-excel-offnen-wurden-einlesen-und-ebenfalls-in-einem-dataframe-darstellen-lassen-um-mit-den-daten-zu-arbeiten-z-b-so" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_stock</span> <span class="o">=</span>  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="die-datei-enthalt-zeitstempel-und-kursveranderung-einer-aktie-zu-bestimmten-zeitpunkten-wenn-wir-bpsw-nur-daten-fur-einen-ganz-bestimmten-zeitraum-sehen-wollen-konnen-wir-den-dataframe-mit-der-funktion-loc-dementsprechend-filtern-und-wieder-in-einen-neuen-dataframe-abspeichern">
+<h2>Die Datei enthält Zeitstempel und Kursveränderung einer Aktie zu bestimmten Zeitpunkten. Wenn wir bpsw. nur Daten für einen ganz bestimmten Zeitraum sehen wollen, können wir den <strong>DataFrame</strong> mit der Funktion <em>loc()</em> dementsprechend filtern und wieder in einen neuen <strong>DataFrame</strong> abspeichern:<a class="headerlink" href="#die-datei-enthalt-zeitstempel-und-kursveranderung-einer-aktie-zu-bestimmten-zeitpunkten-wenn-wir-bpsw-nur-daten-fur-einen-ganz-bestimmten-zeitraum-sehen-wollen-konnen-wir-den-dataframe-mit-der-funktion-loc-dementsprechend-filtern-und-wieder-in-einen-neuen-dataframe-abspeichern" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python Basics – Interaktives Tutorial</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Arithmetik und Variablen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetik">Arithmetik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-seinen-grundlegendsten-funktion-kann-python-wie-ein-taschenrechner-verwendet-werden-also-ganz-basal-fur-addition-multiplikation-subtraktion-und-division-aber-auch-weitaus-komplexere-berechnungen">In seinen grundlegendsten Funktion kann Python wie ein Taschenrechner verwendet werden - also ganz basal für Addition, Multiplikation, Subtraktion und Division, aber auch weitaus komplexere Berechnungen.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-der-folgenden-zelle-findest-du-einige-bespiele-fur-solche-aufgaben-wobei-der-befehl-print-verwendet-wird-um-eine-ausgabe-erzeugen-zu-lassen">In der folgenden Zelle findest Du einige Bespiele für solche Aufgaben, wobei der Befehl <em>print(…)</em> verwendet wird, um eine Ausgabe erzeugen zu lassen.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-das-symbol-verwenden-um-deinen-code-zu-kommentieren-d-h-dass-alles-hinter-dem-symbol-nicht-als-code-ausgefuhrt-wird-kommmentare-sind-sehr-hilfreich-um-dem-code-direkt-eine-erklarung-zum-besseren-verstandnis-hinzuzufugen">Du kannst das <em>#-Symbol</em> verwenden, um Deinen Code zu kommentieren, d.h. dass alles hinter dem <em>#-Symbol</em> nicht als Code ausgeführt wird. Kommmentare sind sehr hilfreich, um dem Code direkt eine Erklärung zum besseren Verständnis hinzuzufügen.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variablen">Variablen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-python-arbeitet-man-sehr-haufig-mit-variablen-das-bedeutet-dass-du-bestimmte-werte-in-variablen-abspeichern-kannst-bzw-auch-mehrere-werte-in-einer-variable-das-ist-sehr-nutzlich-wenn-ein-wert-mehrfach-im-code-verwendet-werden-soll-eine-zuweisung-erfolgt-uber-den-operator-die-benennung-der-variablen-ist-beliebig-d-h-du-kannst-sie-benennen-wie-du-willst-es-empfiehlt-sich-jedoch-in-der-praxis-namen-zu-verwenden-die-die-variable-sinnvoll-mit-dem-wert-assoziieren-das-macht-den-code-fur-dich-und-andere-verstandlicher">In Python arbeitet man sehr häufig mit Variablen. Das bedeutet, dass Du bestimmte Werte in Variablen abspeichern kannst bzw. auch mehrere Werte in einer Variable. Das ist sehr nützlich, wenn ein Wert mehrfach im Code verwendet werden soll. Eine Zuweisung erfolgt über den <em>= - Operator</em>. Die Benennung der Variablen ist beliebig, d.h. Du kannst sie benennen, wie Du willst. Es empfiehlt sich jedoch in der Praxis, Namen zu verwenden, die die Variable sinnvoll mit dem Wert assoziieren. Das macht den Code für Dich und andere verständlicher.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweis-achte-darauf-bei-der-benennung-von-variablen-keine-bereits-verwendeten-namen-zu-verwenden-du-kennst-z-b-schon-die-print-funktion-wenn-du-eine-variable-print-nennst-wurde-das-die-funktion-uberschreiben-die-dann-nicht-mehr-ausgefuhrt-werden-konnte"><strong>HINWEIS</strong>: Achte darauf, bei der Benennung von Variablen, keine bereits verwendeten Namen zu verwenden. Du kennst z.B. schon die print(…)-Funktion. Wenn du eine Variable “print” nennst, würde das die Funktion überschreiben, die dann nicht mehr ausgeführt werden könnte.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-der-folgenden-zelle-siehst-du-wie-man-eine-variable-einem-wert-zuweist-und-diese-dann-uber-print-ausgeben-lassen-kann">In der folgenden Zelle siehst Du, wie man eine Variable einem Wert zuweist und diese dann über print(…) ausgeben lassen kann.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-dieselbe-variable-dann-mit-auch-wieder-uberschreiben-z-b-so">Du kannst dieselbe Variable dann mit <em>=</em> auch wieder überschreiben, z.B. so:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-variable-x-ist-somit-uberschrieben-und-nun-dem-wert-10-zugewiesen">Die Variable <em>x</em> ist somit überschrieben und nun dem Wert 10 zugewiesen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variablen-sind-also-schlicht-platzhalter-fur-objekte-in-diesem-fall-eine-ganze-zahl-integer-oder-int-wenn-wir-weitere-variablen-definieren-konnen-wir-mit-diesen-auch-berechnungen-anstellen">Variablen sind also schlicht Platzhalter für Objekte, in diesem Fall eine ganze Zahl (<em>Integer</em> oder <em>Int</em>). Wenn wir weitere Variablen definieren, können wir mit diesen auch Berechnungen anstellen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-wie-bereits-erwahnt-auch-mehrere-objekte-in-einer-variable-speichern-und-ausgeben-lassen-z-b-so">Du kannst, wie bereits erwähnt, auch mehrere Objekte in einer Variable speichern und ausgeben lassen, z.B. so:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-diesem-fall-sind-die-objekte-keine-ganzen-zahlen-integers-sondern-sogenannte-strings-ein-string-in-python-ist-einfach-ein-stuck-text-also-alles-was-aus-buchstaben-zahlen-oder-zeichen-besteht-und-in-anfuhrungszeichen-steht">In diesem Fall sind die Objekte keine ganzen Zahlen/Integers sondern sogenannte <em>Strings</em>. Ein <em>String</em> in Python ist einfach ein Stück Text – also alles, was aus Buchstaben, Zahlen oder Zeichen besteht <strong>und in Anführungszeichen</strong> steht.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ubung-1">Übung 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jetzt-bist-du-an-der-reihe-lose-die-folgende-ubung">Jetzt bist Du an der Reihe! Löse die folgende Übung:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#berechne-das-produkt-aus-3-und-6-und-speichere-das-ergebnis-in-der-variable-v-1-dividiere-das-ergebnis-durch-2-und-speichere-dieses-ergebnis-in-der-variable-v-2-lass-dir-dann-das-ergebnis-von-v-2-ausgeben">Berechne das Produkt aus 3 und 6 und speichere das Ergebnis in der Variable v_1. Dividiere das Ergebnis durch 2 und speichere dieses Ergebnis in der Variable v_2. Lass dir dann das Ergebnis von v_2 ausgeben.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#datentypen">2. Datentypen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#im-ersten-kapitel-hast-du-bereits-integer-und-string-variablen-kennengelernt-in-python-gibt-es-verschiedene-datentypen-die-in-variablen-abgespeichert-werden-konnen-integers-ganze-zahlen-und-strings-zeichenfolgen-in-sind-nur-zwei-beispiele-fur-datentypen-die-eine-variable-annehmen-kann-in-diesem-kapitel-lernst-du-weitere-bzw-die-gangigsten-datentypen-in-python-kennen">Im ersten Kapitel hast Du bereits <em>Integer-</em> und *String-*Variablen kennengelernt. In Python gibt es verschiedene Datentypen, die in Variablen abgespeichert werden können. <em>Integers</em> (Ganze Zahlen) und <em>Strings</em> (Zeichenfolgen in “…”) sind nur zwei Beispiele für Datentypen, die eine Variable annehmen kann. In diesem Kapitel lernst du weitere bzw. die gängigsten Datentypen in Python kennen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variablentypen-datentypen"><strong>Variablentypen / Datentypen</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerische-datentypen">Numerische Datentypen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grundsatzlich-gibt-es-zwei-wichtige-numerische-datenypen-ganzzahlen-int-die-du-schon-kennst-und-flieszkommazahlen-float-also-dezimalzahlen-wichtig-in-python-ist-das-dezimalzeichen-ein-punkt-kein-komma">Grundsätzlich gibt es zwei wichtige numerische Datenypen: Ganzzahlen (<em>int</em>), die Du schon kennst, und Fließkommazahlen (<em>float</em>) also Dezimalzahlen. <strong>Wichtig:</strong> In Python ist das Dezimalzeichen ein Punkt, kein Komma.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweis-du-musst-in-python-den-datentyp-beim-erstellen-einer-variable-nicht-explizit-angeben-als-dynamische-sprache-erkennt-python-automatisch-den-datentyp-der-variablen-basierend-auf-dem-zugewiesenen-wert-das-gilt-fur-alles-datentypen-nicht-nur-fur-numerische-datentypen-hier-ein-beispiel"><strong>HINWEIS:</strong> Du musst in Python den Datentyp beim Erstellen einer Variable nicht explizit angeben. Als dynamische Sprache erkennt Python automatisch den Datentyp der Variablen basierend auf dem zugewiesenen Wert. Das gilt für alles Datentypen, nicht nur für numerische Datentypen. Hier ein Beispiel:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-der-funktion-type-kannst-du-dir-ausgeben-lassen-welchen-datentyp-eine-variable-hat">Mit der Funktion type(…) kannst Du dir ausgeben lassen, welchen Datentyp eine Variable hat.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings"><strong>Strings</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier"><em>Strings</em> sind Zeichenfolgen (Buchstaben, Symbole, aber auch Zahlen usw.). <em>Strings</em> werden erstellt, indem man die Zeichenfolge in einfache oder doppelte Anführungszeichen einschließt, so wie hier:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans"><strong>Booleans</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-sind-ein-datentyp-der-nur-zwei-werte-annehmen-kann-entweder-true-oder-false-sie-reprasentieren-den-wahrheitswert-eine-aussage-auch-diesen-datentyp-kannst-du-mit-der-funktion-type-uberprufen"><em>Booleans</em> sind ein Datentyp, der nur zwei Werte annehmen kann. Entweder <em>True</em> oder <em>False</em>. Sie repräsentieren den Wahrheitswert eine Aussage. Auch diesen Datentyp kannst du mit der Funktion type(…) überprüfen:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-werden-haufig-in-bedingungsanweisungen-if-else-verwendet-also-z-b-wenn-x-groszer-ist-als-4-d-h-x-4-true-dann-tue-dies-wenn-nicht-d-h-x-4-false-dann-tue-dies-bedingungsanweisungen-sind-schon-eine-fortgeschrittene-technik-die-wir-zunachst-nicht-betrachten">Booleans werden häufig in Bedingungsanweisungen (if, else) verwendet (also z.B. “Wenn x größer ist als 4 (d.h. x &gt; 4 = True), dann tue dies, wenn nicht (d.h. x &gt; 4 = False), dann tue dies…). Bedingungsanweisungen sind schon eine fortgeschrittene Technik, die wir zunächst nicht betrachten.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#collections-fur-variablen">Collections für Variablen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-bietet-die-moglichkeit-mehrere-werte-in-einer-einzigen-variable-zu-speichern-sogenannte-collections-die-gangigsten-collection-typen-sind-listen-tupel-sets-und-dictionaries">Python bietet die Möglichkeit, mehrere Werte in einer einzigen Variable zu speichern, sogenannte <em>Collections</em>. Die gängigsten <em>Collection</em>-Typen sind Listen, Tupel, Sets und Dictionaries.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listen">Listen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listen-sind-die-flexibleste-art-um-mehrere-objekte-in-einer-variablen-zu-speichern-listen-werden-mit-eckigen-klammern-erstellt-in-denen-du-die-einzelnen-objekte-mit-kommata-trennst">Listen sind die flexibleste Art, um mehrere Objekte in einer Variablen zu speichern. Listen werden mit eckigen Klammern erstellt, in denen Du die einzelnen Objekte mit Kommata trennst:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#man-kann-auch-auf-einzelne-elemente-einer-liste-zugreifen-uber-den-sog-index">Man kann auch auf einzelne Elemente einer Liste zugreifen - über den sog. <em>Index</em>.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweis-die-indexierung-d-h-die-durchnummerierung-der-objekte-in-einer-liste-beginnt-in-python-bei-0-und-nicht-bei-1-d-h-wenn-ich-auf-der-erste-objekt-eine-liste-zugreifen-will-ist-der-index-0-und-beim-zweiten-objekt-1-usw"><strong>HINWEIS</strong>: Die Indexierung, d.h. die “Durchnummerierung” der Objekte in einer Liste beginnt in Python bei 0 und nicht bei 1, d.h. wenn ich auf der erste Objekt eine Liste zugreifen will, ist der Index 0, und beim zweiten Objekt 1 usw:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-indizes-konnen-ebenfalls-verwendet-werden-um-objekte-aus-der-liste-von-hinten-zu-erhalten-mit-1-greift-man-bspw-auf-das-letzte-objekt-einer-liste-zu">Negative Indizes können ebenfalls verwendet werden, um Objekte aus der Liste “von hinten” zu erhalten. Mit -1 greift man bspw. auf das letzte Objekt einer Liste zu.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listen-sind-wie-gesagt-flexibel-d-h-sie-konnen-jederzeit-verandert-erweitert-oder-dezimiert-werden-mit-den-funktionen-append-und-remove-kannst-du-objekte-hinzufugen-bzw-entfernen">Listen sind, wie gesagt, flexibel, d.h. sie können jederzeit verändert, erweitert oder dezimiert werden. Mit den Funktionen append() und remove() kannst du Objekte hinzufügen bzw. entfernen:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Übung 1</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstelle-eine-liste-mit-den-namen-benny-emre-charlotte-oleg-und-anastasia-losche-dann-benny-aus-der-liste-und-fuge-lukas-hinzu">Erstelle eine Liste mit den Namen <em>Benny, Emre, Charlotte, Oleg</em> und <em>Anastasia</em>. Lösche dann <em>Benny</em> aus der Liste und füge <em>Lukas</em> hinzu.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubung-2"><strong>Übung 2</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstelle-eine-liste-mit-den-zahlen-1-bis-3-fuge-dann-den-string-four-hinzu-und-gib-die-liste-aus">Erstelle eine Liste mit den Zahlen 1 bis 3. Füge dann den String “Four” hinzu und gib die Liste aus.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tupel">Tupel</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tupel-sind-der-unflexibelste-datentyp-da-sie-nicht-verandert-werden-konnen-daher-sollten-sie-nur-verwendet-werden-wenn-die-daten-mit-sicherheit-gleich-bleiben">Tupel sind der unflexibelste Datentyp, da sie nicht verändert werden können. Daher sollten sie nur verwendet werden, wenn die Daten mit Sicherheit gleich bleiben.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-tupel-wird-mit-runden-klammern-und-kommata-erzeugt-und-wenn-du-dich-erinnerst-haben-wir-auch-schon-einen-erstellt-namlich">Ein Tupel wird mit runden Klammern und Kommata erzeugt und wenn du dich erinnerst, haben wir auch schon einen erstellt, nämlich:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#das-besondere-an-tupeln-ist-das-tuple-unpacking-wobei-mehrere-variablen-gleichzeitig-automatisch-zugewiesen-werden-konnen">Das besondere an Tupeln ist das <em>Tuple Unpacking</em>, wobei mehrere Variablen gleichzeitig automatisch zugewiesen werden können:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">Sets</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-sind-ungeordnet-und-auszerdem-nicht-indizierbar-d-h-du-kannst-uber-den-index-nicht-auf-einzelne-objekte-des-sets-zugreifen-auszerdem-ist-jedes-objekt-in-einem-set-einzigartig-sodass-doppelte-werte-automatisch-entfernt-werden"><em>Sets</em> sind “ungeordnet” und außerdem nicht indizierbar, d.h. Du kannst über den <em>Index</em> nicht auf einzelne Objekte des Sets zugreifen. Außerdem ist jedes Objekt in einem <em>Set</em> einzigartig, sodass doppelte Werte automatisch entfernt werden.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-werden-mit-geschweiften-klammern-und-kommata-erzeugt"><em>Sets</em> werden mit geschweiften Klammern und Kommata erzeugt:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-sind-z-b-sehr-nutzlich-wenn-man-duplikate-aus-listen-entfernen-mochte">Sets sind z.B. sehr nützlich, wenn man Duplikate aus Listen entfernen möchte:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#im-prinzip-sind-dictionaries-eine-erweiterte-version-von-listen-und-sets-listen-enthalten-nur-werte-wahrend-dictionaries-aus-schlussel-wert-paaren-bestehen-die-aber-im-gegensatz-zu-den-werten-einer-liste-ungeordnet-sind-dictionaries-werden-in-eingeschlossen-und-die-schlussel-wert-paare-mit-kommata-getrennt-d-h-dass-du-jedem-objekt-eine-eindeutige-kennung-zuordnung-geben-kannst-der-zugriff-auf-einzelne-objekte-erfolgt-dann-uber-den-schlussel-nicht-uber-den-index-das-konnen-wir-uns-anhand-der-listen-die-wir-oben-schon-erstellt-haben-ganz-leicht-veranschaulichen">Im Prinzip sind Dictionaries eine erweiterte Version von Listen und Sets. Listen enthalten nur Werte, während Dictionaries aus <em>Schlüssel-Wert-Paaren</em> bestehen, die aber - im Gegensatz zu den Werten einer Liste - ungeordnet sind. Dictionaries werden in {…} eingeschlossen und die <em>Schlüssel-Wert-Paare</em> mit Kommata getrennt. D.h., dass du jedem Objekt eine eindeutige Kennung/Zuordnung geben kannst. Der Zugriff auf einzelne Objekte erfolgt dann über den <em>Schlüssel</em>, nicht über den <em>Index</em>. Das können wir uns anhand der Listen, die wir oben schon erstellt haben ganz leicht veranschaulichen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-diesem-dictionary-sind-die-namen-in-die-schlussel-und-die-dazugehorigen-alter-die-werte-uber-die-print-funktion-kann-man-sich-dann-mit-angabe-des-dictionaries-und-des-schlussels-in-den-zugehorigen-wert-ausgeben-lassen">In diesem Dictionary sind die Namen in “…” die <em>Schlüssel</em> und die dazugehörigen Alter die <em>Werte</em>. Über die print(…)-Funktion kann man sich dann mit Angabe des Dictionaries und des Schlüssels in […] den zugehörigen Wert ausgeben lassen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries-sind-sehr-flexibel-objekte-konnen-hinzugefugt-verandert-oder-entfernt-werden-mit-dem-zuweisungsoperator-s-u-konnen-weitere-werte-hinzugefugt-mit-der-funktion-pop-entfernt-werden">Dictionaries sind sehr flexibel. Objekte können hinzugefügt, verändert oder entfernt werden. Mit dem Zuweisungsoperator (s.u.) können weitere Werte hinzugefügt, mit der Funktion pop(…) entfernt werden.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-keys-kannst-du-dir-alle-schlussel-oder-mit-values-alle-werte-eines-dictionaries-ausgeben-separat-voneinander-ausgeben-lassen">Mit keys(…) kannst du dir alle Schlüssel oder mit values(…) alle Werte eines Dictionaries ausgeben separat voneinander ausgeben lassen:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ubung-3">Übung 3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-nachste-ubung-ist-etwas-schwieriger-und-bedarf-einer-kombination-von-code-aus-dem-bisher-gelernten-aber-mit-etwas-geschick-konnt-ihr-den-code-knacken">Die nächste Übung ist etwas schwieriger und bedarf einer Kombination von Code aus dem bisher gelernten. Aber mit etwas Geschick könnt Ihr den Code knacken:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellt-ein-dictionary-aus-den-namen-peter-aylin-und-sebastian-und-gebt-als-wert-jeweils-ein-beliebiges-alter-an-fuge-dann-ezra-mit-dem-gleichen-alter-wie-aylin-hinzu-wandle-dann-die-werte-des-dictionaries-in-eine-liste-mit-eindeutigen-werten-um">Erstellt ein Dictionary aus den Namen “Peter”, “Aylin” und “Sebastian” und gebt als Wert jeweils ein beliebiges Alter an. Füge dann “Ezra” mit dem gleichen Alter wie “Aylin” hinzu. Wandle dann die <strong>Werte</strong> des Dictionaries in eine Liste mit eindeutigen Werten um.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#module">3. Module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-python-kann-man-im-grunde-alles-von-grund-auf-neu-programmieren-es-gibt-allerdings-schon-sehr-viel-code-der-bereits-von-anderen-python-nutzern-umgesetzt-wurde-wenn-dieser-code-online-veroffentlicht-wurde-kannst-auch-du-ihn-nutzen-und-fur-deine-zwecke-anpassen">Mit Python kann man im Grunde alles von Grund auf neu programmieren. Es gibt allerdings schon sehr viel Code, der bereits von anderen Python-Nutzern umgesetzt wurde. Wenn dieser Code online veröffentlicht wurde, kannst auch Du ihn nutzen und für deine Zwecke anpassen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#da-python-mit-verschiedenen-modulen-bzw-bibliotheken-arbeitet-musst-du-diese-aber-zunachst-installieren-und-importieren-bevor-funktionen-und-code-verwenden-kannst-der-entsprechende-module-benutzt-die-nicht-schon-in-python-vorinstalliert-sind">Da Python mit verschiedenen Modulen bzw. Bibliotheken arbeitet, musst du diese aber zunächst installieren und importieren, bevor Funktionen und Code verwenden kannst, der entsprechende Module benutzt, die nicht schon in Python vorinstalliert sind.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotheken-installieren">Bibliotheken installieren</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#es-gibt-sehr-viele-weitere-bibliotheken-die-in-der-standardversion-von-python-noch-nicht-enthalten-sind-die-veroffentlichungen-von-python-bibliotheken-werden-i-d-r-auf-https-pypi-org-veroffentlicht">Es gibt sehr viele weitere Bibliotheken, die in der Standardversion von Python noch nicht enthalten sind. Die Veröffentlichungen von Python-Bibliotheken werden i.d.R. auf https://pypi.org veröffentlicht</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#um-bibliotheken-von-pypi-zu-installieren-kannst-du-pip-verwenden-du-kannst-pip-direkt-aus-python-heraus-in-deinem-notebook-aufrufen-ublicherweise-benutzt-man-pip-aber-uber-das-terminal">Um Bibliotheken von PyPi zu installieren, kannst du <strong>pip</strong> verwenden. Du kannst <strong>pip</strong> direkt aus Python heraus in deinem Notebook aufrufen, üblicherweise benutzt man <strong>pip</strong> aber über das Terminal.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eine-der-am-meisten-verwendeten-bibliotheken-sind-pandas-und-matplotlib-die-insbesondere-zur-datenverarbeitung-analyse-und-visualisierung-verwendet-werden-hier-zeigen-wir-dir-beide-wege-der-installation-einmal-exemplarisch">Eine der am meisten verwendeten Bibliotheken sind <strong>pandas</strong> und <strong>matplotlib</strong>, die insbesondere zur Datenverarbeitung, -analyse und -visualisierung verwendet werden. Hier zeigen wir dir beide Wege der Installation einmal exemplarisch:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#um-eine-bibliothek-oder-ein-modul-zu-installieren-muss-der-befehl-import-verwendet-werden-und-der-name-der-bibliohek-und-an-alias-angegeben-werden">Um eine Bibliothek oder ein Modul zu installieren, muss der Befehl <strong>import</strong> verwendet werden und der Name der Bibliohek und an Alias angegeben werden:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-von-pandas-konnen-jetzt-uber-das-kurzel-pd-abgerufen-werden">Funktionen von <strong>pandas</strong> können jetzt über das Kürzel <strong>pd</strong> abgerufen werden.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-und-matplotlib">4. pandas und matplotlib</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#da-wir-nun-die-beiden-bibliotheken-importiert-haben-konnen-wir-mit-ihnen-arbeiten-mit-pandas-kann-man-daten-in-eine-tabellarische-form-einen-sog-dataframe-umwandeln-und-analysieren-und-anschlieszend-mit-matplotlib-visualisieren">Da wir nun die beiden Bibliotheken importiert haben, können wir mit ihnen arbeiten. Mit <strong>pandas</strong> kann man Daten in eine tabellarische Form, einen sog. <strong>DataFrame</strong> umwandeln und analysieren und anschließend mit <strong>matplotlib</strong> visualisieren.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispielhaft-konnte-das-so-aussehen">Beispielhaft könnte das so aussehen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nun-sind-unsere-daten-in-einer-sauberen-tabellarischen-form-unter-der-variablen-df-abgespeichert">Nun sind unsere Daten in einer sauberen tabellarischen Form unter der Variablen <em>df</em> abgespeichert</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#man-konnte-nun-z-b-die-funktion-sort-values-von-pandas-verwenden-um-die-daten-nach-den-werten-einer-bestimmten-spalte-zu-sortieren-in-diesem-fall-nehmen-wir-das-alter-und-lassen-es-absteigend-sortieren">Man könnte nun z.B. die Funktion <em>sort_values()</em> von <strong>pandas</strong> verwenden, um die Daten nach den Werten einer bestimmten Spalte zu sortieren. In diesem Fall nehmen wir das Alter und lassen es absteigend sortieren:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#by-alter-gibt-an-aus-welcher-spalte-die-werte-zur-sortierung-entnommen-werden-sollen-ascending-false-kehrt-die-sortierung-ascending-aufsteigend-um-sodass-das-alter-absteigend-sortiert-wird-ascending-true-wurde-die-werte-aufsteigend-sortieren-mit-der-erstellung-der-neuen-variable-df-sorted-haben-wir-einen-neuen-dataframe-erstellt-hatten-wir-einfach-wieder-die-variable-df-verwendet-hatten-wir-unseren-ersten-dataframe-uberschrieben-es-ist-wichtig-das-im-hinterkopf-zu-behalten-um-den-ursprunglichen-dataframe-oder-bestimmte-berarbeitete-dataframes-zu-erhalten-sofern-das-relevant-fur-die-eigene-datenverarbeitung-ist-unser-neuer-dataframe-sieht-nun-so-aus"><em>by=”Alter”</em> gibt an, aus welcher Spalte die Werte zur Sortierung entnommen werden sollen, <em>ascending=False</em> kehrt die Sortierung (ascending - aufsteigend) um, sodass das Alter absteigend sortiert wird. <em>ascending=True</em> würde die Werte aufsteigend sortieren. mit der Erstellung der neuen Variable <em>df_sorted</em> haben wir einen neuen DataFrame erstellt. Hätten wir einfach wieder die Variable <em>df</em> verwendet, hätten wir unseren ersten DataFrame überschrieben. Es ist wichtig, das im Hinterkopf zu behalten, um den ursprünglichen <strong>DataFrame</strong> oder bestimmte berarbeitete <strong>DataFrames</strong> zu erhalten, sofern das relevant für die eigene Datenverarbeitung ist. Unser neuer <strong>DataFrame</strong> sieht nun so aus:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wir-konnen-uber-pandas-auch-csv-oder-xlsx-dateien-die-wir-normalerweise-mit-excel-offnen-wurden-einlesen-und-ebenfalls-in-einem-dataframe-darstellen-lassen-um-mit-den-daten-zu-arbeiten-z-b-so">Wir können über pandas auch .csv- oder .xlsx-Dateien, die wir normalerweise mit Excel öffnen würden einlesen und ebenfalls in einem DataFrame darstellen lassen, um mit den Daten zu arbeiten. z.B. so:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-datei-enthalt-zeitstempel-und-kursveranderung-einer-aktie-zu-bestimmten-zeitpunkten-wenn-wir-bpsw-nur-daten-fur-einen-ganz-bestimmten-zeitraum-sehen-wollen-konnen-wir-den-dataframe-mit-der-funktion-loc-dementsprechend-filtern-und-wieder-in-einen-neuen-dataframe-abspeichern">Die Datei enthält Zeitstempel und Kursveränderung einer Aktie zu bestimmten Zeitpunkten. Wenn wir bpsw. nur Daten für einen ganz bestimmten Zeitraum sehen wollen, können wir den <strong>DataFrame</strong> mit der Funktion <em>loc()</em> dementsprechend filtern und wieder in einen neuen <strong>DataFrame</strong> abspeichern:</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By reinkober
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
