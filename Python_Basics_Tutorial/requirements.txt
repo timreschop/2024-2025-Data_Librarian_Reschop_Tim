@@ -1,0 +1,5 @@
+# Pakete für Binder (füge hier hinzu, was dein Notebook benötigt)
+ipykernel
+numpy
+pandas
+matplotlib

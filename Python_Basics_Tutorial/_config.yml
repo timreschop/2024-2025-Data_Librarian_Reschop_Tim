@@ -1,0 +1,15 @@
+title: "Python Basics Tutorial"
+author: "reinkober"
+only_build_toc_files: true
+
+# Do not execute notebooks at build time; code will run in the browser via Thebe/Binder
+execute:
+  execute_notebooks: "off"
+
+# Enable interactive code via Thebe + Binder (online kernel)
+launch_buttons:
+  binderhub_url: "https://mybinder.org"
+  thebe: true
+
+html:
+  favicon: ""
