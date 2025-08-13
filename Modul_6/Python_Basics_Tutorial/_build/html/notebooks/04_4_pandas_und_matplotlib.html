@@ -1,0 +1,722 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. pandas und matplotlib &#8212; Python Basics Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/04_4_pandas_und_matplotlib';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="3. Module" href="03_01_bibliotheken_installieren.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Python Basics Tutorial</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Tutorial
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="01_1_arithmetik_und_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">1. Arithmetik und Variablen</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="01_02_01_uebung_1.html">Übung 1</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="02_2_datentypen.html">2. Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="02_01_variablentypen_datentypen.html">Variablentypen / Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">numerische Datentypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html">Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html">Booleans</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="02_02_collections_fuer_variablen.html">Collections für Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="02_02_01_listen.html">Listen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_02_02_tupel.html">Tupel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_02_03_sets.html">Sets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_02_04_dictionaries.html">Dictionaries</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="03_3_module.html">3. Module</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_01_bibliotheken_installieren.html">3. Module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. pandas und matplotlib</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebooks/04_4_pandas_und_matplotlib.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/04_4_pandas_und_matplotlib.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4. pandas und matplotlib</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#da-wir-nun-die-beiden-bibliotheken-importiert-haben-konnen-wir-mit-ihnen-arbeiten-mit-pandas-kann-man-daten-in-eine-tabellarische-form-einen-sog-dataframe-umwandeln-und-analysieren-und-anschlieszend-mit-matplotlib-visualisieren">Da wir nun die beiden Bibliotheken importiert haben, können wir mit ihnen arbeiten. Mit <strong>pandas</strong> kann man Daten in eine tabellarische Form, einen sog. <strong>DataFrame</strong> umwandeln und analysieren und anschließend mit <strong>matplotlib</strong> visualisieren.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispielhaft-konnte-das-so-aussehen">Beispielhaft könnte das so aussehen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nun-sind-unsere-daten-in-einer-sauberen-tabellarischen-form-unter-der-variablen-df-abgespeichert">Nun sind unsere Daten in einer sauberen tabellarischen Form unter der Variablen <em>df</em> abgespeichert</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#man-konnte-nun-z-b-die-funktion-sort-values-von-pandas-verwenden-um-die-daten-nach-den-werten-einer-bestimmten-spalte-zu-sortieren-in-diesem-fall-nehmen-wir-das-alter-und-lassen-es-absteigend-sortieren">Man könnte nun z.B. die Funktion <em>sort_values()</em> von <strong>pandas</strong> verwenden, um die Daten nach den Werten einer bestimmten Spalte zu sortieren. In diesem Fall nehmen wir das Alter und lassen es absteigend sortieren:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#by-alter-gibt-an-aus-welcher-spalte-die-werte-zur-sortierung-entnommen-werden-sollen-ascending-false-kehrt-die-sortierung-ascending-aufsteigend-um-sodass-das-alter-absteigend-sortiert-wird-ascending-true-wurde-die-werte-aufsteigend-sortieren-mit-der-erstellung-der-neuen-variable-df-sorted-haben-wir-einen-neuen-dataframe-erstellt-hatten-wir-einfach-wieder-die-variable-df-verwendet-hatten-wir-unseren-ersten-dataframe-uberschrieben-es-ist-wichtig-das-im-hinterkopf-zu-behalten-um-den-ursprunglichen-dataframe-oder-bestimmte-berarbeitete-dataframes-zu-erhalten-sofern-das-relevant-fur-die-eigene-datenverarbeitung-ist-unser-neuer-dataframe-sieht-nun-so-aus"><em>by=”Alter”</em> gibt an, aus welcher Spalte die Werte zur Sortierung entnommen werden sollen, <em>ascending=False</em> kehrt die Sortierung (ascending - aufsteigend) um, sodass das Alter absteigend sortiert wird. <em>ascending=True</em> würde die Werte aufsteigend sortieren. mit der Erstellung der neuen Variable <em>df_sorted</em> haben wir einen neuen DataFrame erstellt. Hätten wir einfach wieder die Variable <em>df</em> verwendet, hätten wir unseren ersten DataFrame überschrieben. Es ist wichtig, das im Hinterkopf zu behalten, um den ursprünglichen <strong>DataFrame</strong> oder bestimmte berarbeitete <strong>DataFrames</strong> zu erhalten, sofern das relevant für die eigene Datenverarbeitung ist. Unser neuer <strong>DataFrame</strong> sieht nun so aus:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wir-konnen-uber-pandas-auch-csv-oder-xlsx-dateien-die-wir-normalerweise-mit-excel-offnen-wurden-einlesen-und-ebenfalls-in-einem-dataframe-darstellen-lassen-um-mit-den-daten-zu-arbeiten-z-b-so">Wir können über pandas auch .csv- oder .xlsx-Dateien, die wir normalerweise mit Excel öffnen würden einlesen und ebenfalls in einem DataFrame darstellen lassen, um mit den Daten zu arbeiten. z.B. so:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-datei-enthalt-zeitstempel-und-kursveranderung-einer-aktie-zu-bestimmten-zeitpunkten-wenn-wir-bpsw-nur-daten-fur-einen-ganz-bestimmten-zeitraum-sehen-wollen-konnen-wir-den-dataframe-mit-der-funktion-loc-dementsprechend-filtern-und-wieder-in-einen-neuen-dataframe-abspeichern">Die Datei enthält Zeitstempel und Kursveränderung einer Aktie zu bestimmten Zeitpunkten. Wenn wir bpsw. nur Daten für einen ganz bestimmten Zeitraum sehen wollen, können wir den <strong>DataFrame</strong> mit der Funktion <em>loc()</em> dementsprechend filtern und wieder in einen neuen <strong>DataFrame</strong> abspeichern:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pandas-und-matplotlib">
+<h1>4. pandas und matplotlib<a class="headerlink" href="#pandas-und-matplotlib" title="Link to this heading">#</a></h1>
+<section id="da-wir-nun-die-beiden-bibliotheken-importiert-haben-konnen-wir-mit-ihnen-arbeiten-mit-pandas-kann-man-daten-in-eine-tabellarische-form-einen-sog-dataframe-umwandeln-und-analysieren-und-anschlieszend-mit-matplotlib-visualisieren">
+<h2>Da wir nun die beiden Bibliotheken importiert haben, können wir mit ihnen arbeiten. Mit <strong>pandas</strong> kann man Daten in eine tabellarische Form, einen sog. <strong>DataFrame</strong> umwandeln und analysieren und anschließend mit <strong>matplotlib</strong> visualisieren.<a class="headerlink" href="#da-wir-nun-die-beiden-bibliotheken-importiert-haben-konnen-wir-mit-ihnen-arbeiten-mit-pandas-kann-man-daten-in-eine-tabellarische-form-einen-sog-dataframe-umwandeln-und-analysieren-und-anschlieszend-mit-matplotlib-visualisieren" title="Link to this heading">#</a></h2>
+</section>
+<section id="beispielhaft-konnte-das-so-aussehen">
+<h2>Beispielhaft könnte das so aussehen:<a class="headerlink" href="#beispielhaft-konnte-das-so-aussehen" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Zunächst erstellen wir drei Listen mit gleich vielen Elementen - eine für Namen, eine für Alter und eine für Hobbies</span>
+<span class="c1">#Jede Position in den Listen gehört logisch zusammen (z.B. Name, Alter und Hobby einer bestimmten Person)</span>
+<span class="c1">#Der Einfachheit halber verwenden wir die Listen, die wir bereits erstellt haben:</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span> <span class="s2">&quot;Giselle&quot;</span><span class="p">,</span> <span class="s2">&quot;Can&quot;</span><span class="p">,</span> <span class="s2">&quot;Amber&quot;</span><span class="p">,</span> <span class="s2">&quot;Friedrich&quot;</span><span class="p">]</span> 
+<span class="n">age</span> <span class="o">=</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span> 
+<span class="n">hobby</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Gaming&quot;</span><span class="p">,</span> <span class="s2">&quot;Fußball&quot;</span><span class="p">,</span> <span class="s2">&quot;Fußball&quot;</span><span class="p">,</span> <span class="s2">&quot;Singen&quot;</span><span class="p">,</span> <span class="s2">&quot;Lesen&quot;</span><span class="p">]</span>
+
+<span class="c1">#Nun bündeln wir die Listen in einem Dictionary - erstellen also Schlüssel-Wert-Paare. D.h. unser Dictionary besteht aus mehreren Listen,</span>
+<span class="c1">#denen ein Schlüssel zugeordnet wird:</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">names</span><span class="p">,</span> <span class="s2">&quot;Alter&quot;</span><span class="p">:</span> <span class="n">age</span><span class="p">,</span> <span class="s2">&quot;Hobby&quot;</span><span class="p">:</span> <span class="n">hobby</span><span class="p">}</span>
+
+<span class="c1">#Jetzt können wir mit pandas einen DataFrane ersellen - eine tabellarische Struktur (ähnlich wie Excel)</span>
+<span class="c1">#Die Spalten ergeben sich dabei aus den Schlüssel-Wert-Paaren:</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1">#Jetzt lassen wir uns den DataFrame (df) ausgeben, das geht mit print(df) oder einfach mit &quot;df&quot;</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Alter</th>
+      <th>Hobby</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alex</td>
+      <td>24</td>
+      <td>Gaming</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Giselle</td>
+      <td>23</td>
+      <td>Fußball</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Can</td>
+      <td>26</td>
+      <td>Fußball</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Amber</td>
+      <td>21</td>
+      <td>Singen</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Friedrich</td>
+      <td>29</td>
+      <td>Lesen</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="nun-sind-unsere-daten-in-einer-sauberen-tabellarischen-form-unter-der-variablen-df-abgespeichert">
+<h2>Nun sind unsere Daten in einer sauberen tabellarischen Form unter der Variablen <em>df</em> abgespeichert<a class="headerlink" href="#nun-sind-unsere-daten-in-einer-sauberen-tabellarischen-form-unter-der-variablen-df-abgespeichert" title="Link to this heading">#</a></h2>
+</section>
+<section id="man-konnte-nun-z-b-die-funktion-sort-values-von-pandas-verwenden-um-die-daten-nach-den-werten-einer-bestimmten-spalte-zu-sortieren-in-diesem-fall-nehmen-wir-das-alter-und-lassen-es-absteigend-sortieren">
+<h2>Man könnte nun z.B. die Funktion <em>sort_values()</em> von <strong>pandas</strong> verwenden, um die Daten nach den Werten einer bestimmten Spalte zu sortieren. In diesem Fall nehmen wir das Alter und lassen es absteigend sortieren:<a class="headerlink" href="#man-konnte-nun-z-b-die-funktion-sort-values-von-pandas-verwenden-um-die-daten-nach-den-werten-einer-bestimmten-spalte-zu-sortieren-in-diesem-fall-nehmen-wir-das-alter-und-lassen-es-absteigend-sortieren" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sorted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Alter&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="by-alter-gibt-an-aus-welcher-spalte-die-werte-zur-sortierung-entnommen-werden-sollen-ascending-false-kehrt-die-sortierung-ascending-aufsteigend-um-sodass-das-alter-absteigend-sortiert-wird-ascending-true-wurde-die-werte-aufsteigend-sortieren-mit-der-erstellung-der-neuen-variable-df-sorted-haben-wir-einen-neuen-dataframe-erstellt-hatten-wir-einfach-wieder-die-variable-df-verwendet-hatten-wir-unseren-ersten-dataframe-uberschrieben-es-ist-wichtig-das-im-hinterkopf-zu-behalten-um-den-ursprunglichen-dataframe-oder-bestimmte-berarbeitete-dataframes-zu-erhalten-sofern-das-relevant-fur-die-eigene-datenverarbeitung-ist-unser-neuer-dataframe-sieht-nun-so-aus">
+<h2><em>by=”Alter”</em> gibt an, aus welcher Spalte die Werte zur Sortierung entnommen werden sollen, <em>ascending=False</em> kehrt die Sortierung (ascending - aufsteigend) um, sodass das Alter absteigend sortiert wird. <em>ascending=True</em> würde die Werte aufsteigend sortieren. mit der Erstellung der neuen Variable <em>df_sorted</em> haben wir einen neuen DataFrame erstellt. Hätten wir einfach wieder die Variable <em>df</em> verwendet, hätten wir unseren ersten DataFrame überschrieben. Es ist wichtig, das im Hinterkopf zu behalten, um den ursprünglichen <strong>DataFrame</strong> oder bestimmte berarbeitete <strong>DataFrames</strong> zu erhalten, sofern das relevant für die eigene Datenverarbeitung ist. Unser neuer <strong>DataFrame</strong> sieht nun so aus:<a class="headerlink" href="#by-alter-gibt-an-aus-welcher-spalte-die-werte-zur-sortierung-entnommen-werden-sollen-ascending-false-kehrt-die-sortierung-ascending-aufsteigend-um-sodass-das-alter-absteigend-sortiert-wird-ascending-true-wurde-die-werte-aufsteigend-sortieren-mit-der-erstellung-der-neuen-variable-df-sorted-haben-wir-einen-neuen-dataframe-erstellt-hatten-wir-einfach-wieder-die-variable-df-verwendet-hatten-wir-unseren-ersten-dataframe-uberschrieben-es-ist-wichtig-das-im-hinterkopf-zu-behalten-um-den-ursprunglichen-dataframe-oder-bestimmte-berarbeitete-dataframes-zu-erhalten-sofern-das-relevant-fur-die-eigene-datenverarbeitung-ist-unser-neuer-dataframe-sieht-nun-so-aus" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sorted</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Alter</th>
+      <th>Hobby</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>Friedrich</td>
+      <td>29</td>
+      <td>Lesen</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Can</td>
+      <td>26</td>
+      <td>Fußball</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Alex</td>
+      <td>24</td>
+      <td>Gaming</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Giselle</td>
+      <td>23</td>
+      <td>Fußball</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Amber</td>
+      <td>21</td>
+      <td>Singen</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="wir-konnen-uber-pandas-auch-csv-oder-xlsx-dateien-die-wir-normalerweise-mit-excel-offnen-wurden-einlesen-und-ebenfalls-in-einem-dataframe-darstellen-lassen-um-mit-den-daten-zu-arbeiten-z-b-so">
+<h2>Wir können über pandas auch .csv- oder .xlsx-Dateien, die wir normalerweise mit Excel öffnen würden einlesen und ebenfalls in einem DataFrame darstellen lassen, um mit den Daten zu arbeiten. z.B. so:<a class="headerlink" href="#wir-konnen-uber-pandas-auch-csv-oder-xlsx-dateien-die-wir-normalerweise-mit-excel-offnen-wurden-einlesen-und-ebenfalls-in-einem-dataframe-darstellen-lassen-um-mit-den-daten-zu-arbeiten-z-b-so" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_stock</span> <span class="o">=</span>  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="die-datei-enthalt-zeitstempel-und-kursveranderung-einer-aktie-zu-bestimmten-zeitpunkten-wenn-wir-bpsw-nur-daten-fur-einen-ganz-bestimmten-zeitraum-sehen-wollen-konnen-wir-den-dataframe-mit-der-funktion-loc-dementsprechend-filtern-und-wieder-in-einen-neuen-dataframe-abspeichern">
+<h2>Die Datei enthält Zeitstempel und Kursveränderung einer Aktie zu bestimmten Zeitpunkten. Wenn wir bpsw. nur Daten für einen ganz bestimmten Zeitraum sehen wollen, können wir den <strong>DataFrame</strong> mit der Funktion <em>loc()</em> dementsprechend filtern und wieder in einen neuen <strong>DataFrame</strong> abspeichern:<a class="headerlink" href="#die-datei-enthalt-zeitstempel-und-kursveranderung-einer-aktie-zu-bestimmten-zeitpunkten-wenn-wir-bpsw-nur-daten-fur-einen-ganz-bestimmten-zeitraum-sehen-wollen-konnen-wir-den-dataframe-mit-der-funktion-loc-dementsprechend-filtern-und-wieder-in-einen-neuen-dataframe-abspeichern" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03_01_bibliotheken_installieren.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">3. Module</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#da-wir-nun-die-beiden-bibliotheken-importiert-haben-konnen-wir-mit-ihnen-arbeiten-mit-pandas-kann-man-daten-in-eine-tabellarische-form-einen-sog-dataframe-umwandeln-und-analysieren-und-anschlieszend-mit-matplotlib-visualisieren">Da wir nun die beiden Bibliotheken importiert haben, können wir mit ihnen arbeiten. Mit <strong>pandas</strong> kann man Daten in eine tabellarische Form, einen sog. <strong>DataFrame</strong> umwandeln und analysieren und anschließend mit <strong>matplotlib</strong> visualisieren.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beispielhaft-konnte-das-so-aussehen">Beispielhaft könnte das so aussehen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nun-sind-unsere-daten-in-einer-sauberen-tabellarischen-form-unter-der-variablen-df-abgespeichert">Nun sind unsere Daten in einer sauberen tabellarischen Form unter der Variablen <em>df</em> abgespeichert</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#man-konnte-nun-z-b-die-funktion-sort-values-von-pandas-verwenden-um-die-daten-nach-den-werten-einer-bestimmten-spalte-zu-sortieren-in-diesem-fall-nehmen-wir-das-alter-und-lassen-es-absteigend-sortieren">Man könnte nun z.B. die Funktion <em>sort_values()</em> von <strong>pandas</strong> verwenden, um die Daten nach den Werten einer bestimmten Spalte zu sortieren. In diesem Fall nehmen wir das Alter und lassen es absteigend sortieren:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#by-alter-gibt-an-aus-welcher-spalte-die-werte-zur-sortierung-entnommen-werden-sollen-ascending-false-kehrt-die-sortierung-ascending-aufsteigend-um-sodass-das-alter-absteigend-sortiert-wird-ascending-true-wurde-die-werte-aufsteigend-sortieren-mit-der-erstellung-der-neuen-variable-df-sorted-haben-wir-einen-neuen-dataframe-erstellt-hatten-wir-einfach-wieder-die-variable-df-verwendet-hatten-wir-unseren-ersten-dataframe-uberschrieben-es-ist-wichtig-das-im-hinterkopf-zu-behalten-um-den-ursprunglichen-dataframe-oder-bestimmte-berarbeitete-dataframes-zu-erhalten-sofern-das-relevant-fur-die-eigene-datenverarbeitung-ist-unser-neuer-dataframe-sieht-nun-so-aus"><em>by=”Alter”</em> gibt an, aus welcher Spalte die Werte zur Sortierung entnommen werden sollen, <em>ascending=False</em> kehrt die Sortierung (ascending - aufsteigend) um, sodass das Alter absteigend sortiert wird. <em>ascending=True</em> würde die Werte aufsteigend sortieren. mit der Erstellung der neuen Variable <em>df_sorted</em> haben wir einen neuen DataFrame erstellt. Hätten wir einfach wieder die Variable <em>df</em> verwendet, hätten wir unseren ersten DataFrame überschrieben. Es ist wichtig, das im Hinterkopf zu behalten, um den ursprünglichen <strong>DataFrame</strong> oder bestimmte berarbeitete <strong>DataFrames</strong> zu erhalten, sofern das relevant für die eigene Datenverarbeitung ist. Unser neuer <strong>DataFrame</strong> sieht nun so aus:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wir-konnen-uber-pandas-auch-csv-oder-xlsx-dateien-die-wir-normalerweise-mit-excel-offnen-wurden-einlesen-und-ebenfalls-in-einem-dataframe-darstellen-lassen-um-mit-den-daten-zu-arbeiten-z-b-so">Wir können über pandas auch .csv- oder .xlsx-Dateien, die wir normalerweise mit Excel öffnen würden einlesen und ebenfalls in einem DataFrame darstellen lassen, um mit den Daten zu arbeiten. z.B. so:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-datei-enthalt-zeitstempel-und-kursveranderung-einer-aktie-zu-bestimmten-zeitpunkten-wenn-wir-bpsw-nur-daten-fur-einen-ganz-bestimmten-zeitraum-sehen-wollen-konnen-wir-den-dataframe-mit-der-funktion-loc-dementsprechend-filtern-und-wieder-in-einen-neuen-dataframe-abspeichern">Die Datei enthält Zeitstempel und Kursveränderung einer Aktie zu bestimmten Zeitpunkten. Wenn wir bpsw. nur Daten für einen ganz bestimmten Zeitraum sehen wollen, können wir den <strong>DataFrame</strong> mit der Funktion <em>loc()</em> dementsprechend filtern und wieder in einen neuen <strong>DataFrame</strong> abspeichern:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tim Reschop
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

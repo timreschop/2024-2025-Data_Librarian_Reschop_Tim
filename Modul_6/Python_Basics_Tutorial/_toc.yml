@@ -1,4 +1,26 @@
 format: jb-book
 root: index
 chapters:
-  - file: notebooks/Python_Basics_Tutorial
+  - file: notebooks/01_1_arithmetik_und_variablen
+    sections:
+      - file: notebooks/01_01_arithmetik
+      - file: notebooks/01_02_variablen
+        sections:
+          - file: notebooks/01_02_01_uebung_1
+  - file: notebooks/02_2_datentypen
+    sections:
+      - file: notebooks/02_01_variablentypen_datentypen
+        sections:
+          - file: notebooks/02_01_01_numerische_datentypen
+          - file: notebooks/02_01_02_strings
+          - file: notebooks/02_01_03_booleans
+      - file: notebooks/02_02_collections_fuer_variablen
+        sections:
+          - file: notebooks/02_02_01_listen
+          - file: notebooks/02_02_02_tupel
+          - file: notebooks/02_02_03_sets
+          - file: notebooks/02_02_04_dictionaries
+  - file: notebooks/03_3_module
+    sections:
+      - file: notebooks/03_01_bibliotheken_installieren
+  - file: notebooks/04_4_pandas_und_matplotlib
