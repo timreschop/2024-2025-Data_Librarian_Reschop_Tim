@@ -175,8 +175,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="01_1_arithmetik_und_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">1. Arithmetik und Variablen</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">Arithmetik</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="01_02_01_uebung_1.html">Übung 1</a></li>
 </ul>
 </details></li>
@@ -184,9 +184,9 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">2. Datentypen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_01_variablentypen_datentypen.html">Variablentypen / Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">numerische Datentypen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html">Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html">Booleans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">Numerische Datentypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html"><strong>Strings</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html"><strong>Booleans</strong></a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_02_collections_fuer_variablen.html">Collections für Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -194,6 +194,7 @@
 <li class="toctree-l3"><a class="reference internal" href="02_02_02_tupel.html">Tupel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_03_sets.html">Sets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_04_dictionaries.html">Dictionaries</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -401,22 +402,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#im-ersten-kapitel-hast-du-bereits-integer-und-string-variablen-kennengelernt-in-python-gibt-es-verschiedene-datentypen-die-in-variablen-abgespeichert-werden-konnen-integers-ganze-zahlen-und-strings-zeichenfolgen-in-sind-nur-zwei-beispiele-fur-datentypen-die-eine-variable-annehmen-kann-in-diesem-kapitel-lernst-du-weitere-bzw-die-gangigsten-datentypen-in-python-kennen">Im ersten Kapitel hast Du bereits <em>Integer-</em> und *String-*Variablen kennengelernt. In Python gibt es verschiedene Datentypen, die in Variablen abgespeichert werden können. <em>Integers</em> (Ganze Zahlen) und <em>Strings</em> (Zeichenfolgen in “…”) sind nur zwei Beispiele für Datentypen, die eine Variable annehmen kann. In diesem Kapitel lernst du weitere bzw. die gängigsten Datentypen in Python kennen.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variablentypen-datentypen"><strong>Variablentypen / Datentypen</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerische-datentypen">Numerische Datentypen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grundsatzlich-gibt-es-zwei-wichtige-numerische-datenypen-ganzzahlen-int-die-du-schon-kennst-und-flieszkommazahlen-float-also-dezimalzahlen-wichtig-in-python-ist-das-dezimalzeichen-ein-punkt-kein-komma">Grundsätzlich gibt es zwei wichtige numerische Datenypen: Ganzzahlen (<em>int</em>), die Du schon kennst, und Fließkommazahlen (<em>float</em>) also Dezimalzahlen. <strong>Wichtig:</strong> In Python ist das Dezimalzeichen ein Punkt, kein Komma.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweis-du-musst-in-python-den-datentyp-beim-erstellen-einer-variable-nicht-explizit-angeben-als-dynamische-sprache-erkennt-python-automatisch-den-datentyp-der-variablen-basierend-auf-dem-zugewiesenen-wert-das-gilt-fur-alles-datentypen-nicht-nur-fur-numerische-datentypen-hier-ein-beispiel"><strong>HINWEIS:</strong> Du musst in Python den Datentyp beim Erstellen einer Variable nicht explizit angeben. Als dynamische Sprache erkennt Python automatisch den Datentyp der Variablen basierend auf dem zugewiesenen Wert. Das gilt für alles Datentypen, nicht nur für numerische Datentypen. Hier ein Beispiel:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-der-funktion-type-kannst-du-dir-ausgeben-lassen-welchen-datentyp-eine-variable-hat">Mit der Funktion type(…) kannst Du dir ausgeben lassen, welchen Datentyp eine Variable hat.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings"><strong>Strings</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier"><em>Strings</em> sind Zeichenfolgen (Buchstaben, Symbole, aber auch Zahlen usw.). <em>Strings</em> werden erstellt, indem man die Zeichenfolge in einfache oder doppelte Anführungszeichen einschließt, so wie hier:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans"><strong>Booleans</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-sind-ein-datentyp-der-nur-zwei-werte-annehmen-kann-entweder-true-oder-false-sie-reprasentieren-den-wahrheitswert-eine-aussage-auch-diesen-datentyp-kannst-du-mit-der-funktion-type-uberprufen"><em>Booleans</em> sind ein Datentyp, der nur zwei Werte annehmen kann. Entweder <em>True</em> oder <em>False</em>. Sie repräsentieren den Wahrheitswert eine Aussage. Auch diesen Datentyp kannst du mit der Funktion type(…) überprüfen:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-werden-haufig-in-bedingungsanweisungen-if-else-verwendet-also-z-b-wenn-x-groszer-ist-als-4-d-h-x-4-true-dann-tue-dies-wenn-nicht-d-h-x-4-false-dann-tue-dies-bedingungsanweisungen-sind-schon-eine-fortgeschrittene-technik-die-wir-zunachst-nicht-betrachten">Booleans werden häufig in Bedingungsanweisungen (if, else) verwendet (also z.B. “Wenn x größer ist als 4 (d.h. x &gt; 4 = True), dann tue dies, wenn nicht (d.h. x &gt; 4 = False), dann tue dies…). Bedingungsanweisungen sind schon eine fortgeschrittene Technik, die wir zunächst nicht betrachten.</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -432,85 +417,6 @@ document.write(`
 <h1>2. Datentypen<a class="headerlink" href="#datentypen" title="Link to this heading">#</a></h1>
 <section id="im-ersten-kapitel-hast-du-bereits-integer-und-string-variablen-kennengelernt-in-python-gibt-es-verschiedene-datentypen-die-in-variablen-abgespeichert-werden-konnen-integers-ganze-zahlen-und-strings-zeichenfolgen-in-sind-nur-zwei-beispiele-fur-datentypen-die-eine-variable-annehmen-kann-in-diesem-kapitel-lernst-du-weitere-bzw-die-gangigsten-datentypen-in-python-kennen">
 <h2>Im ersten Kapitel hast Du bereits <em>Integer-</em> und *String-*Variablen kennengelernt. In Python gibt es verschiedene Datentypen, die in Variablen abgespeichert werden können. <em>Integers</em> (Ganze Zahlen) und <em>Strings</em> (Zeichenfolgen in “…”) sind nur zwei Beispiele für Datentypen, die eine Variable annehmen kann. In diesem Kapitel lernst du weitere bzw. die gängigsten Datentypen in Python kennen.<a class="headerlink" href="#im-ersten-kapitel-hast-du-bereits-integer-und-string-variablen-kennengelernt-in-python-gibt-es-verschiedene-datentypen-die-in-variablen-abgespeichert-werden-konnen-integers-ganze-zahlen-und-strings-zeichenfolgen-in-sind-nur-zwei-beispiele-fur-datentypen-die-eine-variable-annehmen-kann-in-diesem-kapitel-lernst-du-weitere-bzw-die-gangigsten-datentypen-in-python-kennen" title="Link to this heading">#</a></h2>
-</section>
-<section id="variablentypen-datentypen">
-<h2><strong>Variablentypen / Datentypen</strong><a class="headerlink" href="#variablentypen-datentypen" title="Link to this heading">#</a></h2>
-</section>
-<section id="numerische-datentypen">
-<h2>Numerische Datentypen<a class="headerlink" href="#numerische-datentypen" title="Link to this heading">#</a></h2>
-<section id="grundsatzlich-gibt-es-zwei-wichtige-numerische-datenypen-ganzzahlen-int-die-du-schon-kennst-und-flieszkommazahlen-float-also-dezimalzahlen-wichtig-in-python-ist-das-dezimalzeichen-ein-punkt-kein-komma">
-<h3>Grundsätzlich gibt es zwei wichtige numerische Datenypen: Ganzzahlen (<em>int</em>), die Du schon kennst, und Fließkommazahlen (<em>float</em>) also Dezimalzahlen. <strong>Wichtig:</strong> In Python ist das Dezimalzeichen ein Punkt, kein Komma.<a class="headerlink" href="#grundsatzlich-gibt-es-zwei-wichtige-numerische-datenypen-ganzzahlen-int-die-du-schon-kennst-und-flieszkommazahlen-float-also-dezimalzahlen-wichtig-in-python-ist-das-dezimalzeichen-ein-punkt-kein-komma" title="Link to this heading">#</a></h3>
-</section>
-<section id="hinweis-du-musst-in-python-den-datentyp-beim-erstellen-einer-variable-nicht-explizit-angeben-als-dynamische-sprache-erkennt-python-automatisch-den-datentyp-der-variablen-basierend-auf-dem-zugewiesenen-wert-das-gilt-fur-alles-datentypen-nicht-nur-fur-numerische-datentypen-hier-ein-beispiel">
-<h3><strong>HINWEIS:</strong> Du musst in Python den Datentyp beim Erstellen einer Variable nicht explizit angeben. Als dynamische Sprache erkennt Python automatisch den Datentyp der Variablen basierend auf dem zugewiesenen Wert. Das gilt für alles Datentypen, nicht nur für numerische Datentypen. Hier ein Beispiel:<a class="headerlink" href="#hinweis-du-musst-in-python-den-datentyp-beim-erstellen-einer-variable-nicht-explizit-angeben-als-dynamische-sprache-erkennt-python-automatisch-den-datentyp-der-variablen-basierend-auf-dem-zugewiesenen-wert-das-gilt-fur-alles-datentypen-nicht-nur-fur-numerische-datentypen-hier-ein-beispiel" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mf">5.5</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
-&lt;class &#39;float&#39;&gt;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="mit-der-funktion-type-kannst-du-dir-ausgeben-lassen-welchen-datentyp-eine-variable-hat">
-<h3>Mit der Funktion type(…) kannst Du dir ausgeben lassen, welchen Datentyp eine Variable hat.<a class="headerlink" href="#mit-der-funktion-type-kannst-du-dir-ausgeben-lassen-welchen-datentyp-eine-variable-hat" title="Link to this heading">#</a></h3>
-</section>
-</section>
-<section id="strings">
-<h2><strong>Strings</strong><a class="headerlink" href="#strings" title="Link to this heading">#</a></h2>
-<section id="strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier">
-<h3><em>Strings</em> sind Zeichenfolgen (Buchstaben, Symbole, aber auch Zahlen usw.). <em>Strings</em> werden erstellt, indem man die Zeichenfolge in einfache oder doppelte Anführungszeichen einschließt, so wie hier:<a class="headerlink" href="#strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;Hello, World!&#39;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World! &lt;class &#39;str&#39;&gt;
-Hello, World! &lt;class &#39;str&#39;&gt;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="booleans">
-<h2><strong>Booleans</strong><a class="headerlink" href="#booleans" title="Link to this heading">#</a></h2>
-<section id="booleans-sind-ein-datentyp-der-nur-zwei-werte-annehmen-kann-entweder-true-oder-false-sie-reprasentieren-den-wahrheitswert-eine-aussage-auch-diesen-datentyp-kannst-du-mit-der-funktion-type-uberprufen">
-<h3><em>Booleans</em> sind ein Datentyp, der nur zwei Werte annehmen kann. Entweder <em>True</em> oder <em>False</em>. Sie repräsentieren den Wahrheitswert eine Aussage. Auch diesen Datentyp kannst du mit der Funktion type(…) überprüfen:<a class="headerlink" href="#booleans-sind-ein-datentyp-der-nur-zwei-werte-annehmen-kann-entweder-true-oder-false-sie-reprasentieren-den-wahrheitswert-eine-aussage-auch-diesen-datentyp-kannst-du-mit-der-funktion-type-uberprufen" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">d</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt;
-&lt;class &#39;bool&#39;&gt;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="booleans-werden-haufig-in-bedingungsanweisungen-if-else-verwendet-also-z-b-wenn-x-groszer-ist-als-4-d-h-x-4-true-dann-tue-dies-wenn-nicht-d-h-x-4-false-dann-tue-dies-bedingungsanweisungen-sind-schon-eine-fortgeschrittene-technik-die-wir-zunachst-nicht-betrachten">
-<h3>Booleans werden häufig in Bedingungsanweisungen (if, else) verwendet (also z.B. “Wenn x größer ist als 4 (d.h. x &gt; 4 = True), dann tue dies, wenn nicht (d.h. x &gt; 4 = False), dann tue dies…). Bedingungsanweisungen sind schon eine fortgeschrittene Technik, die wir zunächst nicht betrachten.<a class="headerlink" href="#booleans-werden-haufig-in-bedingungsanweisungen-if-else-verwendet-also-z-b-wenn-x-groszer-ist-als-4-d-h-x-4-true-dann-tue-dies-wenn-nicht-d-h-x-4-false-dann-tue-dies-bedingungsanweisungen-sind-schon-eine-fortgeschrittene-technik-die-wir-zunachst-nicht-betrachten" title="Link to this heading">#</a></h3>
-</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -581,22 +487,6 @@ Hello, World! &lt;class &#39;str&#39;&gt;
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#im-ersten-kapitel-hast-du-bereits-integer-und-string-variablen-kennengelernt-in-python-gibt-es-verschiedene-datentypen-die-in-variablen-abgespeichert-werden-konnen-integers-ganze-zahlen-und-strings-zeichenfolgen-in-sind-nur-zwei-beispiele-fur-datentypen-die-eine-variable-annehmen-kann-in-diesem-kapitel-lernst-du-weitere-bzw-die-gangigsten-datentypen-in-python-kennen">Im ersten Kapitel hast Du bereits <em>Integer-</em> und *String-*Variablen kennengelernt. In Python gibt es verschiedene Datentypen, die in Variablen abgespeichert werden können. <em>Integers</em> (Ganze Zahlen) und <em>Strings</em> (Zeichenfolgen in “…”) sind nur zwei Beispiele für Datentypen, die eine Variable annehmen kann. In diesem Kapitel lernst du weitere bzw. die gängigsten Datentypen in Python kennen.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variablentypen-datentypen"><strong>Variablentypen / Datentypen</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerische-datentypen">Numerische Datentypen</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grundsatzlich-gibt-es-zwei-wichtige-numerische-datenypen-ganzzahlen-int-die-du-schon-kennst-und-flieszkommazahlen-float-also-dezimalzahlen-wichtig-in-python-ist-das-dezimalzeichen-ein-punkt-kein-komma">Grundsätzlich gibt es zwei wichtige numerische Datenypen: Ganzzahlen (<em>int</em>), die Du schon kennst, und Fließkommazahlen (<em>float</em>) also Dezimalzahlen. <strong>Wichtig:</strong> In Python ist das Dezimalzeichen ein Punkt, kein Komma.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweis-du-musst-in-python-den-datentyp-beim-erstellen-einer-variable-nicht-explizit-angeben-als-dynamische-sprache-erkennt-python-automatisch-den-datentyp-der-variablen-basierend-auf-dem-zugewiesenen-wert-das-gilt-fur-alles-datentypen-nicht-nur-fur-numerische-datentypen-hier-ein-beispiel"><strong>HINWEIS:</strong> Du musst in Python den Datentyp beim Erstellen einer Variable nicht explizit angeben. Als dynamische Sprache erkennt Python automatisch den Datentyp der Variablen basierend auf dem zugewiesenen Wert. Das gilt für alles Datentypen, nicht nur für numerische Datentypen. Hier ein Beispiel:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-der-funktion-type-kannst-du-dir-ausgeben-lassen-welchen-datentyp-eine-variable-hat">Mit der Funktion type(…) kannst Du dir ausgeben lassen, welchen Datentyp eine Variable hat.</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings"><strong>Strings</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier"><em>Strings</em> sind Zeichenfolgen (Buchstaben, Symbole, aber auch Zahlen usw.). <em>Strings</em> werden erstellt, indem man die Zeichenfolge in einfache oder doppelte Anführungszeichen einschließt, so wie hier:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans"><strong>Booleans</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-sind-ein-datentyp-der-nur-zwei-werte-annehmen-kann-entweder-true-oder-false-sie-reprasentieren-den-wahrheitswert-eine-aussage-auch-diesen-datentyp-kannst-du-mit-der-funktion-type-uberprufen"><em>Booleans</em> sind ein Datentyp, der nur zwei Werte annehmen kann. Entweder <em>True</em> oder <em>False</em>. Sie repräsentieren den Wahrheitswert eine Aussage. Auch diesen Datentyp kannst du mit der Funktion type(…) überprüfen:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-werden-haufig-in-bedingungsanweisungen-if-else-verwendet-also-z-b-wenn-x-groszer-ist-als-4-d-h-x-4-true-dann-tue-dies-wenn-nicht-d-h-x-4-false-dann-tue-dies-bedingungsanweisungen-sind-schon-eine-fortgeschrittene-technik-die-wir-zunachst-nicht-betrachten">Booleans werden häufig in Bedingungsanweisungen (if, else) verwendet (also z.B. “Wenn x größer ist als 4 (d.h. x &gt; 4 = True), dann tue dies, wenn nicht (d.h. x &gt; 4 = False), dann tue dies…). Bedingungsanweisungen sind schon eine fortgeschrittene Technik, die wir zunächst nicht betrachten.</a></li>
-</ul>
-</li>
 </ul>
   </nav></div>
 

@@ -175,8 +175,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="01_1_arithmetik_und_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">1. Arithmetik und Variablen</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">Arithmetik</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="01_02_01_uebung_1.html">Übung 1</a></li>
 </ul>
 </details></li>
@@ -184,9 +184,9 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="02_2_datentypen.html">2. Datentypen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_01_variablentypen_datentypen.html">Variablentypen / Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">numerische Datentypen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html">Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html">Booleans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">Numerische Datentypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html"><strong>Strings</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html"><strong>Booleans</strong></a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="02_02_collections_fuer_variablen.html">Collections für Variablen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -194,6 +194,7 @@
 <li class="toctree-l3"><a class="reference internal" href="02_02_02_tupel.html">Tupel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_03_sets.html">Sets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_04_dictionaries.html">Dictionaries</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -400,8 +401,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings"><strong>Strings</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier"><em>Strings</em> sind Zeichenfolgen (Buchstaben, Symbole, aber auch Zahlen usw.). <em>Strings</em> werden erstellt, indem man die Zeichenfolge in einfache oder doppelte Anführungszeichen einschließt, so wie hier:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listen-sind-die-flexibleste-art-um-mehrere-objekte-in-einer-variablen-zu-speichern-listen-werden-mit-eckigen-klammern-erstellt-in-denen-du-die-einzelnen-objekte-mit-kommata-trennst">Listen sind die flexibleste Art, um mehrere Objekte in einer Variablen zu speichern. Listen werden mit eckigen Klammern erstellt, in denen Du die einzelnen Objekte mit Kommata trennst:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#man-kann-auch-auf-einzelne-elemente-einer-liste-zugreifen-uber-den-sog-index">Man kann auch auf einzelne Elemente einer Liste zugreifen - über den sog. <em>Index</em>.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweis-die-indexierung-d-h-die-durchnummerierung-der-objekte-in-einer-liste-beginnt-in-python-bei-0-und-nicht-bei-1-d-h-wenn-ich-auf-der-erste-objekt-eine-liste-zugreifen-will-ist-der-index-0-und-beim-zweiten-objekt-1-usw-print-age-0-durch-0-mache-gebe-ich-an-auf-welches-objekt-ich-zugreifen-will"><strong>HINWEIS</strong>: Die Indexierung, d.h. die “Durchnummerierung” der Objekte in einer Liste beginnt in Python bei 0 und nicht bei 1, d.h. wenn ich auf der erste Objekt eine Liste zugreifen will, ist der Index 0, und beim zweiten Objekt 1 usw:print(age[0]) #Durch [0] mache gebe ich an, auf welches Objekt ich zugreifen will.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-indizes-konnen-ebenfalls-verwendet-werden-um-objekte-aus-der-liste-von-hinten-zu-erhalten-mit-1-greift-man-bspw-auf-das-letzte-objekt-einer-liste-zu">Negative Indizes können ebenfalls verwendet werden, um Objekte aus der Liste “von hinten” zu erhalten. Mit -1 greift man bspw. auf das letzte Objekt einer Liste zu.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listen-sind-wie-gesagt-flexibel-d-h-sie-konnen-jederzeit-verandert-erweitert-oder-dezimiert-werden-mit-den-funktionen-append-und-remove-kannst-du-objekte-hinzufugen-bzw-entfernen">Listen sind, wie gesagt, flexibel, d.h. sie können jederzeit verändert, erweitert oder dezimiert werden. Mit den Funktionen append() und remove() kannst du Objekte hinzufügen bzw. entfernen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubung-1-listen"><strong>Übung 1 (Listen)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstelle-eine-neue-liste-mit-den-namen-benny-emre-charlotte-oleg-und-anastasia-losche-dann-benny-aus-der-liste-fuge-lukas-hinzu-und-gib-die-liste-aus">Erstelle eine neue Liste mit den Namen <em>Benny, Emre, Charlotte, Oleg</em> und <em>Anastasia</em>. Lösche dann <em>Benny</em> aus der Liste, füge <em>Lukas</em> hinzu und gib die Liste aus.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubung-2-listen"><strong>Übung 2 (Listen)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstelle-eine-liste-mit-den-zahlen-1-bis-3-fuge-dann-den-string-four-hinzu-und-gib-die-liste-aus">Erstelle eine Liste mit den Zahlen 1 bis 3. Füge dann den String “Four” hinzu und gib die Liste aus</a></li>
 </ul>
 </li>
 </ul>
@@ -417,25 +427,124 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="listen">
 <h1>Listen<a class="headerlink" href="#listen" title="Link to this heading">#</a></h1>
-<section id="strings">
-<h2><strong>Strings</strong><a class="headerlink" href="#strings" title="Link to this heading">#</a></h2>
-<section id="strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier">
-<h3><em>Strings</em> sind Zeichenfolgen (Buchstaben, Symbole, aber auch Zahlen usw.). <em>Strings</em> werden erstellt, indem man die Zeichenfolge in einfache oder doppelte Anführungszeichen einschließt, so wie hier:<a class="headerlink" href="#strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier" title="Link to this heading">#</a></h3>
+<section id="listen-sind-die-flexibleste-art-um-mehrere-objekte-in-einer-variablen-zu-speichern-listen-werden-mit-eckigen-klammern-erstellt-in-denen-du-die-einzelnen-objekte-mit-kommata-trennst">
+<h2>Listen sind die flexibleste Art, um mehrere Objekte in einer Variablen zu speichern. Listen werden mit eckigen Klammern erstellt, in denen Du die einzelnen Objekte mit Kommata trennst:<a class="headerlink" href="#listen-sind-die-flexibleste-art-um-mehrere-objekte-in-einer-variablen-zu-speichern-listen-werden-mit-eckigen-klammern-erstellt-in-denen-du-die-einzelnen-objekte-mit-kommata-trennst" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;Hello, World!&#39;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span> <span class="s2">&quot;Giselle&quot;</span><span class="p">,</span> <span class="s2">&quot;Can&quot;</span><span class="p">,</span> <span class="s2">&quot;Amber&quot;</span><span class="p">,</span> <span class="s2">&quot;Friedrich&quot;</span><span class="p">]</span> <span class="c1">#Liste aus Strings</span>
+<span class="n">age</span> <span class="o">=</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span> <span class="c1">#Liste aus integers</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World! &lt;class &#39;str&#39;&gt;
-Hello, World! &lt;class &#39;str&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Alex&#39;, &#39;Giselle&#39;, &#39;Can&#39;, &#39;Amber&#39;, &#39;Friedrich&#39;]
+[24, 23, 26, 21, 29]
 </pre></div>
 </div>
+</div>
+</div>
+</section>
+<section id="man-kann-auch-auf-einzelne-elemente-einer-liste-zugreifen-uber-den-sog-index">
+<h2>Man kann auch auf einzelne Elemente einer Liste zugreifen - über den sog. <em>Index</em>.<a class="headerlink" href="#man-kann-auch-auf-einzelne-elemente-einer-liste-zugreifen-uber-den-sog-index" title="Link to this heading">#</a></h2>
+</section>
+<section id="hinweis-die-indexierung-d-h-die-durchnummerierung-der-objekte-in-einer-liste-beginnt-in-python-bei-0-und-nicht-bei-1-d-h-wenn-ich-auf-der-erste-objekt-eine-liste-zugreifen-will-ist-der-index-0-und-beim-zweiten-objekt-1-usw-print-age-0-durch-0-mache-gebe-ich-an-auf-welches-objekt-ich-zugreifen-will">
+<h2><strong>HINWEIS</strong>: Die Indexierung, d.h. die “Durchnummerierung” der Objekte in einer Liste beginnt in Python bei 0 und nicht bei 1, d.h. wenn ich auf der erste Objekt eine Liste zugreifen will, ist der Index 0, und beim zweiten Objekt 1 usw:print(age[0]) #Durch [0] mache gebe ich an, auf welches Objekt ich zugreifen will.<a class="headerlink" href="#hinweis-die-indexierung-d-h-die-durchnummerierung-der-objekte-in-einer-liste-beginnt-in-python-bei-0-und-nicht-bei-1-d-h-wenn-ich-auf-der-erste-objekt-eine-liste-zugreifen-will-ist-der-index-0-und-beim-zweiten-objekt-1-usw-print-age-0-durch-0-mache-gebe-ich-an-auf-welches-objekt-ich-zugreifen-will" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#Durch [0] mache gebe ich an, auf welches Objekt ich zugreifen will.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="negative-indizes-konnen-ebenfalls-verwendet-werden-um-objekte-aus-der-liste-von-hinten-zu-erhalten-mit-1-greift-man-bspw-auf-das-letzte-objekt-einer-liste-zu">
+<h2>Negative Indizes können ebenfalls verwendet werden, um Objekte aus der Liste “von hinten” zu erhalten. Mit -1 greift man bspw. auf das letzte Objekt einer Liste zu.<a class="headerlink" href="#negative-indizes-konnen-ebenfalls-verwendet-werden-um-objekte-aus-der-liste-von-hinten-zu-erhalten-mit-1-greift-man-bspw-auf-das-letzte-objekt-einer-liste-zu" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="listen-sind-wie-gesagt-flexibel-d-h-sie-konnen-jederzeit-verandert-erweitert-oder-dezimiert-werden-mit-den-funktionen-append-und-remove-kannst-du-objekte-hinzufugen-bzw-entfernen">
+<h2>Listen sind, wie gesagt, flexibel, d.h. sie können jederzeit verändert, erweitert oder dezimiert werden. Mit den Funktionen append() und remove() kannst du Objekte hinzufügen bzw. entfernen:<a class="headerlink" href="#listen-sind-wie-gesagt-flexibel-d-h-sie-konnen-jederzeit-verandert-erweitert-oder-dezimiert-werden-mit-den-funktionen-append-und-remove-kannst-du-objekte-hinzufugen-bzw-entfernen" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Raffael&quot;</span><span class="p">)</span>
+<span class="n">age</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">31</span><span class="p">)</span>
+
+<span class="n">names</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">)</span>
+<span class="n">age</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Giselle&#39;, &#39;Can&#39;, &#39;Amber&#39;, &#39;Friedrich&#39;, &#39;Raffael&#39;]
+[23, 26, 21, 29, 31]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ubung-1-listen">
+<h2><strong>Übung 1 (Listen)</strong><a class="headerlink" href="#ubung-1-listen" title="Link to this heading">#</a></h2>
+<section id="erstelle-eine-neue-liste-mit-den-namen-benny-emre-charlotte-oleg-und-anastasia-losche-dann-benny-aus-der-liste-fuge-lukas-hinzu-und-gib-die-liste-aus">
+<h3>Erstelle eine neue Liste mit den Namen <em>Benny, Emre, Charlotte, Oleg</em> und <em>Anastasia</em>. Lösche dann <em>Benny</em> aus der Liste, füge <em>Lukas</em> hinzu und gib die Liste aus.<a class="headerlink" href="#erstelle-eine-neue-liste-mit-den-namen-benny-emre-charlotte-oleg-und-anastasia-losche-dann-benny-aus-der-liste-fuge-lukas-hinzu-und-gib-die-liste-aus" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schreibe hier deine Lösung.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Beispiel‑Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># names_2 = [&quot;Benny&quot;, &quot;Emre&quot;, &quot;Charlotte&quot;, &quot;Oleg&quot;, &quot;Anastasia&quot;]</span>
+<span class="c1"># names_2.remove(&quot;Benny&quot;)</span>
+<span class="c1"># names_2.append(&quot;Lukas&quot;)</span>
+<span class="c1"># names_2</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ubung-2-listen">
+<h2><strong>Übung 2 (Listen)</strong><a class="headerlink" href="#ubung-2-listen" title="Link to this heading">#</a></h2>
+<section id="erstelle-eine-liste-mit-den-zahlen-1-bis-3-fuge-dann-den-string-four-hinzu-und-gib-die-liste-aus">
+<h3>Erstelle eine Liste mit den Zahlen 1 bis 3. Füge dann den String “Four” hinzu und gib die Liste aus<a class="headerlink" href="#erstelle-eine-liste-mit-den-zahlen-1-bis-3-fuge-dann-den-string-four-hinzu-und-gib-die-liste-aus" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schreibe hier deine Lösung.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Beispiel‑Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># numbers = [1, 2, 3]</span>
+<span class="c1"># numbers.append(&quot;Four&quot;)</span>
+<span class="c1"># numbers</span>
+</pre></div>
 </div>
 </div>
 </section>
@@ -506,8 +615,17 @@ Hello, World! &lt;class &#39;str&#39;&gt;
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings"><strong>Strings</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier"><em>Strings</em> sind Zeichenfolgen (Buchstaben, Symbole, aber auch Zahlen usw.). <em>Strings</em> werden erstellt, indem man die Zeichenfolge in einfache oder doppelte Anführungszeichen einschließt, so wie hier:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listen-sind-die-flexibleste-art-um-mehrere-objekte-in-einer-variablen-zu-speichern-listen-werden-mit-eckigen-klammern-erstellt-in-denen-du-die-einzelnen-objekte-mit-kommata-trennst">Listen sind die flexibleste Art, um mehrere Objekte in einer Variablen zu speichern. Listen werden mit eckigen Klammern erstellt, in denen Du die einzelnen Objekte mit Kommata trennst:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#man-kann-auch-auf-einzelne-elemente-einer-liste-zugreifen-uber-den-sog-index">Man kann auch auf einzelne Elemente einer Liste zugreifen - über den sog. <em>Index</em>.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweis-die-indexierung-d-h-die-durchnummerierung-der-objekte-in-einer-liste-beginnt-in-python-bei-0-und-nicht-bei-1-d-h-wenn-ich-auf-der-erste-objekt-eine-liste-zugreifen-will-ist-der-index-0-und-beim-zweiten-objekt-1-usw-print-age-0-durch-0-mache-gebe-ich-an-auf-welches-objekt-ich-zugreifen-will"><strong>HINWEIS</strong>: Die Indexierung, d.h. die “Durchnummerierung” der Objekte in einer Liste beginnt in Python bei 0 und nicht bei 1, d.h. wenn ich auf der erste Objekt eine Liste zugreifen will, ist der Index 0, und beim zweiten Objekt 1 usw:print(age[0]) #Durch [0] mache gebe ich an, auf welches Objekt ich zugreifen will.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#negative-indizes-konnen-ebenfalls-verwendet-werden-um-objekte-aus-der-liste-von-hinten-zu-erhalten-mit-1-greift-man-bspw-auf-das-letzte-objekt-einer-liste-zu">Negative Indizes können ebenfalls verwendet werden, um Objekte aus der Liste “von hinten” zu erhalten. Mit -1 greift man bspw. auf das letzte Objekt einer Liste zu.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listen-sind-wie-gesagt-flexibel-d-h-sie-konnen-jederzeit-verandert-erweitert-oder-dezimiert-werden-mit-den-funktionen-append-und-remove-kannst-du-objekte-hinzufugen-bzw-entfernen">Listen sind, wie gesagt, flexibel, d.h. sie können jederzeit verändert, erweitert oder dezimiert werden. Mit den Funktionen append() und remove() kannst du Objekte hinzufügen bzw. entfernen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubung-1-listen"><strong>Übung 1 (Listen)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstelle-eine-neue-liste-mit-den-namen-benny-emre-charlotte-oleg-und-anastasia-losche-dann-benny-aus-der-liste-fuge-lukas-hinzu-und-gib-die-liste-aus">Erstelle eine neue Liste mit den Namen <em>Benny, Emre, Charlotte, Oleg</em> und <em>Anastasia</em>. Lösche dann <em>Benny</em> aus der Liste, füge <em>Lukas</em> hinzu und gib die Liste aus.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubung-2-listen"><strong>Übung 2 (Listen)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erstelle-eine-liste-mit-den-zahlen-1-bis-3-fuge-dann-den-string-four-hinzu-und-gib-die-liste-aus">Erstelle eine Liste mit den Zahlen 1 bis 3. Füge dann den String “Four” hinzu und gib die Liste aus</a></li>
 </ul>
 </li>
 </ul>
