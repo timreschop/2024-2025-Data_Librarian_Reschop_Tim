@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/01_1_arithmetik_und_variablen';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Arithmetik und Variablen" href="01_01_arithmetik.html" />
+    <link rel="next" title="Arithmetik" href="01_01_arithmetik.html" />
     <link rel="prev" title="Tutorial" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,8 +175,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. Arithmetik und Variablen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">1. Arithmetik und Variablen</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">Arithmetik</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="01_02_01_uebung_1.html">Übung 1</a></li>
 </ul>
 </details></li>
@@ -184,9 +184,9 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="02_2_datentypen.html">2. Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_01_variablentypen_datentypen.html">Variablentypen / Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">numerische Datentypen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html">Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html">Booleans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">Numerische Datentypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html"><strong>Strings</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html"><strong>Booleans</strong></a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_02_collections_fuer_variablen.html">Collections für Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -194,6 +194,7 @@
 <li class="toctree-l3"><a class="reference internal" href="02_02_02_tupel.html">Tupel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_03_sets.html">Sets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_04_dictionaries.html">Dictionaries</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -400,12 +401,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetik">Arithmetik</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-seinen-grundlegendsten-funktion-kann-python-wie-ein-taschenrechner-verwendet-werden-also-ganz-basal-fur-addition-multiplikation-subtraktion-und-division-aber-auch-weitaus-komplexere-berechnungen">In seinen grundlegendsten Funktion kann Python wie ein Taschenrechner verwendet werden - also ganz basal für Addition, Multiplikation, Subtraktion und Division, aber auch weitaus komplexere Berechnungen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-der-folgenden-zelle-findest-du-einige-bespiele-fur-solche-aufgaben-wobei-der-befehl-print-verwendet-wird-um-eine-ausgabe-erzeugen-zu-lassen">In der folgenden Zelle findest Du einige Bespiele für solche Aufgaben, wobei der Befehl <em>print(…)</em> verwendet wird, um eine Ausgabe erzeugen zu lassen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-das-symbol-verwenden-um-deinen-code-zu-kommentieren-d-h-dass-alles-hinter-dem-symbol-nicht-als-code-ausgefuhrt-wird-kommmentare-sind-sehr-hilfreich-um-dem-code-direkt-eine-erklarung-zum-besseren-verstandnis-hinzuzufugen">Du kannst das <em>#-Symbol</em> verwenden, um Deinen Code zu kommentieren, d.h. dass alles hinter dem <em>#-Symbol</em> nicht als Code ausgeführt wird. Kommmentare sind sehr hilfreich, um dem Code direkt eine Erklärung zum besseren Verständnis hinzuzufügen.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-python-kannst-du-den-computer-wie-einen-taschenrechner-verwenden-du-gibst-rechenaufgaben-ein-und-er-liefert-dir-das-ergebnis-das-nennt-man-arithmetische-operationen-dazu-gehoren-zum-beispiel-das-addieren-subtrahieren-multiplizieren-und-dividieren-von-zahlen">In Python kannst du den Computer wie einen Taschenrechner verwenden: Du gibst Rechenaufgaben ein, und er liefert dir das Ergebnis. Das nennt man arithmetische Operationen – dazu gehören zum Beispiel das Addieren, Subtrahieren, Multiplizieren und Dividieren von Zahlen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#damit-du-nicht-jede-zahl-immer-wieder-neu-eingeben-musst-kannst-du-werte-in-variablen-speichern-eine-variable-ist-wie-eine-kleine-beschriftete-box-im-speicher-deines-computers-du-legst-etwas-hinein-zum-beispiel-eine-zahl-oder-einen-text-und-kannst-diesen-inhalt-spater-jederzeit-abrufen-oder-verandern-variablen-helfen-dir-deine-programme-ubersichtlicher-zu-gestalten-und-mit-gespeicherten-daten-zu-arbeiten-anstatt-sie-standig-neu-eingeben-zu-mussen">Damit du nicht jede Zahl immer wieder neu eingeben musst, kannst du Werte in Variablen speichern. Eine Variable ist wie eine kleine, beschriftete Box im Speicher deines Computers. Du legst etwas hinein – zum Beispiel eine Zahl oder einen Text – und kannst diesen Inhalt später jederzeit abrufen oder verändern. Variablen helfen dir, deine Programme übersichtlicher zu gestalten und mit gespeicherten Daten zu arbeiten, anstatt sie ständig neu eingeben zu müssen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-bilden-arithmetik-und-variablen-die-grundlage-fur-fast-alles-was-du-in-python-programmierst-rechnen-daten-merken-und-diese-weiterverarbeiten">So bilden Arithmetik und Variablen die Grundlage für fast alles, was du in Python programmierst: Rechnen, Daten merken und diese weiterverarbeiten.</a></li>
 </ul>
             </nav>
         </div>
@@ -419,37 +417,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="arithmetik-und-variablen">
 <h1>1. Arithmetik und Variablen<a class="headerlink" href="#arithmetik-und-variablen" title="Link to this heading">#</a></h1>
-<section id="arithmetik">
-<h2>Arithmetik<a class="headerlink" href="#arithmetik" title="Link to this heading">#</a></h2>
-<section id="in-seinen-grundlegendsten-funktion-kann-python-wie-ein-taschenrechner-verwendet-werden-also-ganz-basal-fur-addition-multiplikation-subtraktion-und-division-aber-auch-weitaus-komplexere-berechnungen">
-<h3>In seinen grundlegendsten Funktion kann Python wie ein Taschenrechner verwendet werden - also ganz basal für Addition, Multiplikation, Subtraktion und Division, aber auch weitaus komplexere Berechnungen.<a class="headerlink" href="#in-seinen-grundlegendsten-funktion-kann-python-wie-ein-taschenrechner-verwendet-werden-also-ganz-basal-fur-addition-multiplikation-subtraktion-und-division-aber-auch-weitaus-komplexere-berechnungen" title="Link to this heading">#</a></h3>
+<section id="in-python-kannst-du-den-computer-wie-einen-taschenrechner-verwenden-du-gibst-rechenaufgaben-ein-und-er-liefert-dir-das-ergebnis-das-nennt-man-arithmetische-operationen-dazu-gehoren-zum-beispiel-das-addieren-subtrahieren-multiplizieren-und-dividieren-von-zahlen">
+<h2>In Python kannst du den Computer wie einen Taschenrechner verwenden: Du gibst Rechenaufgaben ein, und er liefert dir das Ergebnis. Das nennt man arithmetische Operationen – dazu gehören zum Beispiel das Addieren, Subtrahieren, Multiplizieren und Dividieren von Zahlen.<a class="headerlink" href="#in-python-kannst-du-den-computer-wie-einen-taschenrechner-verwenden-du-gibst-rechenaufgaben-ein-und-er-liefert-dir-das-ergebnis-das-nennt-man-arithmetische-operationen-dazu-gehoren-zum-beispiel-das-addieren-subtrahieren-multiplizieren-und-dividieren-von-zahlen" title="Link to this heading">#</a></h2>
 </section>
-<section id="in-der-folgenden-zelle-findest-du-einige-bespiele-fur-solche-aufgaben-wobei-der-befehl-print-verwendet-wird-um-eine-ausgabe-erzeugen-zu-lassen">
-<h3>In der folgenden Zelle findest Du einige Bespiele für solche Aufgaben, wobei der Befehl <em>print(…)</em> verwendet wird, um eine Ausgabe erzeugen zu lassen.<a class="headerlink" href="#in-der-folgenden-zelle-findest-du-einige-bespiele-fur-solche-aufgaben-wobei-der-befehl-print-verwendet-wird-um-eine-ausgabe-erzeugen-zu-lassen" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#Addition</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#Subtraktion</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">24</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#Division</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">#Multiplikation</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#Potenzierung</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-3
-8.0
-10
-27
-</pre></div>
-</div>
-</div>
-</div>
+<section id="damit-du-nicht-jede-zahl-immer-wieder-neu-eingeben-musst-kannst-du-werte-in-variablen-speichern-eine-variable-ist-wie-eine-kleine-beschriftete-box-im-speicher-deines-computers-du-legst-etwas-hinein-zum-beispiel-eine-zahl-oder-einen-text-und-kannst-diesen-inhalt-spater-jederzeit-abrufen-oder-verandern-variablen-helfen-dir-deine-programme-ubersichtlicher-zu-gestalten-und-mit-gespeicherten-daten-zu-arbeiten-anstatt-sie-standig-neu-eingeben-zu-mussen">
+<h2>Damit du nicht jede Zahl immer wieder neu eingeben musst, kannst du Werte in Variablen speichern. Eine Variable ist wie eine kleine, beschriftete Box im Speicher deines Computers. Du legst etwas hinein – zum Beispiel eine Zahl oder einen Text – und kannst diesen Inhalt später jederzeit abrufen oder verändern. Variablen helfen dir, deine Programme übersichtlicher zu gestalten und mit gespeicherten Daten zu arbeiten, anstatt sie ständig neu eingeben zu müssen.<a class="headerlink" href="#damit-du-nicht-jede-zahl-immer-wieder-neu-eingeben-musst-kannst-du-werte-in-variablen-speichern-eine-variable-ist-wie-eine-kleine-beschriftete-box-im-speicher-deines-computers-du-legst-etwas-hinein-zum-beispiel-eine-zahl-oder-einen-text-und-kannst-diesen-inhalt-spater-jederzeit-abrufen-oder-verandern-variablen-helfen-dir-deine-programme-ubersichtlicher-zu-gestalten-und-mit-gespeicherten-daten-zu-arbeiten-anstatt-sie-standig-neu-eingeben-zu-mussen" title="Link to this heading">#</a></h2>
 </section>
-<section id="du-kannst-das-symbol-verwenden-um-deinen-code-zu-kommentieren-d-h-dass-alles-hinter-dem-symbol-nicht-als-code-ausgefuhrt-wird-kommmentare-sind-sehr-hilfreich-um-dem-code-direkt-eine-erklarung-zum-besseren-verstandnis-hinzuzufugen">
-<h3>Du kannst das <em>#-Symbol</em> verwenden, um Deinen Code zu kommentieren, d.h. dass alles hinter dem <em>#-Symbol</em> nicht als Code ausgeführt wird. Kommmentare sind sehr hilfreich, um dem Code direkt eine Erklärung zum besseren Verständnis hinzuzufügen.<a class="headerlink" href="#du-kannst-das-symbol-verwenden-um-deinen-code-zu-kommentieren-d-h-dass-alles-hinter-dem-symbol-nicht-als-code-ausgefuhrt-wird-kommmentare-sind-sehr-hilfreich-um-dem-code-direkt-eine-erklarung-zum-besseren-verstandnis-hinzuzufugen" title="Link to this heading">#</a></h3>
-</section>
+<section id="so-bilden-arithmetik-und-variablen-die-grundlage-fur-fast-alles-was-du-in-python-programmierst-rechnen-daten-merken-und-diese-weiterverarbeiten">
+<h2>So bilden Arithmetik und Variablen die Grundlage für fast alles, was du in Python programmierst: Rechnen, Daten merken und diese weiterverarbeiten.<a class="headerlink" href="#so-bilden-arithmetik-und-variablen-die-grundlage-fur-fast-alles-was-du-in-python-programmierst-rechnen-daten-merken-und-diese-weiterverarbeiten" title="Link to this heading">#</a></h2>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -499,7 +474,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1. Arithmetik und Variablen</p>
+        <p class="prev-next-title">Arithmetik</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -519,12 +494,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetik">Arithmetik</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-seinen-grundlegendsten-funktion-kann-python-wie-ein-taschenrechner-verwendet-werden-also-ganz-basal-fur-addition-multiplikation-subtraktion-und-division-aber-auch-weitaus-komplexere-berechnungen">In seinen grundlegendsten Funktion kann Python wie ein Taschenrechner verwendet werden - also ganz basal für Addition, Multiplikation, Subtraktion und Division, aber auch weitaus komplexere Berechnungen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-der-folgenden-zelle-findest-du-einige-bespiele-fur-solche-aufgaben-wobei-der-befehl-print-verwendet-wird-um-eine-ausgabe-erzeugen-zu-lassen">In der folgenden Zelle findest Du einige Bespiele für solche Aufgaben, wobei der Befehl <em>print(…)</em> verwendet wird, um eine Ausgabe erzeugen zu lassen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-das-symbol-verwenden-um-deinen-code-zu-kommentieren-d-h-dass-alles-hinter-dem-symbol-nicht-als-code-ausgefuhrt-wird-kommmentare-sind-sehr-hilfreich-um-dem-code-direkt-eine-erklarung-zum-besseren-verstandnis-hinzuzufugen">Du kannst das <em>#-Symbol</em> verwenden, um Deinen Code zu kommentieren, d.h. dass alles hinter dem <em>#-Symbol</em> nicht als Code ausgeführt wird. Kommmentare sind sehr hilfreich, um dem Code direkt eine Erklärung zum besseren Verständnis hinzuzufügen.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-python-kannst-du-den-computer-wie-einen-taschenrechner-verwenden-du-gibst-rechenaufgaben-ein-und-er-liefert-dir-das-ergebnis-das-nennt-man-arithmetische-operationen-dazu-gehoren-zum-beispiel-das-addieren-subtrahieren-multiplizieren-und-dividieren-von-zahlen">In Python kannst du den Computer wie einen Taschenrechner verwenden: Du gibst Rechenaufgaben ein, und er liefert dir das Ergebnis. Das nennt man arithmetische Operationen – dazu gehören zum Beispiel das Addieren, Subtrahieren, Multiplizieren und Dividieren von Zahlen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#damit-du-nicht-jede-zahl-immer-wieder-neu-eingeben-musst-kannst-du-werte-in-variablen-speichern-eine-variable-ist-wie-eine-kleine-beschriftete-box-im-speicher-deines-computers-du-legst-etwas-hinein-zum-beispiel-eine-zahl-oder-einen-text-und-kannst-diesen-inhalt-spater-jederzeit-abrufen-oder-verandern-variablen-helfen-dir-deine-programme-ubersichtlicher-zu-gestalten-und-mit-gespeicherten-daten-zu-arbeiten-anstatt-sie-standig-neu-eingeben-zu-mussen">Damit du nicht jede Zahl immer wieder neu eingeben musst, kannst du Werte in Variablen speichern. Eine Variable ist wie eine kleine, beschriftete Box im Speicher deines Computers. Du legst etwas hinein – zum Beispiel eine Zahl oder einen Text – und kannst diesen Inhalt später jederzeit abrufen oder verändern. Variablen helfen dir, deine Programme übersichtlicher zu gestalten und mit gespeicherten Daten zu arbeiten, anstatt sie ständig neu eingeben zu müssen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-bilden-arithmetik-und-variablen-die-grundlage-fur-fast-alles-was-du-in-python-programmierst-rechnen-daten-merken-und-diese-weiterverarbeiten">So bilden Arithmetik und Variablen die Grundlage für fast alles, was du in Python programmierst: Rechnen, Daten merken und diese weiterverarbeiten.</a></li>
 </ul>
   </nav></div>
 

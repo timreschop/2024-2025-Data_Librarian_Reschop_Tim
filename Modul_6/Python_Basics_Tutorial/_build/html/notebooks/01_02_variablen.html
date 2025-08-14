@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Arithmetik und Variablen &#8212; Python Basics Tutorial</title>
+    <title>Variablen &#8212; Python Basics Tutorial</title>
   
   
   
@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Übung 1" href="01_02_01_uebung_1.html" />
-    <link rel="prev" title="1. Arithmetik und Variablen" href="01_01_arithmetik.html" />
+    <link rel="prev" title="Arithmetik" href="01_01_arithmetik.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,8 +175,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="01_1_arithmetik_und_variablen.html">1. Arithmetik und Variablen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">1. Arithmetik und Variablen</a></li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">1. Arithmetik und Variablen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">Arithmetik</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Variablen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="01_02_01_uebung_1.html">Übung 1</a></li>
 </ul>
 </details></li>
@@ -184,9 +184,9 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="02_2_datentypen.html">2. Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_01_variablentypen_datentypen.html">Variablentypen / Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">numerische Datentypen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html">Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html">Booleans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">Numerische Datentypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html"><strong>Strings</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html"><strong>Booleans</strong></a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_02_collections_fuer_variablen.html">Collections für Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -194,6 +194,7 @@
 <li class="toctree-l3"><a class="reference internal" href="02_02_02_tupel.html">Tupel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_03_sets.html">Sets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_04_dictionaries.html">Dictionaries</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -390,7 +391,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1. Arithmetik und Variablen</h1>
+    <h1>Variablen</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,12 +401,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetik">Arithmetik</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-seinen-grundlegendsten-funktion-kann-python-wie-ein-taschenrechner-verwendet-werden-also-ganz-basal-fur-addition-multiplikation-subtraktion-und-division-aber-auch-weitaus-komplexere-berechnungen">In seinen grundlegendsten Funktion kann Python wie ein Taschenrechner verwendet werden - also ganz basal für Addition, Multiplikation, Subtraktion und Division, aber auch weitaus komplexere Berechnungen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-der-folgenden-zelle-findest-du-einige-bespiele-fur-solche-aufgaben-wobei-der-befehl-print-verwendet-wird-um-eine-ausgabe-erzeugen-zu-lassen">In der folgenden Zelle findest Du einige Bespiele für solche Aufgaben, wobei der Befehl <em>print(…)</em> verwendet wird, um eine Ausgabe erzeugen zu lassen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-das-symbol-verwenden-um-deinen-code-zu-kommentieren-d-h-dass-alles-hinter-dem-symbol-nicht-als-code-ausgefuhrt-wird-kommmentare-sind-sehr-hilfreich-um-dem-code-direkt-eine-erklarung-zum-besseren-verstandnis-hinzuzufugen">Du kannst das <em>#-Symbol</em> verwenden, um Deinen Code zu kommentieren, d.h. dass alles hinter dem <em>#-Symbol</em> nicht als Code ausgeführt wird. Kommmentare sind sehr hilfreich, um dem Code direkt eine Erklärung zum besseren Verständnis hinzuzufügen.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-python-arbeitet-man-sehr-haufig-mit-variablen-das-bedeutet-dass-du-bestimmte-werte-in-variablen-abspeichern-kannst-bzw-auch-mehrere-werte-in-einer-variable-das-ist-sehr-nutzlich-wenn-ein-wert-mehrfach-im-code-verwendet-werden-soll-eine-zuweisung-erfolgt-uber-den-operator-die-benennung-der-variablen-ist-beliebig-d-h-du-kannst-sie-benennen-wie-du-willst-es-empfiehlt-sich-jedoch-in-der-praxis-namen-zu-verwenden-die-die-variable-sinnvoll-mit-dem-wert-assoziieren-das-macht-den-code-fur-dich-und-andere-verstandlicher">In Python arbeitet man sehr häufig mit Variablen. Das bedeutet, dass Du bestimmte Werte in Variablen abspeichern kannst bzw. auch mehrere Werte in einer Variable. Das ist sehr nützlich, wenn ein Wert mehrfach im Code verwendet werden soll. Eine Zuweisung erfolgt über den <em>= - Operator</em>. Die Benennung der Variablen ist beliebig, d.h. Du kannst sie benennen, wie Du willst. Es empfiehlt sich jedoch in der Praxis, Namen zu verwenden, die die Variable sinnvoll mit dem Wert assoziieren. Das macht den Code für Dich und andere verständlicher.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweis-achte-darauf-bei-der-benennung-von-variablen-keine-bereits-verwendeten-namen-zu-verwenden-du-kennst-z-b-schon-die-print-funktion-wenn-du-eine-variable-print-nennst-wurde-das-die-funktion-uberschreiben-die-dann-nicht-mehr-ausgefuhrt-werden-konnte"><strong>HINWEIS</strong>: Achte darauf, bei der Benennung von Variablen, keine bereits verwendeten Namen zu verwenden. Du kennst z.B. schon die print(…)-Funktion. Wenn du eine Variable “print” nennst, würde das die Funktion überschreiben, die dann nicht mehr ausgeführt werden könnte.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-der-folgenden-zelle-siehst-du-wie-man-eine-variable-einem-wert-zuweist-und-diese-dann-uber-print-ausgeben-lassen-kann">In der folgenden Zelle siehst Du, wie man eine Variable einem Wert zuweist und diese dann über print(…) ausgeben lassen kann.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-dieselbe-variable-dann-mit-auch-wieder-uberschreiben-z-b-so">Du kannst dieselbe Variable dann mit <em>=</em> auch wieder überschreiben, z.B. so:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-variable-x-ist-somit-uberschrieben-und-nun-dem-wert-10-zugewiesen">Die Variable <em>x</em> ist somit überschrieben und nun dem Wert 10 zugewiesen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variablen-sind-also-schlicht-platzhalter-fur-objekte-in-diesem-fall-eine-ganze-zahl-integer-oder-int-wenn-wir-weitere-variablen-definieren-konnen-wir-mit-diesen-auch-berechnungen-anstellen">Variablen sind also schlicht Platzhalter für Objekte, in diesem Fall eine ganze Zahl (<em>Integer</em> oder <em>Int</em>). Wenn wir weitere Variablen definieren, können wir mit diesen auch Berechnungen anstellen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-wie-bereits-erwahnt-auch-mehrere-objekte-in-einer-variable-speichern-und-ausgeben-lassen-z-b-so">Du kannst, wie bereits erwähnt, auch mehrere Objekte in einer Variable speichern und ausgeben lassen, z.B. so:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-diesem-fall-sind-die-objekte-keine-ganzen-zahlen-integers-sondern-sogenannte-strings-ein-string-in-python-ist-einfach-ein-stuck-text-also-alles-was-aus-buchstaben-zahlen-oder-zeichen-besteht-und-in-anfuhrungszeichen-steht-doch-dazu-spater-mehr">In diesem Fall sind die Objekte keine ganzen Zahlen/Integers sondern sogenannte <em>Strings</em>. Ein <em>String</em> in Python ist einfach ein Stück Text – also alles, was aus Buchstaben, Zahlen oder Zeichen besteht <strong>und in Anführungszeichen</strong> steht. Doch dazu später mehr.</a></li>
 </ul>
             </nav>
         </div>
@@ -417,39 +420,89 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="arithmetik-und-variablen">
-<h1>1. Arithmetik und Variablen<a class="headerlink" href="#arithmetik-und-variablen" title="Link to this heading">#</a></h1>
-<section id="arithmetik">
-<h2>Arithmetik<a class="headerlink" href="#arithmetik" title="Link to this heading">#</a></h2>
-<section id="in-seinen-grundlegendsten-funktion-kann-python-wie-ein-taschenrechner-verwendet-werden-also-ganz-basal-fur-addition-multiplikation-subtraktion-und-division-aber-auch-weitaus-komplexere-berechnungen">
-<h3>In seinen grundlegendsten Funktion kann Python wie ein Taschenrechner verwendet werden - also ganz basal für Addition, Multiplikation, Subtraktion und Division, aber auch weitaus komplexere Berechnungen.<a class="headerlink" href="#in-seinen-grundlegendsten-funktion-kann-python-wie-ein-taschenrechner-verwendet-werden-also-ganz-basal-fur-addition-multiplikation-subtraktion-und-division-aber-auch-weitaus-komplexere-berechnungen" title="Link to this heading">#</a></h3>
+  <section id="variablen">
+<h1>Variablen<a class="headerlink" href="#variablen" title="Link to this heading">#</a></h1>
+<section id="in-python-arbeitet-man-sehr-haufig-mit-variablen-das-bedeutet-dass-du-bestimmte-werte-in-variablen-abspeichern-kannst-bzw-auch-mehrere-werte-in-einer-variable-das-ist-sehr-nutzlich-wenn-ein-wert-mehrfach-im-code-verwendet-werden-soll-eine-zuweisung-erfolgt-uber-den-operator-die-benennung-der-variablen-ist-beliebig-d-h-du-kannst-sie-benennen-wie-du-willst-es-empfiehlt-sich-jedoch-in-der-praxis-namen-zu-verwenden-die-die-variable-sinnvoll-mit-dem-wert-assoziieren-das-macht-den-code-fur-dich-und-andere-verstandlicher">
+<h2>In Python arbeitet man sehr häufig mit Variablen. Das bedeutet, dass Du bestimmte Werte in Variablen abspeichern kannst bzw. auch mehrere Werte in einer Variable. Das ist sehr nützlich, wenn ein Wert mehrfach im Code verwendet werden soll. Eine Zuweisung erfolgt über den <em>= - Operator</em>. Die Benennung der Variablen ist beliebig, d.h. Du kannst sie benennen, wie Du willst. Es empfiehlt sich jedoch in der Praxis, Namen zu verwenden, die die Variable sinnvoll mit dem Wert assoziieren. Das macht den Code für Dich und andere verständlicher.<a class="headerlink" href="#in-python-arbeitet-man-sehr-haufig-mit-variablen-das-bedeutet-dass-du-bestimmte-werte-in-variablen-abspeichern-kannst-bzw-auch-mehrere-werte-in-einer-variable-das-ist-sehr-nutzlich-wenn-ein-wert-mehrfach-im-code-verwendet-werden-soll-eine-zuweisung-erfolgt-uber-den-operator-die-benennung-der-variablen-ist-beliebig-d-h-du-kannst-sie-benennen-wie-du-willst-es-empfiehlt-sich-jedoch-in-der-praxis-namen-zu-verwenden-die-die-variable-sinnvoll-mit-dem-wert-assoziieren-das-macht-den-code-fur-dich-und-andere-verstandlicher" title="Link to this heading">#</a></h2>
 </section>
-<section id="in-der-folgenden-zelle-findest-du-einige-bespiele-fur-solche-aufgaben-wobei-der-befehl-print-verwendet-wird-um-eine-ausgabe-erzeugen-zu-lassen">
-<h3>In der folgenden Zelle findest Du einige Bespiele für solche Aufgaben, wobei der Befehl <em>print(…)</em> verwendet wird, um eine Ausgabe erzeugen zu lassen.<a class="headerlink" href="#in-der-folgenden-zelle-findest-du-einige-bespiele-fur-solche-aufgaben-wobei-der-befehl-print-verwendet-wird-um-eine-ausgabe-erzeugen-zu-lassen" title="Link to this heading">#</a></h3>
+<section id="hinweis-achte-darauf-bei-der-benennung-von-variablen-keine-bereits-verwendeten-namen-zu-verwenden-du-kennst-z-b-schon-die-print-funktion-wenn-du-eine-variable-print-nennst-wurde-das-die-funktion-uberschreiben-die-dann-nicht-mehr-ausgefuhrt-werden-konnte">
+<h2><strong>HINWEIS</strong>: Achte darauf, bei der Benennung von Variablen, keine bereits verwendeten Namen zu verwenden. Du kennst z.B. schon die print(…)-Funktion. Wenn du eine Variable “print” nennst, würde das die Funktion überschreiben, die dann nicht mehr ausgeführt werden könnte.<a class="headerlink" href="#hinweis-achte-darauf-bei-der-benennung-von-variablen-keine-bereits-verwendeten-namen-zu-verwenden-du-kennst-z-b-schon-die-print-funktion-wenn-du-eine-variable-print-nennst-wurde-das-die-funktion-uberschreiben-die-dann-nicht-mehr-ausgefuhrt-werden-konnte" title="Link to this heading">#</a></h2>
+</section>
+<section id="in-der-folgenden-zelle-siehst-du-wie-man-eine-variable-einem-wert-zuweist-und-diese-dann-uber-print-ausgeben-lassen-kann">
+<h2>In der folgenden Zelle siehst Du, wie man eine Variable einem Wert zuweist und diese dann über print(…) ausgeben lassen kann.<a class="headerlink" href="#in-der-folgenden-zelle-siehst-du-wie-man-eine-variable-einem-wert-zuweist-und-diese-dann-uber-print-ausgeben-lassen-kann" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#Addition</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#Subtraktion</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">24</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#Division</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">#Multiplikation</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#Potenzierung</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-3
-8.0
-10
-27
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="du-kannst-das-symbol-verwenden-um-deinen-code-zu-kommentieren-d-h-dass-alles-hinter-dem-symbol-nicht-als-code-ausgefuhrt-wird-kommmentare-sind-sehr-hilfreich-um-dem-code-direkt-eine-erklarung-zum-besseren-verstandnis-hinzuzufugen">
-<h3>Du kannst das <em>#-Symbol</em> verwenden, um Deinen Code zu kommentieren, d.h. dass alles hinter dem <em>#-Symbol</em> nicht als Code ausgeführt wird. Kommmentare sind sehr hilfreich, um dem Code direkt eine Erklärung zum besseren Verständnis hinzuzufügen.<a class="headerlink" href="#du-kannst-das-symbol-verwenden-um-deinen-code-zu-kommentieren-d-h-dass-alles-hinter-dem-symbol-nicht-als-code-ausgefuhrt-wird-kommmentare-sind-sehr-hilfreich-um-dem-code-direkt-eine-erklarung-zum-besseren-verstandnis-hinzuzufugen" title="Link to this heading">#</a></h3>
+<section id="du-kannst-dieselbe-variable-dann-mit-auch-wieder-uberschreiben-z-b-so">
+<h2>Du kannst dieselbe Variable dann mit <em>=</em> auch wieder überschreiben, z.B. so:<a class="headerlink" href="#du-kannst-dieselbe-variable-dann-mit-auch-wieder-uberschreiben-z-b-so" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+10
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+<section id="die-variable-x-ist-somit-uberschrieben-und-nun-dem-wert-10-zugewiesen">
+<h2>Die Variable <em>x</em> ist somit überschrieben und nun dem Wert 10 zugewiesen.<a class="headerlink" href="#die-variable-x-ist-somit-uberschrieben-und-nun-dem-wert-10-zugewiesen" title="Link to this heading">#</a></h2>
+</section>
+<section id="variablen-sind-also-schlicht-platzhalter-fur-objekte-in-diesem-fall-eine-ganze-zahl-integer-oder-int-wenn-wir-weitere-variablen-definieren-konnen-wir-mit-diesen-auch-berechnungen-anstellen">
+<h2>Variablen sind also schlicht Platzhalter für Objekte, in diesem Fall eine ganze Zahl (<em>Integer</em> oder <em>Int</em>). Wenn wir weitere Variablen definieren, können wir mit diesen auch Berechnungen anstellen:<a class="headerlink" href="#variablen-sind-also-schlicht-platzhalter-fur-objekte-in-diesem-fall-eine-ganze-zahl-integer-oder-int-wenn-wir-weitere-variablen-definieren-konnen-wir-mit-diesen-auch-berechnungen-anstellen" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">#Überschreibt die Variable x wieder</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="du-kannst-wie-bereits-erwahnt-auch-mehrere-objekte-in-einer-variable-speichern-und-ausgeben-lassen-z-b-so">
+<h2>Du kannst, wie bereits erwähnt, auch mehrere Objekte in einer Variable speichern und ausgeben lassen, z.B. so:<a class="headerlink" href="#du-kannst-wie-bereits-erwahnt-auch-mehrere-objekte-in-einer-variable-speichern-und-ausgeben-lassen-z-b-so" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g7_countries</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;Italy&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;UK&quot;</span><span class="p">,</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">,</span> <span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g7_countries</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Germany&#39;, &#39;Italy&#39;, &#39;France&#39;, &#39;UK&#39;, &#39;USA&#39;, &#39;Canada&#39;, &#39;Japan&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="in-diesem-fall-sind-die-objekte-keine-ganzen-zahlen-integers-sondern-sogenannte-strings-ein-string-in-python-ist-einfach-ein-stuck-text-also-alles-was-aus-buchstaben-zahlen-oder-zeichen-besteht-und-in-anfuhrungszeichen-steht-doch-dazu-spater-mehr">
+<h2>In diesem Fall sind die Objekte keine ganzen Zahlen/Integers sondern sogenannte <em>Strings</em>. Ein <em>String</em> in Python ist einfach ein Stück Text – also alles, was aus Buchstaben, Zahlen oder Zeichen besteht <strong>und in Anführungszeichen</strong> steht. Doch dazu später mehr.<a class="headerlink" href="#in-diesem-fall-sind-die-objekte-keine-ganzen-zahlen-integers-sondern-sogenannte-strings-ein-string-in-python-ist-einfach-ein-stuck-text-also-alles-was-aus-buchstaben-zahlen-oder-zeichen-besteht-und-in-anfuhrungszeichen-steht-doch-dazu-spater-mehr" title="Link to this heading">#</a></h2>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -491,7 +544,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1. Arithmetik und Variablen</p>
+        <p class="prev-next-title">Arithmetik</p>
       </div>
     </a>
     <a class="right-next"
@@ -519,12 +572,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetik">Arithmetik</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-seinen-grundlegendsten-funktion-kann-python-wie-ein-taschenrechner-verwendet-werden-also-ganz-basal-fur-addition-multiplikation-subtraktion-und-division-aber-auch-weitaus-komplexere-berechnungen">In seinen grundlegendsten Funktion kann Python wie ein Taschenrechner verwendet werden - also ganz basal für Addition, Multiplikation, Subtraktion und Division, aber auch weitaus komplexere Berechnungen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-der-folgenden-zelle-findest-du-einige-bespiele-fur-solche-aufgaben-wobei-der-befehl-print-verwendet-wird-um-eine-ausgabe-erzeugen-zu-lassen">In der folgenden Zelle findest Du einige Bespiele für solche Aufgaben, wobei der Befehl <em>print(…)</em> verwendet wird, um eine Ausgabe erzeugen zu lassen.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-das-symbol-verwenden-um-deinen-code-zu-kommentieren-d-h-dass-alles-hinter-dem-symbol-nicht-als-code-ausgefuhrt-wird-kommmentare-sind-sehr-hilfreich-um-dem-code-direkt-eine-erklarung-zum-besseren-verstandnis-hinzuzufugen">Du kannst das <em>#-Symbol</em> verwenden, um Deinen Code zu kommentieren, d.h. dass alles hinter dem <em>#-Symbol</em> nicht als Code ausgeführt wird. Kommmentare sind sehr hilfreich, um dem Code direkt eine Erklärung zum besseren Verständnis hinzuzufügen.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-python-arbeitet-man-sehr-haufig-mit-variablen-das-bedeutet-dass-du-bestimmte-werte-in-variablen-abspeichern-kannst-bzw-auch-mehrere-werte-in-einer-variable-das-ist-sehr-nutzlich-wenn-ein-wert-mehrfach-im-code-verwendet-werden-soll-eine-zuweisung-erfolgt-uber-den-operator-die-benennung-der-variablen-ist-beliebig-d-h-du-kannst-sie-benennen-wie-du-willst-es-empfiehlt-sich-jedoch-in-der-praxis-namen-zu-verwenden-die-die-variable-sinnvoll-mit-dem-wert-assoziieren-das-macht-den-code-fur-dich-und-andere-verstandlicher">In Python arbeitet man sehr häufig mit Variablen. Das bedeutet, dass Du bestimmte Werte in Variablen abspeichern kannst bzw. auch mehrere Werte in einer Variable. Das ist sehr nützlich, wenn ein Wert mehrfach im Code verwendet werden soll. Eine Zuweisung erfolgt über den <em>= - Operator</em>. Die Benennung der Variablen ist beliebig, d.h. Du kannst sie benennen, wie Du willst. Es empfiehlt sich jedoch in der Praxis, Namen zu verwenden, die die Variable sinnvoll mit dem Wert assoziieren. Das macht den Code für Dich und andere verständlicher.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hinweis-achte-darauf-bei-der-benennung-von-variablen-keine-bereits-verwendeten-namen-zu-verwenden-du-kennst-z-b-schon-die-print-funktion-wenn-du-eine-variable-print-nennst-wurde-das-die-funktion-uberschreiben-die-dann-nicht-mehr-ausgefuhrt-werden-konnte"><strong>HINWEIS</strong>: Achte darauf, bei der Benennung von Variablen, keine bereits verwendeten Namen zu verwenden. Du kennst z.B. schon die print(…)-Funktion. Wenn du eine Variable “print” nennst, würde das die Funktion überschreiben, die dann nicht mehr ausgeführt werden könnte.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-der-folgenden-zelle-siehst-du-wie-man-eine-variable-einem-wert-zuweist-und-diese-dann-uber-print-ausgeben-lassen-kann">In der folgenden Zelle siehst Du, wie man eine Variable einem Wert zuweist und diese dann über print(…) ausgeben lassen kann.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-dieselbe-variable-dann-mit-auch-wieder-uberschreiben-z-b-so">Du kannst dieselbe Variable dann mit <em>=</em> auch wieder überschreiben, z.B. so:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-variable-x-ist-somit-uberschrieben-und-nun-dem-wert-10-zugewiesen">Die Variable <em>x</em> ist somit überschrieben und nun dem Wert 10 zugewiesen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variablen-sind-also-schlicht-platzhalter-fur-objekte-in-diesem-fall-eine-ganze-zahl-integer-oder-int-wenn-wir-weitere-variablen-definieren-konnen-wir-mit-diesen-auch-berechnungen-anstellen">Variablen sind also schlicht Platzhalter für Objekte, in diesem Fall eine ganze Zahl (<em>Integer</em> oder <em>Int</em>). Wenn wir weitere Variablen definieren, können wir mit diesen auch Berechnungen anstellen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#du-kannst-wie-bereits-erwahnt-auch-mehrere-objekte-in-einer-variable-speichern-und-ausgeben-lassen-z-b-so">Du kannst, wie bereits erwähnt, auch mehrere Objekte in einer Variable speichern und ausgeben lassen, z.B. so:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-diesem-fall-sind-die-objekte-keine-ganzen-zahlen-integers-sondern-sogenannte-strings-ein-string-in-python-ist-einfach-ein-stuck-text-also-alles-was-aus-buchstaben-zahlen-oder-zeichen-besteht-und-in-anfuhrungszeichen-steht-doch-dazu-spater-mehr">In diesem Fall sind die Objekte keine ganzen Zahlen/Integers sondern sogenannte <em>Strings</em>. Ein <em>String</em> in Python ist einfach ein Stück Text – also alles, was aus Buchstaben, Zahlen oder Zeichen besteht <strong>und in Anführungszeichen</strong> steht. Doch dazu später mehr.</a></li>
 </ul>
   </nav></div>
 

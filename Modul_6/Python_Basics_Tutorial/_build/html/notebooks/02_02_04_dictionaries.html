@@ -175,8 +175,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="01_1_arithmetik_und_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">1. Arithmetik und Variablen</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">Arithmetik</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="01_02_01_uebung_1.html">Übung 1</a></li>
 </ul>
 </details></li>
@@ -184,9 +184,9 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="02_2_datentypen.html">2. Datentypen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_01_variablentypen_datentypen.html">Variablentypen / Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">numerische Datentypen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html">Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html">Booleans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">Numerische Datentypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html"><strong>Strings</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html"><strong>Booleans</strong></a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="02_02_collections_fuer_variablen.html">Collections für Variablen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -194,6 +194,7 @@
 <li class="toctree-l3"><a class="reference internal" href="02_02_02_tupel.html">Tupel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_03_sets.html">Sets</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Dictionaries</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -377,7 +378,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -393,6 +396,26 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Dictionaries</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#im-prinzip-sind-dictionaries-eine-erweiterte-version-von-listen-und-sets-listen-enthalten-nur-werte-wahrend-dictionaries-aus-schlussel-wert-paaren-bestehen-die-aber-im-gegensatz-zu-den-werten-einer-liste-ungeordnet-sind-dictionaries-werden-in-eingeschlossen-und-die-schlussel-wert-paare-mit-kommata-getrennt-d-h-dass-du-jedem-objekt-eine-eindeutige-kennung-zuordnung-geben-kannst-der-zugriff-auf-einzelne-objekte-erfolgt-dann-uber-den-schlussel-nicht-uber-den-index-das-konnen-wir-uns-anhand-der-listen-die-wir-oben-schon-erstellt-haben-ganz-leicht-veranschaulichen">Im Prinzip sind Dictionaries eine erweiterte Version von Listen und Sets. Listen enthalten nur Werte, während Dictionaries aus <em>Schlüssel-Wert-Paaren</em> bestehen, die aber - im Gegensatz zu den Werten einer Liste - ungeordnet sind. Dictionaries werden in {…} eingeschlossen und die <em>Schlüssel-Wert-Paare</em> mit Kommata getrennt. D.h., dass du jedem Objekt eine eindeutige Kennung/Zuordnung geben kannst. Der Zugriff auf einzelne Objekte erfolgt dann über den <em>Schlüssel</em>, nicht über den <em>Index</em>. Das können wir uns anhand der Listen, die wir oben schon erstellt haben ganz leicht veranschaulichen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-diesem-dictionary-sind-die-namen-in-die-schlussel-und-die-dazugehorigen-alter-die-werte-uber-die-print-funktion-kann-man-sich-dann-mit-angabe-des-dictionaries-und-des-schlussels-in-den-zugehorigen-wert-ausgeben-lassen">In diesem Dictionary sind die Namen in “…” die <em>Schlüssel</em> und die dazugehörigen Alter die <em>Werte</em>. Über die print(…)-Funktion kann man sich dann mit Angabe des Dictionaries und des Schlüssels in […] den zugehörigen Wert ausgeben lassen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries-sind-sehr-flexibel-objekte-konnen-hinzugefugt-verandert-oder-entfernt-werden-mit-dem-zuweisungsoperator-s-u-konnen-weitere-werte-hinzugefugt-mit-der-funktion-pop-entfernt-werden">Dictionaries sind sehr flexibel. Objekte können hinzugefügt, verändert oder entfernt werden. Mit dem Zuweisungsoperator (s.u.) können weitere Werte hinzugefügt, mit der Funktion pop(…) entfernt werden.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-der-funktion-keys-kannst-du-dir-alle-schlussel-oder-mit-values-alle-werte-eines-dictionaries-separat-voneinander-ausgeben-lassen">Mit der Funktion keys(…) kannst du dir alle Schlüssel oder mit values(…) alle Werte eines Dictionaries separat voneinander ausgeben lassen:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ubung-3-dictionaries"><strong>Übung 3 (Dictionaries)</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-nachste-ubung-ist-etwas-schwieriger-und-bedarf-einer-kombination-von-code-aus-dem-bisher-gelernten-aber-mit-etwas-geschick-konnt-ihr-den-code-knacken">Die nächste Übung ist etwas schwieriger und bedarf einer Kombination von Code aus dem bisher gelernten. Aber mit etwas Geschick könnt Ihr den Code knacken:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellt-ein-dictionary-aus-den-namen-peter-aylin-und-sebastian-und-gebt-als-wert-jeweils-ein-beliebiges-alter-an-fuge-dann-ezra-mit-dem-gleichen-alter-wie-aylin-hinzu-wandle-dann-die-werte-des-dictionaries-in-eine-liste-mit-eindeutigen-werten-um-lass-dir-dann-die-liste-ausgeben">Erstellt ein Dictionary aus den Namen “Peter”, “Aylin” und “Sebastian” und gebt als Wert jeweils ein beliebiges Alter an. Füge dann “Ezra” mit dem gleichen Alter wie “Aylin” hinzu. Wandle dann die <strong>Werte</strong> des Dictionaries in eine Liste mit eindeutigen Werten um. Lass Dir dann die Liste ausgeben.</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -404,9 +427,107 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dictionaries">
 <h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p>Inhalt nicht automatisch gefunden – bitte ergänzen.</p>
-</div></blockquote>
+<section id="im-prinzip-sind-dictionaries-eine-erweiterte-version-von-listen-und-sets-listen-enthalten-nur-werte-wahrend-dictionaries-aus-schlussel-wert-paaren-bestehen-die-aber-im-gegensatz-zu-den-werten-einer-liste-ungeordnet-sind-dictionaries-werden-in-eingeschlossen-und-die-schlussel-wert-paare-mit-kommata-getrennt-d-h-dass-du-jedem-objekt-eine-eindeutige-kennung-zuordnung-geben-kannst-der-zugriff-auf-einzelne-objekte-erfolgt-dann-uber-den-schlussel-nicht-uber-den-index-das-konnen-wir-uns-anhand-der-listen-die-wir-oben-schon-erstellt-haben-ganz-leicht-veranschaulichen">
+<h2>Im Prinzip sind Dictionaries eine erweiterte Version von Listen und Sets. Listen enthalten nur Werte, während Dictionaries aus <em>Schlüssel-Wert-Paaren</em> bestehen, die aber - im Gegensatz zu den Werten einer Liste - ungeordnet sind. Dictionaries werden in {…} eingeschlossen und die <em>Schlüssel-Wert-Paare</em> mit Kommata getrennt. D.h., dass du jedem Objekt eine eindeutige Kennung/Zuordnung geben kannst. Der Zugriff auf einzelne Objekte erfolgt dann über den <em>Schlüssel</em>, nicht über den <em>Index</em>. Das können wir uns anhand der Listen, die wir oben schon erstellt haben ganz leicht veranschaulichen:<a class="headerlink" href="#im-prinzip-sind-dictionaries-eine-erweiterte-version-von-listen-und-sets-listen-enthalten-nur-werte-wahrend-dictionaries-aus-schlussel-wert-paaren-bestehen-die-aber-im-gegensatz-zu-den-werten-einer-liste-ungeordnet-sind-dictionaries-werden-in-eingeschlossen-und-die-schlussel-wert-paare-mit-kommata-getrennt-d-h-dass-du-jedem-objekt-eine-eindeutige-kennung-zuordnung-geben-kannst-der-zugriff-auf-einzelne-objekte-erfolgt-dann-uber-den-schlussel-nicht-uber-den-index-das-konnen-wir-uns-anhand-der-listen-die-wir-oben-schon-erstellt-haben-ganz-leicht-veranschaulichen" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#die Listen von oben:</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span> <span class="s2">&quot;Giselle&quot;</span><span class="p">,</span> <span class="s2">&quot;Can&quot;</span><span class="p">,</span> <span class="s2">&quot;Amber&quot;</span><span class="p">,</span> <span class="s2">&quot;Friedrich&quot;</span><span class="p">]</span> 
+<span class="n">age</span> <span class="o">=</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span>
+
+<span class="c1">#Ein Dictionary sähe so aus:</span>
+<span class="n">dict_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alex&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Giselle&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;Can&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;Amber&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;Friedrich&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="p">[</span><span class="s2">&quot;Can&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="in-diesem-dictionary-sind-die-namen-in-die-schlussel-und-die-dazugehorigen-alter-die-werte-uber-die-print-funktion-kann-man-sich-dann-mit-angabe-des-dictionaries-und-des-schlussels-in-den-zugehorigen-wert-ausgeben-lassen">
+<h2>In diesem Dictionary sind die Namen in “…” die <em>Schlüssel</em> und die dazugehörigen Alter die <em>Werte</em>. Über die print(…)-Funktion kann man sich dann mit Angabe des Dictionaries und des Schlüssels in […] den zugehörigen Wert ausgeben lassen.<a class="headerlink" href="#in-diesem-dictionary-sind-die-namen-in-die-schlussel-und-die-dazugehorigen-alter-die-werte-uber-die-print-funktion-kann-man-sich-dann-mit-angabe-des-dictionaries-und-des-schlussels-in-den-zugehorigen-wert-ausgeben-lassen" title="Link to this heading">#</a></h2>
+</section>
+<section id="dictionaries-sind-sehr-flexibel-objekte-konnen-hinzugefugt-verandert-oder-entfernt-werden-mit-dem-zuweisungsoperator-s-u-konnen-weitere-werte-hinzugefugt-mit-der-funktion-pop-entfernt-werden">
+<h2>Dictionaries sind sehr flexibel. Objekte können hinzugefügt, verändert oder entfernt werden. Mit dem Zuweisungsoperator (s.u.) können weitere Werte hinzugefügt, mit der Funktion pop(…) entfernt werden.<a class="headerlink" href="#dictionaries-sind-sehr-flexibel-objekte-konnen-hinzugefugt-verandert-oder-entfernt-werden-mit-dem-zuweisungsoperator-s-u-konnen-weitere-werte-hinzugefugt-mit-der-funktion-pop-entfernt-werden" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Unser Dictionary:</span>
+<span class="n">dict_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alex&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Giselle&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;Can&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;Amber&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;Friedrich&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">}</span>
+
+<span class="c1">#Hinzufügen eines Schlüssel-Wert-Paares</span>
+<span class="n">dict_1</span><span class="p">[</span><span class="s2">&quot;Florian&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">27</span>
+
+<span class="c1">#Entfernen eines Schlüssel-Wert-Paares</span>
+<span class="n">dict_1</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;Alex&quot;</span><span class="p">)</span>
+
+<span class="c1">#Ändern eines Schlüssel-Wert-Paares</span>
+<span class="n">dict_1</span><span class="p">[</span><span class="s2">&quot;Can&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Giselle&#39;: 23, &#39;Can&#39;: 25, &#39;Amber&#39;: 21, &#39;Friedrich&#39;: 29, &#39;Florian&#39;: 27}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mit-der-funktion-keys-kannst-du-dir-alle-schlussel-oder-mit-values-alle-werte-eines-dictionaries-separat-voneinander-ausgeben-lassen">
+<h2>Mit der Funktion keys(…) kannst du dir alle Schlüssel oder mit values(…) alle Werte eines Dictionaries separat voneinander ausgeben lassen:<a class="headerlink" href="#mit-der-funktion-keys-kannst-du-dir-alle-schlussel-oder-mit-values-alle-werte-eines-dictionaries-separat-voneinander-ausgeben-lassen" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Unser Dictionary</span>
+<span class="n">dict_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alex&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Giselle&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;Can&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;Amber&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;Friedrich&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_1</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Alex&#39;, &#39;Giselle&#39;, &#39;Can&#39;, &#39;Amber&#39;, &#39;Friedrich&#39;])
+dict_values([25, 23, 26, 21, 29])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ubung-3-dictionaries">
+<h1><strong>Übung 3 (Dictionaries)</strong><a class="headerlink" href="#ubung-3-dictionaries" title="Link to this heading">#</a></h1>
+<section id="die-nachste-ubung-ist-etwas-schwieriger-und-bedarf-einer-kombination-von-code-aus-dem-bisher-gelernten-aber-mit-etwas-geschick-konnt-ihr-den-code-knacken">
+<h2>Die nächste Übung ist etwas schwieriger und bedarf einer Kombination von Code aus dem bisher gelernten. Aber mit etwas Geschick könnt Ihr den Code knacken:<a class="headerlink" href="#die-nachste-ubung-ist-etwas-schwieriger-und-bedarf-einer-kombination-von-code-aus-dem-bisher-gelernten-aber-mit-etwas-geschick-konnt-ihr-den-code-knacken" title="Link to this heading">#</a></h2>
+</section>
+<section id="erstellt-ein-dictionary-aus-den-namen-peter-aylin-und-sebastian-und-gebt-als-wert-jeweils-ein-beliebiges-alter-an-fuge-dann-ezra-mit-dem-gleichen-alter-wie-aylin-hinzu-wandle-dann-die-werte-des-dictionaries-in-eine-liste-mit-eindeutigen-werten-um-lass-dir-dann-die-liste-ausgeben">
+<h2>Erstellt ein Dictionary aus den Namen “Peter”, “Aylin” und “Sebastian” und gebt als Wert jeweils ein beliebiges Alter an. Füge dann “Ezra” mit dem gleichen Alter wie “Aylin” hinzu. Wandle dann die <strong>Werte</strong> des Dictionaries in eine Liste mit eindeutigen Werten um. Lass Dir dann die Liste ausgeben.<a class="headerlink" href="#erstellt-ein-dictionary-aus-den-namen-peter-aylin-und-sebastian-und-gebt-als-wert-jeweils-ein-beliebiges-alter-an-fuge-dann-ezra-mit-dem-gleichen-alter-wie-aylin-hinzu-wandle-dann-die-werte-des-dictionaries-in-eine-liste-mit-eindeutigen-werten-um-lass-dir-dann-die-liste-ausgeben" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Schreibe hier deine Lösung.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Beispiel‑Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># dict_2 = {&quot;Peter&quot;: 43, &quot;Aylin&quot;: 21, &quot;Sebastian&quot;: 36}</span>
+<span class="c1"># dict_2[&quot;Ezra&quot;] = 21</span>
+<span class="c1"># werte = dict_2.values</span>
+<span class="c1"># werte_eindeutig = set(werte) #die Umwandlung in ein Set ist nötig um den doppelten Wert 21 zu entfernen</span>
+<span class="c1"># liste_eindeutig = list(werte_eindeutig)</span>
+<span class="c1"># liste_eindeutig</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -463,6 +584,33 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Dictionaries</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#im-prinzip-sind-dictionaries-eine-erweiterte-version-von-listen-und-sets-listen-enthalten-nur-werte-wahrend-dictionaries-aus-schlussel-wert-paaren-bestehen-die-aber-im-gegensatz-zu-den-werten-einer-liste-ungeordnet-sind-dictionaries-werden-in-eingeschlossen-und-die-schlussel-wert-paare-mit-kommata-getrennt-d-h-dass-du-jedem-objekt-eine-eindeutige-kennung-zuordnung-geben-kannst-der-zugriff-auf-einzelne-objekte-erfolgt-dann-uber-den-schlussel-nicht-uber-den-index-das-konnen-wir-uns-anhand-der-listen-die-wir-oben-schon-erstellt-haben-ganz-leicht-veranschaulichen">Im Prinzip sind Dictionaries eine erweiterte Version von Listen und Sets. Listen enthalten nur Werte, während Dictionaries aus <em>Schlüssel-Wert-Paaren</em> bestehen, die aber - im Gegensatz zu den Werten einer Liste - ungeordnet sind. Dictionaries werden in {…} eingeschlossen und die <em>Schlüssel-Wert-Paare</em> mit Kommata getrennt. D.h., dass du jedem Objekt eine eindeutige Kennung/Zuordnung geben kannst. Der Zugriff auf einzelne Objekte erfolgt dann über den <em>Schlüssel</em>, nicht über den <em>Index</em>. Das können wir uns anhand der Listen, die wir oben schon erstellt haben ganz leicht veranschaulichen:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-diesem-dictionary-sind-die-namen-in-die-schlussel-und-die-dazugehorigen-alter-die-werte-uber-die-print-funktion-kann-man-sich-dann-mit-angabe-des-dictionaries-und-des-schlussels-in-den-zugehorigen-wert-ausgeben-lassen">In diesem Dictionary sind die Namen in “…” die <em>Schlüssel</em> und die dazugehörigen Alter die <em>Werte</em>. Über die print(…)-Funktion kann man sich dann mit Angabe des Dictionaries und des Schlüssels in […] den zugehörigen Wert ausgeben lassen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries-sind-sehr-flexibel-objekte-konnen-hinzugefugt-verandert-oder-entfernt-werden-mit-dem-zuweisungsoperator-s-u-konnen-weitere-werte-hinzugefugt-mit-der-funktion-pop-entfernt-werden">Dictionaries sind sehr flexibel. Objekte können hinzugefügt, verändert oder entfernt werden. Mit dem Zuweisungsoperator (s.u.) können weitere Werte hinzugefügt, mit der Funktion pop(…) entfernt werden.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-der-funktion-keys-kannst-du-dir-alle-schlussel-oder-mit-values-alle-werte-eines-dictionaries-separat-voneinander-ausgeben-lassen">Mit der Funktion keys(…) kannst du dir alle Schlüssel oder mit values(…) alle Werte eines Dictionaries separat voneinander ausgeben lassen:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ubung-3-dictionaries"><strong>Übung 3 (Dictionaries)</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-nachste-ubung-ist-etwas-schwieriger-und-bedarf-einer-kombination-von-code-aus-dem-bisher-gelernten-aber-mit-etwas-geschick-konnt-ihr-den-code-knacken">Die nächste Übung ist etwas schwieriger und bedarf einer Kombination von Code aus dem bisher gelernten. Aber mit etwas Geschick könnt Ihr den Code knacken:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erstellt-ein-dictionary-aus-den-namen-peter-aylin-und-sebastian-und-gebt-als-wert-jeweils-ein-beliebiges-alter-an-fuge-dann-ezra-mit-dem-gleichen-alter-wie-aylin-hinzu-wandle-dann-die-werte-des-dictionaries-in-eine-liste-mit-eindeutigen-werten-um-lass-dir-dann-die-liste-ausgeben">Erstellt ein Dictionary aus den Namen “Peter”, “Aylin” und “Sebastian” und gebt als Wert jeweils ein beliebiges Alter an. Füge dann “Ezra” mit dem gleichen Alter wie “Aylin” hinzu. Wandle dann die <strong>Werte</strong> des Dictionaries in eine Liste mit eindeutigen Werten um. Lass Dir dann die Liste ausgeben.</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

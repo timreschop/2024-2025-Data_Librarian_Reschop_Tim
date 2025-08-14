@@ -175,8 +175,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="01_1_arithmetik_und_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">1. Arithmetik und Variablen</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">Arithmetik</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="01_02_01_uebung_1.html">Übung 1</a></li>
 </ul>
 </details></li>
@@ -184,9 +184,9 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="02_2_datentypen.html">2. Datentypen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_01_variablentypen_datentypen.html">Variablentypen / Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">numerische Datentypen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html">Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html">Booleans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">Numerische Datentypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html"><strong>Strings</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html"><strong>Booleans</strong></a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="02_02_collections_fuer_variablen.html">Collections für Variablen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -194,6 +194,7 @@
 <li class="toctree-l3"><a class="reference internal" href="02_02_02_tupel.html">Tupel</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Sets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_04_dictionaries.html">Dictionaries</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -400,10 +401,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings"><strong>Strings</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier"><em>Strings</em> sind Zeichenfolgen (Buchstaben, Symbole, aber auch Zahlen usw.). <em>Strings</em> werden erstellt, indem man die Zeichenfolge in einfache oder doppelte Anführungszeichen einschließt, so wie hier:</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-sind-ungeordnet-und-auszerdem-nicht-indizierbar-d-h-du-kannst-uber-den-index-nicht-auf-einzelne-objekte-des-sets-zugreifen-auszerdem-ist-jedes-objekt-in-einem-set-einzigartig-sodass-doppelte-werte-automatisch-entfernt-werden"><em>Sets</em> sind “ungeordnet” und außerdem nicht indizierbar, d.h. Du kannst über den <em>Index</em> nicht auf einzelne Objekte des Sets zugreifen. Außerdem ist jedes Objekt in einem <em>Set</em> einzigartig, sodass doppelte Werte automatisch entfernt werden.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-werden-mit-geschweiften-klammern-und-kommata-erzeugt"><em>Sets</em> werden mit geschweiften Klammern und Kommata erzeugt:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-sind-z-b-sehr-nutzlich-wenn-man-duplikate-aus-listen-entfernen-mochte">Sets sind z.B. sehr nützlich, wenn man Duplikate aus Listen entfernen möchte:</a></li>
 </ul>
             </nav>
         </div>
@@ -417,28 +417,44 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sets">
 <h1>Sets<a class="headerlink" href="#sets" title="Link to this heading">#</a></h1>
-<section id="strings">
-<h2><strong>Strings</strong><a class="headerlink" href="#strings" title="Link to this heading">#</a></h2>
-<section id="strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier">
-<h3><em>Strings</em> sind Zeichenfolgen (Buchstaben, Symbole, aber auch Zahlen usw.). <em>Strings</em> werden erstellt, indem man die Zeichenfolge in einfache oder doppelte Anführungszeichen einschließt, so wie hier:<a class="headerlink" href="#strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier" title="Link to this heading">#</a></h3>
+<section id="sets-sind-ungeordnet-und-auszerdem-nicht-indizierbar-d-h-du-kannst-uber-den-index-nicht-auf-einzelne-objekte-des-sets-zugreifen-auszerdem-ist-jedes-objekt-in-einem-set-einzigartig-sodass-doppelte-werte-automatisch-entfernt-werden">
+<h2><em>Sets</em> sind “ungeordnet” und außerdem nicht indizierbar, d.h. Du kannst über den <em>Index</em> nicht auf einzelne Objekte des Sets zugreifen. Außerdem ist jedes Objekt in einem <em>Set</em> einzigartig, sodass doppelte Werte automatisch entfernt werden.<a class="headerlink" href="#sets-sind-ungeordnet-und-auszerdem-nicht-indizierbar-d-h-du-kannst-uber-den-index-nicht-auf-einzelne-objekte-des-sets-zugreifen-auszerdem-ist-jedes-objekt-in-einem-set-einzigartig-sodass-doppelte-werte-automatisch-entfernt-werden" title="Link to this heading">#</a></h2>
+</section>
+<section id="sets-werden-mit-geschweiften-klammern-und-kommata-erzeugt">
+<h2><em>Sets</em> werden mit geschweiften Klammern und Kommata erzeugt:<a class="headerlink" href="#sets-werden-mit-geschweiften-klammern-und-kommata-erzeugt" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;Hello, World!&#39;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set_1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span> <span class="c1">#Man achte auf die doppelte 3!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set_1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World! &lt;class &#39;str&#39;&gt;
-Hello, World! &lt;class &#39;str&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5}
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<section id="sets-sind-z-b-sehr-nutzlich-wenn-man-duplikate-aus-listen-entfernen-mochte">
+<h2>Sets sind z.B. sehr nützlich, wenn man Duplikate aus Listen entfernen möchte:<a class="headerlink" href="#sets-sind-z-b-sehr-nutzlich-wenn-man-duplikate-aus-listen-entfernen-mochte" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">list_1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">list_1</span><span class="p">)</span> <span class="c1">#Wandelt die Liste in ein Set um, wodurch doppelte Werte entfernt werden.</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">list_1</span><span class="p">))</span>
+<span class="n">list_1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">list_1</span><span class="p">)</span> <span class="c1">#Wandelt das Set wieder in eine Liste um, die jetzt keine Duplikate mehr enthält.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_1</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">list_1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;set&#39;&gt;
+[1, 2, 3, 4, 5] &lt;class &#39;list&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -506,10 +522,9 @@ Hello, World! &lt;class &#39;str&#39;&gt;
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings"><strong>Strings</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-sind-zeichenfolgen-buchstaben-symbole-aber-auch-zahlen-usw-strings-werden-erstellt-indem-man-die-zeichenfolge-in-einfache-oder-doppelte-anfuhrungszeichen-einschlieszt-so-wie-hier"><em>Strings</em> sind Zeichenfolgen (Buchstaben, Symbole, aber auch Zahlen usw.). <em>Strings</em> werden erstellt, indem man die Zeichenfolge in einfache oder doppelte Anführungszeichen einschließt, so wie hier:</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-sind-ungeordnet-und-auszerdem-nicht-indizierbar-d-h-du-kannst-uber-den-index-nicht-auf-einzelne-objekte-des-sets-zugreifen-auszerdem-ist-jedes-objekt-in-einem-set-einzigartig-sodass-doppelte-werte-automatisch-entfernt-werden"><em>Sets</em> sind “ungeordnet” und außerdem nicht indizierbar, d.h. Du kannst über den <em>Index</em> nicht auf einzelne Objekte des Sets zugreifen. Außerdem ist jedes Objekt in einem <em>Set</em> einzigartig, sodass doppelte Werte automatisch entfernt werden.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-werden-mit-geschweiften-klammern-und-kommata-erzeugt"><em>Sets</em> werden mit geschweiften Klammern und Kommata erzeugt:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets-sind-z-b-sehr-nutzlich-wenn-man-duplikate-aus-listen-entfernen-mochte">Sets sind z.B. sehr nützlich, wenn man Duplikate aus Listen entfernen möchte:</a></li>
 </ul>
   </nav></div>
 

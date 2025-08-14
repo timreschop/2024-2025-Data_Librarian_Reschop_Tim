@@ -174,8 +174,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="01_1_arithmetik_und_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">1. Arithmetik und Variablen</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">1. Arithmetik und Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">Arithmetik</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="01_02_variablen.html">Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="01_02_01_uebung_1.html">Übung 1</a></li>
 </ul>
 </details></li>
@@ -183,9 +183,9 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="02_2_datentypen.html">2. Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_01_variablentypen_datentypen.html">Variablentypen / Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">numerische Datentypen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html">Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html">Booleans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">Numerische Datentypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html"><strong>Strings</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html"><strong>Booleans</strong></a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_02_collections_fuer_variablen.html">Collections für Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -193,6 +193,7 @@
 <li class="toctree-l3"><a class="reference internal" href="02_02_02_tupel.html">Tupel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_03_sets.html">Sets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_04_dictionaries.html">Dictionaries</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -405,7 +406,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#man-konnte-nun-z-b-die-funktion-sort-values-von-pandas-verwenden-um-die-daten-nach-den-werten-einer-bestimmten-spalte-zu-sortieren-in-diesem-fall-nehmen-wir-das-alter-und-lassen-es-absteigend-sortieren">Man könnte nun z.B. die Funktion <em>sort_values()</em> von <strong>pandas</strong> verwenden, um die Daten nach den Werten einer bestimmten Spalte zu sortieren. In diesem Fall nehmen wir das Alter und lassen es absteigend sortieren:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#by-alter-gibt-an-aus-welcher-spalte-die-werte-zur-sortierung-entnommen-werden-sollen-ascending-false-kehrt-die-sortierung-ascending-aufsteigend-um-sodass-das-alter-absteigend-sortiert-wird-ascending-true-wurde-die-werte-aufsteigend-sortieren-mit-der-erstellung-der-neuen-variable-df-sorted-haben-wir-einen-neuen-dataframe-erstellt-hatten-wir-einfach-wieder-die-variable-df-verwendet-hatten-wir-unseren-ersten-dataframe-uberschrieben-es-ist-wichtig-das-im-hinterkopf-zu-behalten-um-den-ursprunglichen-dataframe-oder-bestimmte-berarbeitete-dataframes-zu-erhalten-sofern-das-relevant-fur-die-eigene-datenverarbeitung-ist-unser-neuer-dataframe-sieht-nun-so-aus"><em>by=”Alter”</em> gibt an, aus welcher Spalte die Werte zur Sortierung entnommen werden sollen, <em>ascending=False</em> kehrt die Sortierung (ascending - aufsteigend) um, sodass das Alter absteigend sortiert wird. <em>ascending=True</em> würde die Werte aufsteigend sortieren. mit der Erstellung der neuen Variable <em>df_sorted</em> haben wir einen neuen DataFrame erstellt. Hätten wir einfach wieder die Variable <em>df</em> verwendet, hätten wir unseren ersten DataFrame überschrieben. Es ist wichtig, das im Hinterkopf zu behalten, um den ursprünglichen <strong>DataFrame</strong> oder bestimmte berarbeitete <strong>DataFrames</strong> zu erhalten, sofern das relevant für die eigene Datenverarbeitung ist. Unser neuer <strong>DataFrame</strong> sieht nun so aus:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wir-konnen-uber-pandas-auch-csv-oder-xlsx-dateien-die-wir-normalerweise-mit-excel-offnen-wurden-einlesen-und-ebenfalls-in-einem-dataframe-darstellen-lassen-um-mit-den-daten-zu-arbeiten-z-b-so">Wir können über pandas auch .csv- oder .xlsx-Dateien, die wir normalerweise mit Excel öffnen würden einlesen und ebenfalls in einem DataFrame darstellen lassen, um mit den Daten zu arbeiten. z.B. so:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-datei-enthalt-zeitstempel-und-kursveranderung-einer-aktie-zu-bestimmten-zeitpunkten-wenn-wir-bpsw-nur-daten-fur-einen-ganz-bestimmten-zeitraum-sehen-wollen-konnen-wir-den-dataframe-mit-der-funktion-loc-dementsprechend-filtern-und-wieder-in-einen-neuen-dataframe-abspeichern">Die Datei enthält Zeitstempel und Kursveränderung einer Aktie zu bestimmten Zeitpunkten. Wenn wir bpsw. nur Daten für einen ganz bestimmten Zeitraum sehen wollen, können wir den <strong>DataFrame</strong> mit der Funktion <em>loc()</em> dementsprechend filtern und wieder in einen neuen <strong>DataFrame</strong> abspeichern:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hier-wird-der-kursverlauf-einer-aktien-in-einem-zeitraum-von-20-tagen-dargestellt-daraus-konnten-wir-nun-mit-matplotlib-ein-diagramm-erstellen-da-es-sich-um-einen-zeitlichen-verlauf-handelt-wurde-sich-ein-liniendiagramm-anbieten">Hier wird der Kursverlauf einer Aktien in einem Zeitraum von 20 Tagen dargestellt. Daraus könnten wir nun mit matplotlib ein Diagramm erstellen. Da es sich um einen zeitlichen Verlauf handelt, würde sich ein Liniendiagramm anbieten:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jetzt-gibt-es-noch-verschiedene-moglichkeiten-dass-diagramm-zu-verfeinern-und-dessen-lesbarkeit-zu-erhohen">Jetzt gibt es noch verschiedene Möglichkeiten, dass Diagramm zu verfeinern und dessen Lesbarkeit zu erhöhen:</a></li>
 </ul>
             </nav>
         </div>
@@ -426,7 +428,11 @@ document.write(`
 <h2>Beispielhaft könnte das so aussehen:<a class="headerlink" href="#beispielhaft-konnte-das-so-aussehen" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Zunächst erstellen wir drei Listen mit gleich vielen Elementen - eine für Namen, eine für Alter und eine für Hobbies</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Als erstes importieren wir pandas und matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1">#Zunächst erstellen wir drei Listen mit gleich vielen Elementen - eine für Namen, eine für Alter und eine für Hobbies</span>
 <span class="c1">#Jede Position in den Listen gehört logisch zusammen (z.B. Name, Alter und Hobby einer bestimmten Person)</span>
 <span class="c1">#Der Einfachheit halber verwenden wir die Listen, die wir bereits erstellt haben:</span>
 
@@ -592,14 +598,212 @@ document.write(`
 <h2>Wir können über pandas auch .csv- oder .xlsx-Dateien, die wir normalerweise mit Excel öffnen würden einlesen und ebenfalls in einem DataFrame darstellen lassen, um mit den Daten zu arbeiten. z.B. so:<a class="headerlink" href="#wir-konnen-uber-pandas-auch-csv-oder-xlsx-dateien-die-wir-normalerweise-mit-excel-offnen-wurden-einlesen-und-ebenfalls-in-einem-dataframe-darstellen-lassen-um-mit-den-daten-zu-arbeiten-z-b-so" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_stock</span> <span class="o">=</span>  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_stock</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/fiktive_aktie.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Datum&quot;</span><span class="p">])</span>
+
+<span class="n">df_stock</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Datum</th>
+      <th>Aktienwert</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2025-01-01 12:00:00</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2025-01-02 12:00:00</td>
+      <td>98.75</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2025-01-03 12:00:00</td>
+      <td>103.20</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2025-01-04 12:00:00</td>
+      <td>105.59</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2025-01-05 12:00:00</td>
+      <td>106.63</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2025-01-06 12:00:00</td>
+      <td>102.96</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2025-01-07 12:00:00</td>
+      <td>99.42</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2025-01-08 12:00:00</td>
+      <td>95.03</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2025-01-09 12:00:00</td>
+      <td>98.51</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2025-01-10 12:00:00</td>
+      <td>99.51</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2025-01-11 12:00:00</td>
+      <td>101.58</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2025-01-12 12:00:00</td>
+      <td>96.71</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2025-01-13 12:00:00</td>
+      <td>101.25</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2025-01-14 12:00:00</td>
+      <td>104.62</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2025-01-15 12:00:00</td>
+      <td>101.61</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2025-01-16 12:00:00</td>
+      <td>98.38</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2025-01-17 12:00:00</td>
+      <td>95.27</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2025-01-18 12:00:00</td>
+      <td>93.41</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2025-01-19 12:00:00</td>
+      <td>93.64</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2025-01-20 12:00:00</td>
+      <td>93.00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="hier-wird-der-kursverlauf-einer-aktien-in-einem-zeitraum-von-20-tagen-dargestellt-daraus-konnten-wir-nun-mit-matplotlib-ein-diagramm-erstellen-da-es-sich-um-einen-zeitlichen-verlauf-handelt-wurde-sich-ein-liniendiagramm-anbieten">
+<h2>Hier wird der Kursverlauf einer Aktien in einem Zeitraum von 20 Tagen dargestellt. Daraus könnten wir nun mit matplotlib ein Diagramm erstellen. Da es sich um einen zeitlichen Verlauf handelt, würde sich ein Liniendiagramm anbieten:<a class="headerlink" href="#hier-wird-der-kursverlauf-einer-aktien-in-einem-zeitraum-von-20-tagen-dargestellt-daraus-konnten-wir-nun-mit-matplotlib-ein-diagramm-erstellen-da-es-sich-um-einen-zeitlichen-verlauf-handelt-wurde-sich-ein-liniendiagramm-anbieten" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_stock</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Datum&#39;, &#39;Aktienwert&#39;], dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Diagrammgröße festlegen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Liniendiagramm</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_stock</span><span class="p">[</span><span class="s2">&quot;Datum&quot;</span><span class="p">],</span> <span class="n">df_stock</span><span class="p">[</span><span class="s2">&quot;Aktienwert&quot;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="c1"># Titel und Achsenbeschriftungen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Fiktiver Aktienkurs (20 Tage, 12:00 Uhr)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Datum&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Aktienwert (€)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1">#Anzeigen des Diagramms</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function matplotlib.pyplot.show(close=None, block=None)&gt;
+</pre></div>
+</div>
+<img alt="../_images/a19713d44eb07db3403dad3fd5353b8d18d11286378a5ed03fc6593a81b2d48c.png" src="../_images/a19713d44eb07db3403dad3fd5353b8d18d11286378a5ed03fc6593a81b2d48c.png" />
+</div>
+</div>
 </section>
-<section id="die-datei-enthalt-zeitstempel-und-kursveranderung-einer-aktie-zu-bestimmten-zeitpunkten-wenn-wir-bpsw-nur-daten-fur-einen-ganz-bestimmten-zeitraum-sehen-wollen-konnen-wir-den-dataframe-mit-der-funktion-loc-dementsprechend-filtern-und-wieder-in-einen-neuen-dataframe-abspeichern">
-<h2>Die Datei enthält Zeitstempel und Kursveränderung einer Aktie zu bestimmten Zeitpunkten. Wenn wir bpsw. nur Daten für einen ganz bestimmten Zeitraum sehen wollen, können wir den <strong>DataFrame</strong> mit der Funktion <em>loc()</em> dementsprechend filtern und wieder in einen neuen <strong>DataFrame</strong> abspeichern:<a class="headerlink" href="#die-datei-enthalt-zeitstempel-und-kursveranderung-einer-aktie-zu-bestimmten-zeitpunkten-wenn-wir-bpsw-nur-daten-fur-einen-ganz-bestimmten-zeitraum-sehen-wollen-konnen-wir-den-dataframe-mit-der-funktion-loc-dementsprechend-filtern-und-wieder-in-einen-neuen-dataframe-abspeichern" title="Link to this heading">#</a></h2>
+<section id="jetzt-gibt-es-noch-verschiedene-moglichkeiten-dass-diagramm-zu-verfeinern-und-dessen-lesbarkeit-zu-erhohen">
+<h2>Jetzt gibt es noch verschiedene Möglichkeiten, dass Diagramm zu verfeinern und dessen Lesbarkeit zu erhöhen:<a class="headerlink" href="#jetzt-gibt-es-noch-verschiedene-moglichkeiten-dass-diagramm-zu-verfeinern-und-dessen-lesbarkeit-zu-erhohen" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Diagrammgröße festlegen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Liniendiagramm</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_stock</span><span class="p">[</span><span class="s2">&quot;Datum&quot;</span><span class="p">],</span> <span class="n">df_stock</span><span class="p">[</span><span class="s2">&quot;Aktienwert&quot;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="c1"># Titel und Achsenbeschriftungen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Fiktiver Aktienkurs (20 Tage, 12:00 Uhr)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Datum&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Aktienwert (€)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># Datumsformat anpassen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="c1"># Raster anzeigen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Diagramm anzeigen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8a264ab8f1e67cd4b872533894c57197e1360f438ecce2d0acd607ae5b4a4cd9.png" src="../_images/8a264ab8f1e67cd4b872533894c57197e1360f438ecce2d0acd607ae5b4a4cd9.png" />
+</div>
+</div>
 </section>
 </section>
 
@@ -664,7 +868,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#man-konnte-nun-z-b-die-funktion-sort-values-von-pandas-verwenden-um-die-daten-nach-den-werten-einer-bestimmten-spalte-zu-sortieren-in-diesem-fall-nehmen-wir-das-alter-und-lassen-es-absteigend-sortieren">Man könnte nun z.B. die Funktion <em>sort_values()</em> von <strong>pandas</strong> verwenden, um die Daten nach den Werten einer bestimmten Spalte zu sortieren. In diesem Fall nehmen wir das Alter und lassen es absteigend sortieren:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#by-alter-gibt-an-aus-welcher-spalte-die-werte-zur-sortierung-entnommen-werden-sollen-ascending-false-kehrt-die-sortierung-ascending-aufsteigend-um-sodass-das-alter-absteigend-sortiert-wird-ascending-true-wurde-die-werte-aufsteigend-sortieren-mit-der-erstellung-der-neuen-variable-df-sorted-haben-wir-einen-neuen-dataframe-erstellt-hatten-wir-einfach-wieder-die-variable-df-verwendet-hatten-wir-unseren-ersten-dataframe-uberschrieben-es-ist-wichtig-das-im-hinterkopf-zu-behalten-um-den-ursprunglichen-dataframe-oder-bestimmte-berarbeitete-dataframes-zu-erhalten-sofern-das-relevant-fur-die-eigene-datenverarbeitung-ist-unser-neuer-dataframe-sieht-nun-so-aus"><em>by=”Alter”</em> gibt an, aus welcher Spalte die Werte zur Sortierung entnommen werden sollen, <em>ascending=False</em> kehrt die Sortierung (ascending - aufsteigend) um, sodass das Alter absteigend sortiert wird. <em>ascending=True</em> würde die Werte aufsteigend sortieren. mit der Erstellung der neuen Variable <em>df_sorted</em> haben wir einen neuen DataFrame erstellt. Hätten wir einfach wieder die Variable <em>df</em> verwendet, hätten wir unseren ersten DataFrame überschrieben. Es ist wichtig, das im Hinterkopf zu behalten, um den ursprünglichen <strong>DataFrame</strong> oder bestimmte berarbeitete <strong>DataFrames</strong> zu erhalten, sofern das relevant für die eigene Datenverarbeitung ist. Unser neuer <strong>DataFrame</strong> sieht nun so aus:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wir-konnen-uber-pandas-auch-csv-oder-xlsx-dateien-die-wir-normalerweise-mit-excel-offnen-wurden-einlesen-und-ebenfalls-in-einem-dataframe-darstellen-lassen-um-mit-den-daten-zu-arbeiten-z-b-so">Wir können über pandas auch .csv- oder .xlsx-Dateien, die wir normalerweise mit Excel öffnen würden einlesen und ebenfalls in einem DataFrame darstellen lassen, um mit den Daten zu arbeiten. z.B. so:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#die-datei-enthalt-zeitstempel-und-kursveranderung-einer-aktie-zu-bestimmten-zeitpunkten-wenn-wir-bpsw-nur-daten-fur-einen-ganz-bestimmten-zeitraum-sehen-wollen-konnen-wir-den-dataframe-mit-der-funktion-loc-dementsprechend-filtern-und-wieder-in-einen-neuen-dataframe-abspeichern">Die Datei enthält Zeitstempel und Kursveränderung einer Aktie zu bestimmten Zeitpunkten. Wenn wir bpsw. nur Daten für einen ganz bestimmten Zeitraum sehen wollen, können wir den <strong>DataFrame</strong> mit der Funktion <em>loc()</em> dementsprechend filtern und wieder in einen neuen <strong>DataFrame</strong> abspeichern:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hier-wird-der-kursverlauf-einer-aktien-in-einem-zeitraum-von-20-tagen-dargestellt-daraus-konnten-wir-nun-mit-matplotlib-ein-diagramm-erstellen-da-es-sich-um-einen-zeitlichen-verlauf-handelt-wurde-sich-ein-liniendiagramm-anbieten">Hier wird der Kursverlauf einer Aktien in einem Zeitraum von 20 Tagen dargestellt. Daraus könnten wir nun mit matplotlib ein Diagramm erstellen. Da es sich um einen zeitlichen Verlauf handelt, würde sich ein Liniendiagramm anbieten:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jetzt-gibt-es-noch-verschiedene-moglichkeiten-dass-diagramm-zu-verfeinern-und-dessen-lesbarkeit-zu-erhohen">Jetzt gibt es noch verschiedene Möglichkeiten, dass Diagramm zu verfeinern und dessen Lesbarkeit zu erhöhen:</a></li>
 </ul>
   </nav></div>
 

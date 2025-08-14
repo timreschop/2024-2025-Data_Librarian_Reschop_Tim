@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. Datentypen" href="02_2_datentypen.html" />
-    <link rel="prev" title="1. Arithmetik und Variablen" href="01_02_variablen.html" />
+    <link rel="prev" title="Variablen" href="01_02_variablen.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,8 +175,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="01_1_arithmetik_und_variablen.html">1. Arithmetik und Variablen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">1. Arithmetik und Variablen</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="01_02_variablen.html">1. Arithmetik und Variablen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_01_arithmetik.html">Arithmetik</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="01_02_variablen.html">Variablen</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Übung 1</a></li>
 </ul>
 </details></li>
@@ -184,9 +184,9 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="02_2_datentypen.html">2. Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_01_variablentypen_datentypen.html">Variablentypen / Datentypen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">numerische Datentypen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html">Strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html">Booleans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_01_numerische_datentypen.html">Numerische Datentypen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_02_strings.html"><strong>Strings</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_01_03_booleans.html"><strong>Booleans</strong></a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="02_02_collections_fuer_variablen.html">Collections für Variablen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -194,6 +194,7 @@
 <li class="toctree-l3"><a class="reference internal" href="02_02_02_tupel.html">Tupel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_03_sets.html">Sets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="02_02_04_dictionaries.html">Dictionaries</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -377,7 +378,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -393,6 +396,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jetzt-bist-du-an-der-reihe-lose-die-folgende-ubung">Jetzt bist Du an der Reihe! Löse die folgende Übung:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#berechne-das-produkt-aus-3-und-6-und-speichere-das-ergebnis-in-der-variable-v-1-dividiere-das-ergebnis-durch-2-und-speichere-dieses-ergebnis-in-der-variable-v-2-lass-dir-dann-das-ergebnis-von-v-2-ausgeben">Berechne das Produkt aus 3 und 6 und speichere das Ergebnis in der Variable v_1. Dividiere das Ergebnis durch 2 und speichere dieses Ergebnis in der Variable v_2. Lass dir dann das Ergebnis von v_2 ausgeben.</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -404,9 +416,30 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ubung-1">
 <h1>Übung 1<a class="headerlink" href="#ubung-1" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p>Inhalt nicht automatisch gefunden – bitte ergänzen.</p>
-</div></blockquote>
+<section id="jetzt-bist-du-an-der-reihe-lose-die-folgende-ubung">
+<h2>Jetzt bist Du an der Reihe! Löse die folgende Übung:<a class="headerlink" href="#jetzt-bist-du-an-der-reihe-lose-die-folgende-ubung" title="Link to this heading">#</a></h2>
+</section>
+<section id="berechne-das-produkt-aus-3-und-6-und-speichere-das-ergebnis-in-der-variable-v-1-dividiere-das-ergebnis-durch-2-und-speichere-dieses-ergebnis-in-der-variable-v-2-lass-dir-dann-das-ergebnis-von-v-2-ausgeben">
+<h2>Berechne das Produkt aus 3 und 6 und speichere das Ergebnis in der Variable v_1. Dividiere das Ergebnis durch 2 und speichere dieses Ergebnis in der Variable v_2. Lass dir dann das Ergebnis von v_2 ausgeben.<a class="headerlink" href="#berechne-das-produkt-aus-3-und-6-und-speichere-das-ergebnis-in-der-variable-v-1-dividiere-das-ergebnis-durch-2-und-speichere-dieses-ergebnis-in-der-variable-v-2-lass-dir-dann-das-ergebnis-von-v-2-ausgeben" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Schreibe hier deine Lösung</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Beispiel‑Lösung</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># v_1 = 3*6</span>
+<span class="c1"># v_1/2 = v_2</span>
+<span class="c1"># print(v_2)</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -445,7 +478,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1. Arithmetik und Variablen</p>
+        <p class="prev-next-title">Variablen</p>
       </div>
     </a>
     <a class="right-next"
@@ -463,6 +496,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jetzt-bist-du-an-der-reihe-lose-die-folgende-ubung">Jetzt bist Du an der Reihe! Löse die folgende Übung:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#berechne-das-produkt-aus-3-und-6-und-speichere-das-ergebnis-in-der-variable-v-1-dividiere-das-ergebnis-durch-2-und-speichere-dieses-ergebnis-in-der-variable-v-2-lass-dir-dann-das-ergebnis-von-v-2-ausgeben">Berechne das Produkt aus 3 und 6 und speichere das Ergebnis in der Variable v_1. Dividiere das Ergebnis durch 2 und speichere dieses Ergebnis in der Variable v_2. Lass dir dann das Ergebnis von v_2 ausgeben.</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
